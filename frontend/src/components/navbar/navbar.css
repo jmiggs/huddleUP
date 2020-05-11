@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+.navbar { 
+    height: 69px;
+    width: 100%;
+    background-color: #EF8354;;
+    font-family: 'Josefin Sans', cursive;
+    position: absolute;
+    top: 0px;
+    display: flex; 
+    align-items: center;
+} 

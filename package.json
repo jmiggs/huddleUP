@@ -3,10 +3,26 @@
   "version": "1.0.0",
   "description": "MERN stack AA",
   "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.13",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
-    "server:debug": "nodemon --inspect app.js"
+    "frontend-install": "npm install --prefix frontend",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -20,18 +36,5 @@
   "bugs": {
     "url": "https://github.com/jmiggs/huddleUP/issues"
   },
-  "homepage": "https://github.com/jmiggs/huddleUP#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.13",
-    "passport": "^0.4.1",
-    "passport-jwt": "^4.0.0",
-    "validator": "^13.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "homepage": "https://github.com/jmiggs/huddleUP#readme"
 }
