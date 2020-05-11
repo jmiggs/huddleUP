@@ -63,11 +63,9 @@ a user's information and an event's information).
 Meetings at 11:30AM
 - [X] Set up Git repo (Miguel)
 - [X] Repo README (Ngoc)
-- [ ] User Authorization (Miguel, Dorian, Bryan, and Ngoc)
-- [ ] Database Schema (Ngoc)
-- [ ] AWS setup (Bryan and Dorian)
-- [ ] Mapping out frontend components and Visual (Dorian)
-- [ ] Splash page (Dorian)
+- [X] AWS setup (Bryan and Dorian)
+- [X] Mapping out frontend components and Visual (Dorian)
+- [X] Splash page (Dorian)
 
 ### Week (May 11-15, 2020) -*Tentative* (Bryan and Ngoc will go where needed)
 #### May 11 (Monday) - Day 1
