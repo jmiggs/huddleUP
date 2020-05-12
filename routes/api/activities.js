@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Activity = require('../../models/Activity');
+const validateActivityInput = require('../../validation/activity');
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the activity test route" }));
@@ -13,11 +14,11 @@ router.post('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
       // console.log(req)
-      // const { errors, isValid } = validateTweetInput(req.body);
+      const { errors, isValid } = validateActivityInput(req.body);
         
-      // if (!isValid) {
-      //   return res.status(400).json(errors);
-      // }
+      if (!isValid) {
+        return res.status(400).json(errors);
+      }
 
     const newActivity = new Activity({
       title: req.body.title,
@@ -52,14 +53,16 @@ router.get('/:id', (req, res) => {
 });
 
 // user sign up to activity
+// pls enforce duplicate sign up error in frontend 
 router.post('/:activityid',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
+
     Activity.findOneAndUpdate(
-        {_id: req.params.id},
-        { $push: { participants: req.user._id} },
+        {_id: req.params.activityid},
+        { $addToSet: { participants: req.user._id} },
       ).
-      then( activity => res.json(activity)).
+      then( activity => {res.json(activity)}).
       catch(err =>
         res.status(404).json({ noactivityfound: 'Cant Join Activity' })
       ); 
