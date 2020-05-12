@@ -11,6 +11,7 @@ class DashBoard extends React.Component {
 
     render () {
         return (
+            <NavBar />
             <div className='outer-div-dashboard'>
                 <div className='dashboard-top-header'>
                     <h1>Find a huddle for all the events you love</h1>
