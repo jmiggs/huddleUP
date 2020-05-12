@@ -1,16 +1,18 @@
 import React from "react"; 
 import { Switch, Route } from "react-router-dom"; 
 import SplashPage from "./splash/splash_page"; 
-import SessionForm from "./auth/session_form";
-import NavBar from "./navbar/navbar";
+import LoginFormContainer from "./auth/login_form_container";
+import SignupFormContainer from "./auth/signup_form_container";
+import NavBarContainer from "./navbar/navbar_container";
+import { AuthRoute, ProtectRoute } from "../util/route_util";
 
 const App = () => (
     <div>
-        {/* <NavBar /> */}
+        {/* <NavBarContainer /> */}
         <Switch>
-            <Route exact path="/" component={SplashPage} />
-            <Route exact path="/login" component={SessionForm} />
-            <Route exact path="/signup" component={SessionForm} />
+            <Route exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
     </div>
 )
