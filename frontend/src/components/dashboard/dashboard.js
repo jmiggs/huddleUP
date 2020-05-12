@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './dashboard.css';
 import '../../reset.css';
-import NavBar from '../navbar/navbar'
+import NavBarContainer from '../navbar/navbar_container'
 
 class DashBoard extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class DashBoard extends React.Component {
     render () {
         return (
             <div className='outer-div-dashboard'>
-            <NavBar />
+            <NavBarContainer />
                 <div className='dashboard-top-header'>
                     <h1>Find a huddle for all the events you love</h1>
                     <img className='dashboard-top-header-img'src='dashboard-header-img2.png' />
@@ -26,7 +26,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Basketball</h1>
-                        <Link className='see-all'>See all</Link> 
+                        <Link to="/dashboard" className='see-all'>See all</Link> 
                     </div>
                     
                     <div className='event-items'>
@@ -43,7 +43,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Golf</h1>
-                        <Link className='see-all'>See all</Link>
+                        <Link to="/dashboard" className='see-all'>See all</Link>
                     </div>
 
                     <div className='event-items'>
@@ -60,7 +60,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Football</h1>
-                        <Link className='see-all'>See all</Link>
+                        <Link to="/dashboard" className='see-all'>See all</Link>
                     </div>        
 
                     <div className='event-items'>
@@ -77,7 +77,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Soccer</h1>
-                        <Link className='see-all'>See all</Link>
+                        <Link to="/dashboard" className='see-all'>See all</Link>
                     </div>  
 
                     <div className='event-items'>
@@ -94,7 +94,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Tennis</h1>
-                        <Link className='see-all'>See all</Link>
+                        <Link to="/dashboard" className='see-all'>See all</Link>
                     </div> 
 
                     <div className='event-items'>
