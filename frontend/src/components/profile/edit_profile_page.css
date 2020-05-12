@@ -1,0 +1,80 @@
+.edit-profile {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+}
+
+.edit-profile-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 26px;
+    padding: 8px;
+}
+
+.edit-form {
+    margin-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.edit-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+
+.edit-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+
+.upload-header {
+    margin-bottom: 6px;
+}
+
+.fileUploader.profile-uploader {
+    width: 180px;
+    height: 220px;
+    border-radius: 6px;
+    /* border: 2px solid #4F5D75; */
+}
+
+.edit-username-textbox, .edit-location-textbox {
+    width: 120px;
+    font-size: 16px;
+}
+
+.sports-dropdown {
+    margin-bottom: 4px;
+}
+
+.edit-update-btn { 
+    height: 50px;
+    width: 170px;
+    background-color: #EF8354;
+    text-align: center;
+    padding: 17px 0px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.edit-update-btn:hover { 
+    background-color: rgb(196, 107, 69);
+}
+
+.edit-update-btn { 
+    text-decoration: none;
+    color: #2D3142;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.drop-down-description {
+    font-size: 14px;
+}

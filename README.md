@@ -70,9 +70,9 @@ Meetings at 11:30AM
 ### Week (May 11-15, 2020) -*Tentative* (Bryan and Ngoc will go where needed)
 #### May 11 (Monday) - Day 1
 - [ ] User Authorization (Miguel and Bryan/Ngoc)
-- [ ] Allows users to create a profile, which includes a profile picture (Miguel and Bryan/Ngoc)
-- [ ] Build login (including a demo login) and signup page (Dorian and Bryan/Ngoc)
-- [ ] Build profile page (allows for editing) (Dorian and Bryan/Ngoc)
+- [ ] Build login (including a demo login) and signup page (Backend) (Dorian)
+- [X] Build profile page (allows for editing) (Ngoc)
+- [ ] Create dashboard page that shows all events (Bryan)
 
 #### May 12 (Tuesday) - Day 2
 - [ ] User can host events and/or signup for events (Miguel and Ngoc)
@@ -82,6 +82,7 @@ Meetings at 11:30AM
 #### May 13 (Wednesday) - Day 3
 - [ ] User can search for event by: location, time, sporting event (Miguel and Bryan/Ngoc)
 - [ ] Search in Navbar and search page (Dorian and Bryan/Ngoc)
+- [ ] Push to Heroku
 
 #### May 14 (Thursday) - Day 4
 - [ ] Make app mobile friendly (Miguel and Bryan/Ngoc)

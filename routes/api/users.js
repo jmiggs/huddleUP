@@ -11,7 +11,7 @@ const validateLoginInput = require('../../validation/login');
 
 
 //test route for users
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+router.get("/test", (req, res) => res.json({ msg: "This is the users test route" }));
 
 //route for user register
 //route for user register

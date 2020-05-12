@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const UserSchema = new Schema({
-  username: {
+const ActivitySchema = new Schema({
+  title: {
     type: String,
     required: true
   },
-  email: {
+  location: {
     type: String,
     required: true
   },
-  password: {
+  sport: {
     type: String,
     required: true
   },
@@ -19,20 +19,23 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  bio: {
+  description: {
     type: String
   },
-  location: {
-    type: String
+  numplayersneed: {
+    type: Number,
+    required: true
   },
-  hosting: [{
+  participants: [{
     type: Schema.Types.ObjectId,
-    ref: 'Activity'
+    ref: 'User'
   }],
-  attending: [{
+  host: {
     type: Schema.Types.ObjectId,
-    ref: 'Activity'
-  }]
+    ref: 'User',
+    required: true
+  }
+
 })
 
-module.exports = User = mongoose.model('User', UserSchema);
+module.exports = Activity = mongoose.model('Activity', ActivitySchema);
