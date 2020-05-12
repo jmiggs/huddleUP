@@ -11,7 +11,7 @@ import NavBarContainer from "../navbar/navbar_container";
 const SplashPage = props => { 
     return (
         <div>
-            <NavBarContainer />
+            <NavBarContainer /> {/* Take this line out and put it on the dashboard after we merge */}
             <div className="splash-nav">
                 <Link to="/" className="splash-nav-link">huddleUP</Link>
                 <div className="auth-nav">
