@@ -1,0 +1,82 @@
+/* 'Work Sans', sans-serif */
+.profile-upper-section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 160px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.profile-left-corner {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-picture-w-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-picture-box {
+    border: 15px solid #BFC0C0;
+    border-radius: 6px;
+    height: 320px;
+    width: 250px;
+}
+
+.profile-picture {
+    border-radius: 6px;
+}
+
+.profile-name {
+    color: #2D3142;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.profile-location {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-location-icon {
+    font-size: 18px;
+    padding: 3px;
+}
+
+.profile-location-word {
+    color: #4F5D75;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 3px;
+}
+
+.profile-right {
+    margin-left: 200px;
+}
+
+.profile-bio {
+    color: #4F5D75;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+}
+.profile-sports {
+    border-top: 1px solid #EF8354;
+    margin-top: 60px;
+    color: #4F5D75;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+}
+
+.edit-link {
+    text-decoration: none;
+    color: #EF8354;
+}
+
+.edit-link:hover {
+    color: #4F5D75;
+}
+
