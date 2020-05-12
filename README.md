@@ -69,15 +69,17 @@ Meetings at 11:30AM
 
 ### Week (May 11-15, 2020) -*Tentative* (Bryan and Ngoc will go where needed)
 #### May 11 (Monday) - Day 1
-- [ ] User Authorization (Miguel and Bryan/Ngoc)
-- [ ] Build login (including a demo login) and signup page (Backend) (Dorian)
+- [X] User Authorization and Users can create and signup for events (Miguel)
+- [X] Build login and signup page (Backend) (Dorian)
 - [X] Build profile page (allows for editing) (Ngoc)
-- [ ] Create dashboard page that shows all events (Bryan)
+- [X] Create dashboard page that shows all events (Bryan)
 
 #### May 12 (Tuesday) - Day 2
-- [ ] User can host events and/or signup for events (Miguel and Ngoc)
+- [ ] User can edit profile and research Google Maps API (Miguel)
 - [ ] Implement Amazon Web Services (AWS) (Dorian and Bryan)
-- [ ] Layout page for an event (Dorian and Bryan/Ngoc)
+- [ ] Layout page for an event (Bryan)
+- [ ] Search engine and filter (Ngoc)
+- [ ] Log in demo (Dorian)
 
 #### May 13 (Wednesday) - Day 3
 - [ ] User can search for event by: location, time, sporting event (Miguel and Bryan/Ngoc)
