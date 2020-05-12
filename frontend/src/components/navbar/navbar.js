@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./navbar.css"
-import { Link } from "react-router-dom";
 
 class NavBar extends React.Component { 
     constructor(props) { 
         super(props)
         this.logoutUser = this.logoutUser.bind(this);
-        this.getLinks = this.getLinks.bind(this);
+        // this.getLinks = this.getLinks.bind(this);
     }
 
     logoutUser(e) { 

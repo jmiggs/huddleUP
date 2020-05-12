@@ -4,7 +4,7 @@ import SplashPage from "./splash/splash_page";
 import LoginFormContainer from "./auth/login_form_container";
 import SignupFormContainer from "./auth/signup_form_container";
 import NavBarContainer from "./navbar/navbar_container";
-import { AuthRoute, ProtectRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfileForm from "./profile/profile_page";
 import EditProfilePage from "./profile/edit_profile_page";
 import DashBoard from './dashboard/dashboard';
@@ -13,12 +13,12 @@ const App = () => (
     <div>
         {/* <NavBarContainer /> */}
         <Switch>
-            <Route exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
+            <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/profile" component={ProfileForm} />
-            <Route path ="/profile/edit" component={EditProfilePage} />
-            <Route exact path="/dashboard" component={DashBoard} /> 
+            <ProtectedRoute exact path="/profile" component={ProfileForm} />
+            <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
+            <ProtectedRoute exact path="/dashboard" component={DashBoard} /> 
         </Switch>
     </div>
 )
