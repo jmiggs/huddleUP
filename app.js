@@ -3,6 +3,7 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 const mongoose = require('mongoose');
 const users = require("./routes/api/users");
+const activities = require("./routes/api/activities");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
@@ -18,6 +19,9 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
+  
+mongoose.set('useFindAndModify', false);
+
 
 // use bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,6 +34,7 @@ app.get("/", (req, res) => {
   
 // requiring routes
 app.use("/api/users", users);
+app.use("/api/activities", activities );
 
 // initialize passport
 app.use(passport.initialize());
