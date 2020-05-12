@@ -1,5 +1,10 @@
 import { combineReducers } from "redux";
+import session from "./session_reducer";
+import ErrorsReducer from "./errors_reducer";
 
-const rootReducer = { poop: "poop" }
+const rootReducer = combineReducers({
+    session,
+    errors: ErrorsReducer
+});
 
 export default rootReducer;
