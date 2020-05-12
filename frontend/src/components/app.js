@@ -7,6 +7,7 @@ import NavBarContainer from "./navbar/navbar_container";
 import { AuthRoute, ProtectRoute } from "../util/route_util";
 import ProfileForm from "./profile/profile_page";
 import EditProfilePage from "./profile/edit_profile_page";
+import DashBoard from './dashboard/dashboard';
 
 const App = () => (
     <div>
@@ -17,6 +18,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/profile" component={ProfileForm} />
             <Route path ="/profile/edit" component={EditProfilePage} />
+            <Route exact path="/dashboard" component={DashBoard} /> 
         </Switch>
     </div>
 )
