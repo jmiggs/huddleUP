@@ -25,7 +25,8 @@ router.post('/',
       sport: req.body.sport,
       description: req.body.description,
       numplayersneed: req.body.numplayersneed,
-      host: req.user.id
+      host: req.user.id,
+      participants: [req.user.id]
 
     });
       
