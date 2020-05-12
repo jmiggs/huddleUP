@@ -9,4 +9,31 @@
     top: 0px;
     display: flex; 
     align-items: center;
+    justify-content: space-between;
 } 
+
+.navbar-name {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-name:hover {
+    color: white;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+}
+
+.navbar-explore-link, .navbar-host-link, .navbar-profile-link {
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-explore-link:hover, .navbar-host-link:hover, .navbar-profile-link:hover {
+    color: white;
+}
