@@ -37,6 +37,7 @@ router.post('/',
 
 // fetch all events in database
 router.get('/', (req, res) => {
+  console.log('coming from the backend')
   Activity.find()
     .sort({ date: -1 })
     .then(activities => res.json(activities))
@@ -55,11 +56,11 @@ router.get('/:id', (req, res) => {
 // get activity by sport
 router.get('/sport/:sport', (req, res) => {
 
-  console.log(req) 
+  // console.log(req) 
   Activity.find( { sport: req.params.sport } )
     .then(activities => res.json(activities))
     .catch(err =>
-        res.status(404).json({ noactivityfound: req })
+        res.status(404).json({ noactivityfound: 'No Activity found' })
     );
 });
 
