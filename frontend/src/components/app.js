@@ -9,6 +9,7 @@ import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
 import DashBoard from './dashboard/dashboard';
 import CreateActivityContainer from "./activities/create_activity_container";
+import ActivityContainer from "./activity/activity_container";
 
 
 const App = () => (

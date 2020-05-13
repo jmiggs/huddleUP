@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { updateUser } from "../../actions/session_actions";
+// import { updateUser } from "../../actions/session_actions";
 import EditProfilePage from "./edit_profile_page";
 
 const mapStateToProps = state => {
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    updateUser: (user) => dispatch(updateUser(user))
+    // updateUser: (user) => dispatch(updateUser(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditProfilePage);
