@@ -9,7 +9,9 @@ import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePage from "./profile/edit_profile_page";
 import DashBoardContainer from './dashboard/dashboard_container';
 import ActivityContainer from './activity/activity_container'
-// import SportContainer from './sport/sport_container'
+import CreateActivityContainer from "./activities/create_activity_container";
+import EditProfilePageContainer from "./profile/edit_profile_page_container";
+
 
 const App = () => (
     <div>
@@ -27,6 +29,9 @@ const App = () => (
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
             {/* <ProtectedRoute path="/sport/:sport" component={SportContainer} /> */}
+            <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
+
+
         </Switch>
     </div>
 )

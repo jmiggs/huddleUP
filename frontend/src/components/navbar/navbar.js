@@ -52,7 +52,7 @@ class NavBar extends React.Component {
                             Explore
                         </Link>
                         {/* redirect to host page */}
-                        <Link to="/" className="navbar-host-link">
+                        <Link to="/activities/host" className="navbar-host-link">
                             Host
                         </Link>
                         <Link to="/profile" className="navbar-profile-link">
