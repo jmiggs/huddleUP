@@ -8,6 +8,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfileForm from "./profile/profile_page";
 import EditProfilePage from "./profile/edit_profile_page";
 import DashBoard from './dashboard/dashboard';
+import CreateActivityContainer from "./activities/create_activity_container";
 
 const App = () => (
     <div>
@@ -19,6 +20,7 @@ const App = () => (
             <ProtectedRoute exact path="/profile" component={ProfileForm} />
             <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
             <ProtectedRoute exact path="/dashboard" component={DashBoard} /> 
+            <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
         </Switch>
     </div>
 )
