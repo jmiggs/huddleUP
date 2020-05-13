@@ -6,6 +6,8 @@ import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 
+import * as ActivitiesActions from "./actions/activities_actions";
+
 document.addEventListener("DOMContentLoaded", () => { 
   let store;
 
@@ -24,6 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
   } else { 
     store = configureStore({});
   }
+
+  // Testing
+  window.fetchActivities = ActivitiesActions.fetchActivities;
+  window.fetchActivity = ActivitiesActions.fetchActivity;
+  window.createActivity = ActivitiesActions.createActivity;
+  window.dispatch = store.dispatch;
+  // End testing
+
   const root = document.getElementById("root")
   ReactDOM.render(<Root store={store} />, root)
 });
