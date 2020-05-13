@@ -6,7 +6,7 @@ import SignupFormContainer from "./auth/signup_form_container";
 import NavBarContainer from "./navbar/navbar_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfilePageContainer from "./profile/profile_page_container";
-import EditProfilePage from "./profile/edit_profile_page";
+import EditProfilePageContainer from "./profile/edit_profile_page_container";
 import DashBoard from './dashboard/dashboard';
 import ActivityContainer from './activity/activity_container'
 
@@ -21,9 +21,8 @@ const App = () => (
             <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute exact path="/profile" component={ProfileForm} />
-            <ProtectedRoute exact path="/" component={ProfileForm} />
-            <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
+            <ProtectedRoute exact path="/profile" component={ProfilePageContainer} />
+            <ProtectedRoute path ="/profile/edit" component={EditProfilePageContainer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoard} /> 
         </Switch>
     </div>
