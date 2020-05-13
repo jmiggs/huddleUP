@@ -13,6 +13,7 @@ import CreateActivityContainer from "./activities/create_activity_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
 
 
+
 const App = () => (
     <div>
         {/* <NavBarContainer /> */}
