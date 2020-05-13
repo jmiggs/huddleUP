@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const getActivities = () => {
-    return axios.get("/api/activities/")
+    return axios.get("/api/activities")
 };
 
 export const test = () => {

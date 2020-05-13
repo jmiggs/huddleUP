@@ -5,14 +5,20 @@ import '../../reset.css';
 import NavBarContainer from '../navbar/navbar_container'
 import DashBoardItem from './dashboard_item'
 
+
 class DashBoard extends React.Component {
     constructor(props) {
         super(props);
     };
 
-    render () {
-        const { activity } = this.props;
+    componentDidMount() {
+        this.props.fetchActivities();
+    }
 
+    render () {
+        const { basketball, golf, soccer, football, tennis  } = this.props;
+        // if (!activities) return null;
+        // debugger
         return (
             <div className='outer-div-dashboard'>
             <NavBarContainer />
@@ -25,16 +31,11 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Basketball</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link> 
+                        <Link to="/basketball" className='see-all'>See all</Link> 
                     </div>
                     
                     <div className='event-items'>
-                    {/* Map events from state */}
-                        <DashBoardItem />
-                        <DashBoardItem />
-                        <DashBoardItem />
-                        <DashBoardItem />
-                        <DashBoardItem />
+                        { basketball.map(activity => <DashBoardItem activity={activity} />) }
                     </div>
                         
                 </div>
@@ -47,11 +48,7 @@ class DashBoard extends React.Component {
                     </div>
 
                     <div className='event-items'>
-                        <img className='event-img' src='event2-img.jpg' />
-                        <img className='event-img' src='event2-img.jpg' />
-                        <img className='event-img' src='event2-img.jpg' />
-                        <img className='event-img' src='event2-img.jpg' />
-                        <img className='event-img' src='event2-img.jpg' />
+                        {golf.map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -64,11 +61,7 @@ class DashBoard extends React.Component {
                     </div>        
 
                     <div className='event-items'>
-                        <img className='event-img' src='event3-img.jpg' />
-                        <img className='event-img' src='event3-img.jpg' />
-                        <img className='event-img' src='event3-img.jpg' />
-                        <img className='event-img' src='event3-img.jpg' />
-                        <img className='event-img' src='event3-img.jpg' />
+                        {football.map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -81,11 +74,7 @@ class DashBoard extends React.Component {
                     </div>  
 
                     <div className='event-items'>
-                        <img className='event-img' src='event4-img.jpg' />
-                        <img className='event-img' src='event4-img.jpg' />
-                        <img className='event-img' src='event4-img.jpg' />
-                        <img className='event-img' src='event4-img.jpg' />
-                        <img className='event-img' src='event4-img.jpg' />
+                        {soccer.map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -98,11 +87,7 @@ class DashBoard extends React.Component {
                     </div> 
 
                     <div className='event-items'>
-                        <img className='event-img' src='event5-img.jpg' />
-                        <img className='event-img' src='event5-img.jpg' />
-                        <img className='event-img' src='event5-img.jpg' />
-                        <img className='event-img' src='event5-img.jpg' />
-                        <img className='event-img' src='event5-img.jpg' />
+                        {tennis.map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
