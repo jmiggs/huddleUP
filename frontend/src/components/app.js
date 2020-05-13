@@ -8,11 +8,16 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
 import DashBoard from './dashboard/dashboard';
+import ActivityContainer from './activity/activity_container'
 
 const App = () => (
     <div>
         {/* <NavBarContainer /> */}
         <Switch>
+            {/* this is for testing activity show components */}
+            <Route exact path="/activityshow" component={ActivityContainer} />
+
+
             <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
