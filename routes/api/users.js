@@ -70,7 +70,7 @@ router.post('/login', (req, res) => {
       bcrypt.compare(password, user.password)
       .then(isMatch => {
           if (isMatch) {
-          const payload = {id: user.id, name: user.name};
+          const payload = {id: user.id, username: user.username};
 
           jwt.sign(
               payload,
@@ -92,6 +92,7 @@ router.post('/login', (req, res) => {
 
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+  console.log(req)
   res.json({
     id: req.user.id,
     username: req.user.username,
