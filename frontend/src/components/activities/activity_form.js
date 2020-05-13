@@ -1,5 +1,6 @@
 import React from "react"; 
 import NavBarContainer from "../navbar/navbar_container";
+import { GuardSpinner } from "react-spinners-kit";
 import "./activity_form.css"
 
 class ActivityForm extends React.Component { 
@@ -27,14 +28,15 @@ class ActivityForm extends React.Component {
 
     renderSubmitButton() { 
         if (this.state.clicked) {
-            return <input type="submit" value="clicked" className="submit-activity-faded" />
+            // return <input type="submit" value="clicked" className="submit-activity-faded" />
+            return <div className="activity-form-spinner"><GuardSpinner size={20} frontColor="#EF8354" backColor="#2D3142" loading={this.state.clicked} /></div>;
         } else if (this.state.title.trim().length &&
             this.state.location.trim().length &&
             this.state.sport.trim().length &&
             this.state.numplayersneed.trim().length) { 
-            return <input type = "submit" value = "Host" className = "submit-activity" />
+            return <input type="submit" value="Host" className="submit-activity" />
         } else { 
-            return < input type = "submit" value = "Host" className = "submit-activity-faded" />
+            return < input type="submit" value="Host" className="submit-activity-faded" />
         }
     }
 
