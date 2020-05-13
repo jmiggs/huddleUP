@@ -58,7 +58,7 @@ class NavBar extends React.Component {
                         <Link to="/profile" className="navbar-profile-link">
                             Profile
                         </Link>
-                        <button onClick={this.logoutUser}>Logout</button>
+                        {/* <button onClick={this.logoutUser}>Logout</button> */}
                     </div>
                 </div>
             </div>

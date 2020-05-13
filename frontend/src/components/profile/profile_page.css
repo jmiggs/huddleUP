@@ -80,3 +80,26 @@
     color: #4F5D75;
 }
 
+.profile-logout-btn { 
+    height: 50px;
+    width: 170px;
+    background-color: #EF8354;
+    text-align: center;
+    padding: 17px 0px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.profile-logout-btn:hover { 
+    background-color: rgb(196, 107, 69);
+}
+
+.profile-logout-btn-text { 
+    text-decoration: none;
+    color: #2D3142;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}

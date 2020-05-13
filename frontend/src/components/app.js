@@ -5,7 +5,7 @@ import LoginFormContainer from "./auth/login_form_container";
 import SignupFormContainer from "./auth/signup_form_container";
 import NavBarContainer from "./navbar/navbar_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import ProfileForm from "./profile/profile_page";
+import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePage from "./profile/edit_profile_page";
 import DashBoard from './dashboard/dashboard';
 import ActivityContainer from './activity/activity_container'
