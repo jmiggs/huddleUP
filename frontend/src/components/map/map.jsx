@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
+import MapMarker from './mapmarker'
 
 import "../../reset.css";
 import "./map.css"
@@ -20,8 +21,14 @@ class Map extends React.Component {
 
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
-    
+    this.mapMarker = new MapMarker(this.map);
+    this.mapMarker.updateMarkers();
   }
+
+  componentDidUpdate() {
+    this.mapMarker.updateMarkers();
+  }
+
 
   render() {
     console.log(google)
