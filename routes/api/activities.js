@@ -52,6 +52,18 @@ router.get('/:id', (req, res) => {
     );
 });
 
+// get activity by sport
+router.get('/sport/:sport', (req, res) => {
+
+  console.log(req) 
+  Activity.find( { sport: req.params.sport } )
+    .then(activities => res.json(activities))
+    .catch(err =>
+        res.status(404).json({ noactivityfound: req })
+    );
+});
+
+
 // user sign up to activity
 // pls enforce duplicate sign up error in frontend 
 router.post('/:activityid',
