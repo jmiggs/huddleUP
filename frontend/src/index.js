@@ -36,4 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const root = document.getElementById("root") // Gets it from the index.html in the public folder
   ReactDOM.render(<Root store={store} />, root)
+  window.store = store;
+  window.getState = store.getState;
 });
