@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './dashboard.css';
 import '../../reset.css';
 import NavBarContainer from '../navbar/navbar_container'
+import DashBoardItem from './dashboard_item'
 
 class DashBoard extends React.Component {
     constructor(props) {
@@ -10,16 +11,14 @@ class DashBoard extends React.Component {
     };
 
     render () {
+        const { activity } = this.props;
+
         return (
             <div className='outer-div-dashboard'>
             <NavBarContainer />
                 <div className='dashboard-top-header'>
                     <h1>Find a huddle for all the events you love</h1>
                     <img className='dashboard-top-header-img'src='dashboard-header-img2.png' />
-                </div>
-
-                <div className='search-bar'>
-                    {/* Search bar */}
                 </div>
 
                 <div className='event-category'>
@@ -30,11 +29,12 @@ class DashBoard extends React.Component {
                     </div>
                     
                     <div className='event-items'>
-                        <img className='event-img' src='event-img.jpg'/>
-                        <img className='event-img' src='event-img.jpg'/>
-                        <img className='event-img' src='event-img.jpg'/>
-                        <img className='event-img' src='event-img.jpg'/>
-                        <img className='event-img' src='event-img.jpg'/>
+                    {/* Map events from state */}
+                        <DashBoardItem />
+                        <DashBoardItem />
+                        <DashBoardItem />
+                        <DashBoardItem />
+                        <DashBoardItem />
                     </div>
                         
                 </div>
