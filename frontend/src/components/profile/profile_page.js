@@ -5,7 +5,11 @@ import "../../reset.css";
 import "./profile_page.css"
 import NavBar from '../navbar/navbar';
 import { GrMapLocation } from 'react-icons/gr';
+<<<<<<< HEAD
 import MJPic from '../../assets/Michael-Jordan-1987.png';
+=======
+import Footer from "../footer/footer";
+>>>>>>> 37076093d90e7faf427500b707b4999582f2f3fc
 
 class ProfilePage extends React.Component {
     constructor(props) {
@@ -154,6 +158,7 @@ class ProfilePage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

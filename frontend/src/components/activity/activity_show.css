@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@531&display=swap");
+/* @import url('https://fonts.googleapis.com/css?family=Josefin+Sans'); */
+
+.activity-show-page { 
+    margin-top: 69px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.activity-show-container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+}
+
+.show-page-title { 
+    font-size: 48px;
+    color: #2D3142;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 15px;
+    align-self: center;
+    text-align: center;
+}
+
+.show-page-description { 
+    font-family: sans-serif;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #4F5D75;
+    width: 600px;
+    align-self: center;
+    text-align: center;
+}
+
+.show-page-details { 
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 4px solid #EF8354;
+}
+
+.show-page-numamountplayers { 
+    font-family: 'Josefin Sans', cursive;
+    margin-bottom: 10px;
+}
+
+.show-page-numplayersneed { 
+    font-family: 'Josefin Sans', cursive;
+    margin-bottom: 10px;
+}
+
+.show-page-location { 
+    font-family: 'Josefin Sans', cursive;
+    margin-bottom: 10px;
+}
+
+.show-page-sport { 
+    font-family: 'Josefin Sans', cursive;
+    /* margin-bottom: 10px; */
+}
+
+.unsubscribe-button { 
+    margin-bottom: 10px;
+    border: none;
+    color: #BFC0C0;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    height: 35px;
+}
+
+.subscribe-button { 
+    margin-bottom: 10px;
+    border: none;
+    color: #EF8354;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    background-color: #2D3142;
+    border-radius: 25px;
+    height: 35px;
+    width: 110px;
+}
+
+.activity-show-map { 
+    width: 600px;
+    height: 600px;
+    background-color: aquamarine;
+}

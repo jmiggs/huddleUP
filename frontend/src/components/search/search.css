@@ -1,0 +1,26 @@
+.search-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-text {
+  font-family: 'Josefin Sans', cursive;
+}
+
+.sport-type {
+  font-size: 4em;
+}
+
+.time-dropdown {
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0.5rem solid #EF8354;
+  border-radius: 1.25rem;
+  color: #EF8354;
+
+  font-size: 1em;
+  height: 50x;
+  line-height: 1.5;
+  width: 100%;
+
+}

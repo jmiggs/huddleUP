@@ -17,7 +17,7 @@
 .dashboard-top-header > h1 {
     font-family: 'Work Sans', sans-serif;
     font-size: 50px;
-    color: white;
+    color: black;
     padding-top: 100px;
     margin-bottom: 40px;
 }
@@ -30,12 +30,56 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 75px;
+    /* border-bottom: 1px solid black */
+}
+
+.event-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-item > img {
+    width: 200px;
+    border-radius: 10px;
+    margin-right: 13px;
+    transition: transform .2s;
+}
+
+.event-item > img:hover {
+    transform: scale(1.1);
+}
+
+.event-item > span {
+    padding-right: 10px;
+}
+
+.event-date {
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: #EF8354;
+    margin-bottom: 5px;
+}
+
+.event-title {
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: bold;
+    color: grey;
+    width: 200px;
+    text-align: center;
 }
 
 .event-items > img{
     width: 200px;
     border-radius: 10px;
     margin-right: 13px;
+    transition: transform .2s;
+}
+
+.event-items > img:hover {
+    transform: scale(1.1);
 }
 
 .event-category-header {
@@ -57,4 +101,9 @@
     text-decoration: none;
     font-size: 15px;
     color: black;
+    transition: .2s;
+}
+
+.see-all:hover {
+    color: #EF8354;
 }
