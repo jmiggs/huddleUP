@@ -9,10 +9,21 @@ import { GrMapLocation } from 'react-icons/gr';
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props);
+
         this.logoutUser = this.logoutUser.bind(this);
         this.getBio = this.getBio.bind(this);
         this.getLocation = this.getLocation.bind(this);
         this.getSports = this.getSports.bind(this);
+    }
+
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.user !=.id= prevProps.user) {
+    //         this.props.fetchUser(this.props.user.id)
+    //     }
+    // }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.user.id)
     }
 
     logoutUser(e) {
@@ -21,7 +32,7 @@ class ProfilePage extends React.Component {
     }
 
     getLocation() {
-        if (!this.props.currentUserLocation) {
+        if (!this.props.user.currentUserLocation) {
             return (
                 <div>
                     Unknown
@@ -30,14 +41,14 @@ class ProfilePage extends React.Component {
         } else {
             return (
                 <div>
-                    {this.props.currentUserLocation}
+                    {this.props.user.currentUserLocation}
                 </div>
             )
         }
     }
 
     getBio() {
-        if (!this.props.currentUserBio) {
+        if (!this.props.user.currentUserBio) {
             return (
                 <div>
                     No Bio
@@ -46,21 +57,21 @@ class ProfilePage extends React.Component {
         } else {
             return (
                 <div>
-                    {this.props.currentUserBio}
+                    {this.props.user.currentUserBio}
                 </div>
             )
         }
     }
 
     getSports() {
-        if (this.props.currentUserSports.length === 0) {
+        if (this.props.user.currentUserSports.length === 0) {
             return (
                 <div>No sports listed</div>
             )
         } else {
             return(
                 <div>
-                    {this.props.currentUserSports.map(sport => (
+                    {this.props.user.currentUserSports.map(sport => (
                         <li>
                             {sport}
                         </li>
@@ -70,7 +81,7 @@ class ProfilePage extends React.Component {
         }
     }
 
-    render() {
+    render() { 
         return (
             <div>
                 <NavBar />
@@ -79,12 +90,17 @@ class ProfilePage extends React.Component {
                         <div className="profile-left-corner">
                             <div className="profile-picture-w-name">
                                 <div className="profile-picture-box">
-                                    {/* where profile picture image will go */}
-                                    <img className="profile-picture"></img>
+                                    <img 
+                                        className="profile-picture"
+                                        src={this.props.currentUserPicture}
+                                        width="100"
+                                        height="80"
+                                        alt="user-profile-picture"
+                                    />
                                 </div>
                                 <br />
                                 <div className="profile-name">
-                                    {this.props.currentUsername}
+                                    {this.props.user.currentUsername}
                                 </div>
                                 <br />
                                 <div className="profile-location">
@@ -96,7 +112,7 @@ class ProfilePage extends React.Component {
                                     </div>
                                 </div>
                                 <br />
-                                <Link to="profile/edit" className="edit-link">Edit</Link>
+                                <Link to= {`${this.props.user.id}/edit`} className="edit-link">Edit</Link>
                             </div>
                         </div>
                     </div>

@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                         <Link to="/" className="navbar-host-link">
                             Host
                         </Link>
-                        <Link to="/profile" className="navbar-profile-link">
+                        <Link to={`/users/${this.props.id}`} className="navbar-profile-link">
                             Profile
                         </Link>
                         {/* <button onClick={this.logoutUser}>Logout</button> */}
