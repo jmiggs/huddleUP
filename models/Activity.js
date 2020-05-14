@@ -8,12 +8,12 @@ const ActivitySchema = new Schema({
     required: true
   },
   lat: {
-    type: String,
-    // required: true
+    type: Number,
+    required: true
   },
   lng: {
-    type: String,
-    // required: true
+    type: Number,
+    required: true
   },
   sport: {
     type: String,

@@ -7,6 +7,8 @@ import NavBarContainer from "./navbar/navbar_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePage from "./profile/edit_profile_page";
+
+import SearchContainer from "./search/search_container";
 import DashBoardContainer from './dashboard/dashboard_container';
 import ActivityContainer from './activity/activity_container'
 import CreateActivityContainer from "./activities/create_activity_container";
@@ -14,13 +16,15 @@ import EditProfilePageContainer from "./profile/edit_profile_page_container";
 
 
 
+
 const App = () => (
     <div>
         {/* <NavBarContainer /> */}
         <Switch>
-            {/* this is for testing activity show components */}
 
-
+            {/* this is for testing  */}
+            <Route exact path="/maptest" component={SearchContainer} />
+ 
             <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -34,6 +38,7 @@ const App = () => (
 
 
         </Switch>
+        
     </div>
 )
 

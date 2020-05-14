@@ -2,13 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const ActivityMap = (props) => {
+
+
+const Activity = (props) => {
 
   return(
     <div>
-      this is the map
+      all sports of a certain type will go here!
+
     </div>
   )
 }
 
-export default ActivityMap
+export default Activity
+
+  
