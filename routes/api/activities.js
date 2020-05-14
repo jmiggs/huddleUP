@@ -42,30 +42,33 @@ router.post('/',
 
 // fetch all events in database
 router.get('/', (req, res) => {
-  
+
   // if there are no filters in the request, use the first .find() to query all activities
   // if there are filters in the request, use the second .find and apply the filters
   // NOTE: will need to add more $and conditions as we implement more filters..
   if (!req.query.filters) {
     Activity.find()
       .sort({ date: -1 })
-      .then(activities => {res.json(activities)})
+      .then(activities => res.json(activities))
       .catch(err => res.status(404).json({ noactivities: 'No activities found' }));
   } else {
 
     // formatting/deconstructing bounds passed from front end component
     let boundsObj = JSON.parse(req.query.filters);
     let { bounds } = boundsObj;
-   
+    console.log(boundsObj)
     // applying filters to select activities
     Activity.find({
       $and: [
         { lat: {$lt: bounds.northEast.lat } },
         { lng: {$lt: bounds.northEast.lng } },
         { lat: {$gt: bounds.southWest.lat } },
-        { lng: {$gt: bounds.southWest.lng } }
+        { lng: {$gt: bounds.southWest.lng } },
+        { sport: boundsObj.sport },
+        { time: {$in: boundsObj.time } },
+        { day: {$in: boundsObj.day } },
       ]}).
-      then(activities => {res.json(activities)}).
+      then(activities => {res.json(activities); console.log(activities)}).
       catch( err => res.status(404).json({ noactivities: 'No activities found' }));
   }
 

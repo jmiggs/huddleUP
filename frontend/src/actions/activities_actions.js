@@ -22,6 +22,7 @@ export const fetchActivities = () => dispatch => {
 export const fetchActivitiesFiltered = (filters) => dispatch => {
   // effectively does the same thing as the fx above, but added filters
   // will test to see if we need this, or if we can just use above fx....
+
   return ActivitiesAPIUtil.getActivitiesFiltered(filters)
       .then(res => {
         dispatch(receiveActivities(res.data))})

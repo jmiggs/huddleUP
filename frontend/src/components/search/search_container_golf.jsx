@@ -12,7 +12,8 @@ const asArray = ({ activities }) => {
 };
 
 const mapStateToProps = state => ({
-  activities: asArray(state.entities)
+  activities: asArray(state.entities),
+  type: 'golf'
 });
 
 const mapDispatchToProps = dispatch => ({

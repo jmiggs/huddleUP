@@ -8,11 +8,16 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePage from "./profile/edit_profile_page";
 
-import SearchContainer from "./search/search_container";
 import DashBoardContainer from './dashboard/dashboard_container';
 import ActivityContainer from './activity/activity_container'
 import CreateActivityContainer from "./activities/create_activity_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
+
+import SearchContainerBball from "./search/search_container_bball";
+import SearchContainerFootball from "./search/search_container_football";
+import SearchContainerSoccer from "./search/search_container_soccer";
+import SearchContainerGolf from "./search/search_container_golf";
+import SearchContainerTennis from "./search/search_container_tennis";
 
 
 
@@ -23,7 +28,6 @@ const App = () => (
         <Switch>
 
             {/* this is for testing  */}
-            <Route exact path="/maptest" component={SearchContainer} />
  
             <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
             <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -33,6 +37,13 @@ const App = () => (
             <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
+
+            <ProtectedRoute exact path="/basketball" component={SearchContainerBball} /> 
+            <ProtectedRoute exact path="/soccer" component={SearchContainerSoccer} /> 
+            <ProtectedRoute exact path="/golf" component={SearchContainerGolf} /> 
+            <ProtectedRoute exact path="/football" component={SearchContainerFootball} /> 
+            <ProtectedRoute exact path="/tennis" component={SearchContainerTennis} /> 
+
             {/* <ProtectedRoute path="/sport/:sport" component={SportContainer} /> */}
             <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
 
