@@ -1,7 +1,7 @@
 .edit-profile {
     margin-top: 100px;
     margin-left: 200px;
-    margin-right: 200px;
+    margin-right: 100px;
     margin-bottom: 100px;
 }
 
@@ -28,7 +28,7 @@
 .edit-right {
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
+    margin-left: 100px;
 }
 
 .upload-header {
@@ -77,4 +77,69 @@
 
 .drop-down-description {
     font-size: 14px;
+}
+
+/* .option { 
+	color: black;
+  } */
+
+.option {
+    color: black;
+}
+
+.searchBox {
+	border: none;
+	font-size: 12px;
+	min-height: 20px;
+}
+
+.inputField { 
+      margin: 7px;
+}
+
+.highlightOption {
+  background: #EF8354;
+  color: #ffffff;
+}
+
+.multiSelectContainer ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.multiSelectContainer li {
+  padding: 10px 10px;
+}
+.multiSelectContainer li:hover {
+  background: #EF8354;
+  color: #fff;
+  cursor: pointer;
+}
+
+.multiSelectContainer:hover {
+    background: #EF8354
+}
+.chip {
+  padding: 4px 10px;
+  background: #EF8354;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.optionContainer li{
+    background-color: white;
+}
+
+.optionContainer li:hover{
+    background-color: #EF8354;
 }

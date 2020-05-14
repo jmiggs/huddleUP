@@ -1,77 +1,66 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import NavBar from "../navbar/navbar";
+import { Multiselect } from 'multiselect-react-dropdown';
 import "../../reset.css";
 import "./edit_profile_page.css"
-import ImageUploader from "react-images-upload";
-import NavBar from "../navbar/navbar";
-import { fetchUser } from "../../actions/users_actions";
-import axios from 'axios';
-import { GrFedora } from "react-icons/gr";
 
 class EditProfilePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.onDrop = this.onDrop.bind(this);
         this.routeBackToProfile = this.routeBackToProfile.bind(this);
         this.sportsList = this.sportsList.bind(this);
-        // this.fileChangedHandler = this.fileChangedHandler.bind(this);
-        // this.fileUploadHandler = this.fileUploadHandler.bind(this);
-        this.handleFile = this.handleFile.bind(this);
+        this.handleFile = this.handleFile.bind(this); 
+        this.multiselectRef = React.createRef();
     }
-
-    // componentDidMount() {
-    //     this.props.fetchUser(this.props.match.params.id)
-    // }
-
-    // onDrop(picture) {   
-    //     this.setState({
-    //         picture: this.state.picture,
-    //     });
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.updateUser(this.state)
-            // .then((user) => this.routeBackToProfile(user))
+        this.props.updateUser(this.state, this.routeBackToProfile())
     }
 
+    routeBackToProfile() {
+        this.props.history.push(`/users/${this.props.id}`)
+    }
     update(type) {
         return (e) => { this.setState({ [type]: e.currentTarget.value }) };
     } 
 
-    routeBackToProfile(user) {
-        this.props.history.push(`/users/${user.id}`)
+    handleChange(selectedSports) {
+        this.setState({selectedSports})
+    } 
+
+    handleDeselect(index) {
+        const selectedSports = this.state.sports.slice()
+        selectedSports.splice(index, 1)
+        this.setState({ selectedSports })
     }
 
     sportsList() {
-        const selected = document.querySelectorAll('#sports option:checked');
-        const values = Array.from(selected).map(el => el.value);
-        return (
-            <div>
-                <select id="sports" multiple="multiple">
-                    <option value="basketball">basketball</option>
-                    <option value="golf">golf</option>
-                    <option value="football">football</option>
-                    <option value="soccer">soccer</option>
-                    <option value="tennis">tennis</option>
-                </select>
+        let options = [
+            { value: "basketball", text: 'basketball' },
+            { value: "golf", text: 'golf' },
+            { value: "football", text: 'football' },
+            { value: "soccer", text: 'soccer' },
+            { value: "tennis", text: 'tennis' }
+        ]
+        const selectedSports = this.state.sports
+        return(   
+            <div className = "edit-sports-selection">
+            <br/>
+            < Multiselect
+                options={options} //Options to display in the dropdown
+                selectedValues={selectedSports} // Preselected value to persist in dropdown
+                onSelect={this.onSelect} // Function will trigger on select event
+                onRemove={this.onRemove} // Function will trigger on remove event
+                displayValue="value" //value name
+            />
             </div>
         )
     }
-
-    // fileChangedHandler(event) {
-    //     this.setState({
-    //         picture: event.target.files[0]
-    //     })
-    // }
-
-    // fileUploadHandler(){
-    //     const formData = new FormData();
-    //     formData.append('image', this.state.picture, this.state.picture.name);
-    //     axios.post('https://s3.console.aws.amazon.com/s3/buckets/huddle-up-dev/?region=us-west-1', formData)
-    // }
 
     handleFile(e) {
         const file = e.currentTarget.files[0];
@@ -83,12 +72,14 @@ class EditProfilePage extends React.Component {
 
     getSignedRequest(file) {
         const xhr = new XMLHttpRequest();
+        // here
         xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
+                debugger
+                // makes status === 0
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
-                    // where error occurs and alerts saying could not get signed URL
                     this.uploadFile(file, response.signedRequest, response.url);
                 }
                 else {
@@ -123,24 +114,15 @@ class EditProfilePage extends React.Component {
                 <h3 className="edit-profile-title">Edit Profile Page</h3>
                 <form className = "edit-form" onSubmit = {this.handleSubmit}>
                     <div className ="edit-left">
-                        <label className="upload-header">Upload profile picture</label>
-                        {/* <ImageUploader
-                            withIcon={true}
-                            buttonText='Choose images'
-                            onChange={this.onDrop}
-                            imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                            maxFileSize={5242880}
-                            className = "profile-uploader"
-                        /> */}
-                        {/* <input type="file" onChange={this.fileChangedHandler}/>
-                        <button onClick = {this.fileUploadHandler}>Upload</button> */}
-                        <label>
-                            Upload
-                            <input 
+                            <label className="upload-header">
+                                Upload profile picture
+                                <br/>
+                                <input
                                 type="file"
                                 onChange={this.handleFile}
-                            />
-                        </label>
+                                />
+                            </label>
+                        <br/>
                         <label>Username</label>
                         <input
                             type="text"
@@ -162,19 +144,20 @@ class EditProfilePage extends React.Component {
                         <textarea
                             cols="40"
                             rows="10"
-                            placeholder={this.state.bio}
+                            value={this.state.bio}
                             onChange={this.update('bio')}
                         />
                         <br/>
                         <label className = "sports-dropdown">Sports</label>
-                            <div className ="drop-down-description"> hold cmd button to select multiples </div>
+                            <div className ="drop-down-description"> 
+                                hold cmd button to select multiples 
+                            </div>
                             {this.sportsList()}
                         <br/>
                         <input
                             className="edit-update-btn"
                             type="submit"
                             value="Update"
-                            // onClick={this.routeBackToProfile(this.state)}
                         />
                     </div>
                 </form>
@@ -183,36 +166,5 @@ class EditProfilePage extends React.Component {
         )
     }
 }
-
-// const EditProfilePage = props => {
-//     return (
-//         <div>
-//             <h3>Edit Profile Page</h3>
-//             <form>
-//                 <label>Upload profile picture</label>
-//                 <label>Username</label>
-//                 <input
-//                     type="text"
-//                     // value={this.state.title}
-//                     // onChange={this.handleInput('title')}
-//                 />
-//                 <label>Location</label>
-//                 <input
-//                     type="text"
-//                 />
-//                 <label>Bio</label>
-//                 <textarea
-//                     cols="40"
-//                     rows="10"
-//                 />
-//                 <label>Sports</label>
-//                 <select id="sports">
-//                     <option value="basketball">basketball</option>
-//                     <option value="soccer">soccer</option>
-//                 </select>
-//             </form>
-//         </div>
-//     )
-// }
 
 export default EditProfilePage;

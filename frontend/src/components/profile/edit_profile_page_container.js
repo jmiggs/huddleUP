@@ -2,8 +2,7 @@ import { connect } from "react-redux";
 import { updateUser, fetchUser, clearUserErrors } from "../../actions/users_actions";
 import EditProfilePage from "./edit_profile_page";
 
-const mapStateToProps = (state, ownProps) => {
-    // let userId = ownProps.match.params.id
+const mapStateToProps = (state) => {
     return {
         loggedIn: state.session.isAuthenticated,
         currentUser: state.session.user,
