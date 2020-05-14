@@ -29,7 +29,7 @@ const mapStateToProps = state => {
     return ({
         basketball,
         golf,
-        football: football.slice(0,4),
+        football,
         tennis,
         soccer
     })
