@@ -68,6 +68,11 @@ class Activity extends React.Component {
             <div className="show-page-details">
               <p className="show-page-numamountplayers">Players Attending: {this.props.numOfPlayers}</p>
               <p className="show-page-numplayersneed">Remaining Players Needed: {this.props.activity.numplayersneed}</p>
+
+              {/* Change the class names  */}
+              <p className="show-page-location">Date: {this.props.activity.day}</p>
+              <p className="show-page-location">Start Time: {this.props.activity.time}</p>
+
               <p className="show-page-location">Location: {this.props.activity.location}</p>
               <p className="show-page-sport">Sport: {this.props.activity.sport.charAt(0).toUpperCase() + this.props.activity.sport.slice(1)}</p>
             </div>
