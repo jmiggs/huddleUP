@@ -3,7 +3,6 @@ import DashBoard from './dashboard';
 import { Link } from 'react-router-dom';
 
 const DashBoardItem = ({ activity }) => {
-
     return (
         <div className="event-item">
             {
@@ -21,8 +20,7 @@ const DashBoardItem = ({ activity }) => {
             <br/>
             <span className='event-date'>{activity.day}, {activity.date.slice(0,10)} </span>
             <span className='event-title'>{activity.title}</span>
-            {/* <span className='event-location'>{activity.location}</span> */}
-            <Link to={`/activity/${activity._id}`}></Link> 
+            <Link to={`/activity/${activity._id}`}>Click here</Link> 
         </div>
     )
 }

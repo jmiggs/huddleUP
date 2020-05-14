@@ -46,8 +46,6 @@ const App = () => (
 
             {/* <ProtectedRoute path="/sport/:sport" component={SportContainer} /> */}
             <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
-
-
         </Switch>
         
     </div>

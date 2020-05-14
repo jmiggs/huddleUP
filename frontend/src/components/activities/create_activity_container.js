@@ -4,8 +4,19 @@ import { createActivity } from "../../actions/activities_actions";
 
 const mapStateToProps = state => ({
     currentUser: state.session.user,
-    activity: { title: "", location: "", sport: "", description: "", numplayersneed: "", host: state.session.user, clicked: false }
-    // Change clicked back to false
+    activity: { 
+        title: "", 
+        location: "", 
+        sport: "", 
+        description: "", 
+        numplayersneed: "", 
+        day: "", 
+        time: "", 
+        host: state.session.user, 
+        clicked: false, 
+        lat: "", 
+        lng: ""
+    }
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -4,6 +4,7 @@ import './dashboard.css';
 import '../../reset.css';
 import NavBarContainer from '../navbar/navbar_container'
 import DashBoardItem from './dashboard_item'
+import Footer from "../footer/footer";
 
 
 class DashBoard extends React.Component {
@@ -17,7 +18,7 @@ class DashBoard extends React.Component {
 
     render () {
         const { basketball, golf, soccer, football, tennis  } = this.props;
-        // if (!activities) return null;
+        // if (!(basketball || golf || soccer || football || tennis)) return null;
         // debugger
         return (
             <div className='outer-div-dashboard'>
@@ -35,7 +36,7 @@ class DashBoard extends React.Component {
                     </div>
                     
                     <div className='event-items'>
-                        { basketball.map(activity => <DashBoardItem activity={activity} />) }
+                        { basketball.map(activity => <DashBoardItem activity={activity} key={activity._id} />) }
                     </div>
                         
                 </div>
@@ -48,7 +49,7 @@ class DashBoard extends React.Component {
                     </div>
 
                     <div className='event-items'>
-                        {golf.map(activity => <DashBoardItem activity={activity} />)}
+                        {golf.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -61,7 +62,7 @@ class DashBoard extends React.Component {
                     </div>        
 
                     <div className='event-items'>
-                        {football.map(activity => <DashBoardItem activity={activity} />)}
+                        {football.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -74,7 +75,7 @@ class DashBoard extends React.Component {
                     </div>  
 
                     <div className='event-items'>
-                        {soccer.map(activity => <DashBoardItem activity={activity} />)}
+                        {soccer.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -87,11 +88,11 @@ class DashBoard extends React.Component {
                     </div> 
 
                     <div className='event-items'>
-                        {tennis.map(activity => <DashBoardItem activity={activity} />)}
+                        {tennis.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
-
+                <Footer />
             </div>
         )
     }
