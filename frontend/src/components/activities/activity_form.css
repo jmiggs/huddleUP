@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+.activity-form-page { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 69px;
+}
+
+.activity-box-box {
+    display: flex;
+}
+
+.activity-form-map { 
+    width: 410px;
+    height: 410px;
+    background-color: rgb(221, 198, 168);
+}
+
+.activity-form {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    justify-content: space-between;
+}
+
+.activity-input-container { 
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+}
+
+.activity-form-label { 
+    font-family: 'Josefin Sans', cursive;
+    font-size: 24px;
+}
+
+.activity-input-field { 
+    border: none;
+    border-left: 2px solid #EF8354;
+    background-color: #ef825414;
+    padding: 5px;
+    font-size: 16px;
+    resize: none;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.activity-input-field:focus { 
+    outline: none;
+}
+
+.sport-dropdown {
+    border: none;
+    background-color: #ef825414;
+    font-size: 16px;
+    width: fit-content;
+}
+
+.num-players-dropdown { 
+    border: none;
+    background-color: #ef825414;
+    font-size: 16px;
+    width: fit-content;
+}
+
+.submit-activity { 
+    cursor: pointer;
+    border: none;
+    background-color: #2D3142;
+    color: #EF8354;
+    border-radius: 25px;
+    height: 25px;
+    width: 100%;
+    align-self: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.submit-activity-faded { 
+    pointer-events: none;
+    border: none;
+    background-color: rgba(45, 49, 66, 0.37);
+    color: #ffffff3b;
+    border-radius: 25px;
+    height: 25px;
+    width: 100%;
+    align-self: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.activity-form-spinner { 
+    display: flex;
+    justify-content: center;
+}

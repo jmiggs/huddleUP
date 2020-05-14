@@ -20,7 +20,7 @@ router.post('/register', (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  console.log(req.body)
+  
     // Check to make sure nobody has already registered with a duplicate email
     User.findOne({ email: req.body.email })
       .then(user => {
@@ -52,7 +52,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
-  console.log(errors);
+ 
 
   if (!isValid) {
     return res.status(400).json(errors);
@@ -96,6 +96,7 @@ router.post('/login', (req, res) => {
       })
     })
 })
+
 
 
 // router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -155,6 +156,7 @@ router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) 
     })
     .catch(err =>
       res.status(400).json(err))
+
 
 });
 
