@@ -1,6 +1,6 @@
 import React from "react"; 
 import { Link } from "react-router-dom";
-import ActivityMap from '../activity_map/activity_map'
+// import ActivityMap from '../activity_map/activity_map'
 
 
 
