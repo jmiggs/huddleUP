@@ -31,7 +31,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Basketball</h1>
-                        <Link to="/basketball" className='see-all'>See all</Link> 
+                        <Link to='/activity/basketball' className='see-all'>See all</Link> 
                     </div>
                     
                     <div className='event-items'>

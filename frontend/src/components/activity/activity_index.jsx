@@ -4,16 +4,15 @@ import ActivityMap from '../activity_map/activity_map'
 
 
 
-const Activity = (props) => {
+const ActivityIndex = ({ basketball, golf, soccer, football, tennis }) => {
 
   return(
-    <div>
-      all sports of a certain type will go here!
-      <ActivityMap />
+    <div className='outer-div-activity-index'>
+      
     </div>
   )
 }
 
-export default Activity
+export default ActivityIndex
 
   

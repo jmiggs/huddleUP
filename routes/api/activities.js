@@ -37,7 +37,7 @@ router.post('/',
 
 // fetch all events in database
 router.get('/', (req, res) => {
-  console.log('coming from the backend')
+  // console.log('coming from the backend')
   Activity.find()
     .sort({ date: -1 })
     .then(activities => res.json(activities))
