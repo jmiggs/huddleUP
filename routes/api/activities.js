@@ -27,8 +27,13 @@ router.post('/',
       description: req.body.description,
       numplayersneed: req.body.numplayersneed,
       host: req.user.id,
-      participants: [req.user.id]
+      participants: [req.user.id],
 
+
+      lat: req.body.lat,
+      lng: req.body.lng,
+      day: req.body.day,
+      startTime: req.body.startTime
     });
       
     newActivity.save().then(activity => res.json(activity));
@@ -63,6 +68,7 @@ router.get('/', (req, res) => {
       then(activities => {res.json(activities)}).
       catch( err => res.status(404).json({ noactivities: 'No activities found' }));
   }
+
 });
 
 // get activity by ID
@@ -73,6 +79,18 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ noactivityfound: 'No Activity found with that ID' })
     );
 });
+
+// get activity by sport
+router.get('/sport/:sport', (req, res) => {
+
+  // console.log(req) 
+  Activity.find( { sport: req.params.sport } )
+    .then(activities => res.json(activities))
+    .catch(err =>
+        res.status(404).json({ noactivityfound: 'No Activity found' })
+    );
+});
+
 
 // user sign up to activity
 // pls enforce duplicate sign up error in frontend 
