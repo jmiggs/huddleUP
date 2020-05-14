@@ -8,7 +8,6 @@ import { render } from 'react-dom';
 
 // filters and activity index to be added later
 class Search extends React.Component {
-
   render() {
     return(
       <div>

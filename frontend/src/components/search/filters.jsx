@@ -3,7 +3,6 @@ import React from 'react';
 const handleChange = (filter, updateFilter) => e => {
 
   if (e.currentTarget.value === 'all') {
-    console.log(e.currentTarget.value)
     updateFilter(filter, filter === 'time'? allTimes : allDays)
   } else {
     updateFilter(filter, [e.currentTarget.value]);
