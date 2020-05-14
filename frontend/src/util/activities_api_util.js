@@ -4,6 +4,11 @@ export const getActivities = () => {
     return axios.get("/api/activities/")
 };
 
+export const getActivitiesFiltered = (filters) => {
+
+  return axios.get("/api/activities/", {params: {filters: filters}})
+};
+
 export const test = () => {
     return axios.get("/api/activities/test")
 }

@@ -4,10 +4,15 @@ import Map from '../map/map';
 import Filters from './filters.jsx';
 import ActivityIndex from './activity_index.jsx';
 
-const Search = (props) => (
+
+// filters and activity index to be added later
+
+const Search = (props) => {
+  
+  return(
   <div>
     <div>
-      {/* <Map /> */}
+      <Map updateFilter={props.updateFilter} activities={props.activities}/>
     </div>
 
     <div>
@@ -15,10 +20,11 @@ const Search = (props) => (
     </div>
 
     <div>
-      {/* <ActivityIndex /> */}
+      {/* <ActivityIndex activities={activities} /> */}
     </div>
   </div>
+  )
 
-);
+};
 
 export default Search;

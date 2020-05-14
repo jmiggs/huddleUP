@@ -9,19 +9,15 @@ import ProfilePageContainer from "./profile/profile_page_container";
 import EditProfilePage from "./profile/edit_profile_page";
 import DashBoard from './dashboard/dashboard';
 import Map from './map/map'
+import SearchContainer from "./search/search_container";
 
-
-
-
-// const API_KEY =`${process.env.REACT_APP_APIMAPS_KEY}`
-// console.log("test", API_KEY )
 
 const App = () => (
     <div>
         {/* <NavBarContainer /> */}
         <Switch>
             {/* this is for testing  */}
-            <Route exact path="/maptest" component={Map} />
+            <Route exact path="/maptest" component={SearchContainer} />
 
 
             <AuthRoute exact path="/" component={SplashPage} /> {/* Change to AuthRoute */}
@@ -32,6 +28,7 @@ const App = () => (
             <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
             <ProtectedRoute exact path="/dashboard" component={DashBoard} /> 
         </Switch>
+        
     </div>
 )
 
