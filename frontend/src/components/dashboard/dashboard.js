@@ -35,7 +35,7 @@ class DashBoard extends React.Component {
                     </div>
                     
                     <div className='event-items'>
-                        { basketball.map(activity => <DashBoardItem activity={activity} />) }
+                        {basketball.slice(0, 5).map(activity => <DashBoardItem activity={activity} />) }
                     </div>
                         
                 </div>
@@ -48,7 +48,7 @@ class DashBoard extends React.Component {
                     </div>
 
                     <div className='event-items'>
-                        {golf.map(activity => <DashBoardItem activity={activity} />)}
+                        {golf.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -61,7 +61,7 @@ class DashBoard extends React.Component {
                     </div>        
 
                     <div className='event-items'>
-                        {football.map(activity => <DashBoardItem activity={activity} />)}
+                        {football.slice(0,5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -74,7 +74,7 @@ class DashBoard extends React.Component {
                     </div>  
 
                     <div className='event-items'>
-                        {soccer.map(activity => <DashBoardItem activity={activity} />)}
+                        {soccer.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -87,7 +87,7 @@ class DashBoard extends React.Component {
                     </div> 
 
                     <div className='event-items'>
-                        {tennis.map(activity => <DashBoardItem activity={activity} />)}
+                        {tennis.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
