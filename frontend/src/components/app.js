@@ -28,7 +28,7 @@ const App = () => (
             <ProtectedRoute exact path="/" component={ProfilePageContainer} />
             <ProtectedRoute path ="/profile/edit" component={EditProfilePage} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
-            <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
+            <ProtectedRoute path="/activities/basketball" component={ActivityContainer} />
             {/* <ProtectedRoute path="/sport/:sport" component={SportContainer} /> */}
             <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
 
