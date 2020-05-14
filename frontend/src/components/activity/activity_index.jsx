@@ -8,7 +8,7 @@ const ActivityIndex = ({ basketball, golf, soccer, football, tennis }) => {
 
   return(
     <div className='outer-div-activity-index'>
-      
+        
     </div>
   )
 }

@@ -9,11 +9,11 @@ const ActivitySchema = new Schema({
   },
   lat: {
     type: String,
-    required: true
+    // required: true
   },
   lng: {
     type: String,
-    required: true
+    // required: true
   },
   sport: {
     type: String,
@@ -45,7 +45,7 @@ const ActivitySchema = new Schema({
   host: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    // required: true
   }
 
 })
