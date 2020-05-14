@@ -36,6 +36,7 @@
 .event-item {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .event-item > img {
@@ -47,6 +48,10 @@
 
 .event-item > img:hover {
     transform: scale(1.1);
+}
+
+.event-item > span {
+    padding-right: 10px;
 }
 
 .event-date {
@@ -63,6 +68,7 @@
     font-weight: bold;
     color: grey;
     width: 200px;
+    text-align: center;
 }
 
 .event-items > img{
