@@ -9,7 +9,7 @@ class MapMarker {
   }
 
   updateMarkers(activities) {
-    console.log(activities)
+   
     // takes all locations shown on the map for idling. to be used to compare against
     // what was saved in this.markers from the map's previous idle position
     const markerTracker = {};
@@ -30,8 +30,7 @@ class MapMarker {
       .filter(activityId => !markerTracker[activityId])
       .forEach(activityId => this.removeMarker(this.markers[activityId]))
 
-    console.log(this.markers)
-    console.log(markerTracker)
+  
     
   }
 
@@ -55,7 +54,7 @@ class MapMarker {
   removeMarker(marker) {
     // line 52 removes marker from the map as per google API docs.
     // line 53 deletes marker from this.markers hash collection.
-    console.log('yo')
+
     marker.setMap(null);
     delete this.markers[marker.activityId];
    
