@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./splash_page.css";
 import NavBarContainer from "../navbar/navbar_container";
+import Footer from "../footer/footer";
 
 // const goToSignUp = () => {
 //     window.location.href = '/signup';
@@ -69,9 +70,7 @@ const SplashPage = props => {
                 </div>
                 
             </div>
-            <footer> {/*  Black with white text */}
-
-            </footer>
+            <Footer />
         </div>
     )
 }

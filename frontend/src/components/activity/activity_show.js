@@ -4,7 +4,7 @@ import ActivityMap from '../activity_map/activity_map'
 import NavBarContainer from "../navbar/navbar_container";
 import "../../reset.css";
 import "./activity_show.css";
-
+import Footer from "../footer/footer";
 
 class Activity extends React.Component { 
   constructor(props) { 
@@ -78,6 +78,7 @@ class Activity extends React.Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }

@@ -5,6 +5,7 @@ import "../../reset.css";
 import "./profile_page.css"
 import NavBar from '../navbar/navbar';
 import { GrMapLocation } from 'react-icons/gr';
+import Footer from "../footer/footer";
 
 class ProfilePage extends React.Component {
     constructor(props) {
@@ -121,6 +122,7 @@ class ProfilePage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

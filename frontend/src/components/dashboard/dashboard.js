@@ -4,6 +4,7 @@ import './dashboard.css';
 import '../../reset.css';
 import NavBarContainer from '../navbar/navbar_container'
 import DashBoardItem from './dashboard_item'
+import Footer from "../footer/footer";
 
 
 class DashBoard extends React.Component {
@@ -91,7 +92,7 @@ class DashBoard extends React.Component {
                     </div>
 
                 </div>
-
+                <Footer />
             </div>
         )
     }

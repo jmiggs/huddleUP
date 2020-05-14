@@ -1,7 +1,9 @@
 import React from "react"; 
 import NavBarContainer from "../navbar/navbar_container";
 import { GuardSpinner } from "react-spinners-kit";
-import "./activity_form.css"
+import "../../reset.css";
+import "./activity_form.css";
+import Footer from "../footer/footer";
 
 class ActivityForm extends React.Component { 
     constructor(props) { 
@@ -121,6 +123,7 @@ class ActivityForm extends React.Component {
                         </form>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

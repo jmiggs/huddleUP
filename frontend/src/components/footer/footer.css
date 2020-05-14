@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@531&display=swap");
+
+.footer { 
+    width: 100%;
+    background-color: #2D3142;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.huddleUP-repo { 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px 10px 0px;
+}
+
+.huddleUP-icon { 
+    font-size: 48px;
+    color: #EF8354;
+}
+
+.engineers-contacts-container { 
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 20px 0px;
+}
+
+.contact-info-container { 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.engineer-name { 
+    color: white;
+    font-size: 24px;
+    font-family: 'Work Sans', sans-serif;;
+}
+
+.symbol-icons-box { 
+    padding-top: 5px;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+}
+
+.footer-icon { 
+    font-size: 26px;
+    color: #EF8354;
+}
