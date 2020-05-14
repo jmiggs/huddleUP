@@ -28,6 +28,9 @@ const UserSchema = new Schema({
   sports: {
     type: [String]
   },
+  profile: {
+    type: String
+  },
   hosting: [{
     type: Schema.Types.ObjectId,
     ref: 'Activity'
