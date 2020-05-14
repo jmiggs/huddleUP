@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
-import ProfilePage from "./profile_page";
+// import { updateUser } from "../../actions/session_actions";
+import EditProfilePage from "./edit_profile_page";
 
 const mapStateToProps = state => {
     return {
@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    // updateUser: (user) => dispatch(updateUser(user))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfilePage);

@@ -10,11 +10,12 @@ class EditProfilePage extends React.Component {
         super(props);
         this.state = {
             picture: [],
-            username: "",
+            username: this.props.currentUsername,
             location: "",
             bio: "",
             sports: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.onDrop = this.onDrop.bind(this);
     }
 
@@ -24,13 +25,22 @@ class EditProfilePage extends React.Component {
         });
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateUser(this.state)
+    }
+
+    handleInput(type) {
+        return (e) => { this.setState({ [type]: e.currentTarget.value }) };
+    } 
+
     render() {
         return(
         <div>
             <NavBar/>
             <div className = "edit-profile">
                 <h3 className="edit-profile-title">Edit Profile Page</h3>
-                <form className = "edit-form">
+                <form className = "edit-form" onSubmit = {this.handleSubmit}>
                     <div className ="edit-left">
                         <label className="upload-header">Upload profile picture</label>
                         <ImageUploader
@@ -44,15 +54,17 @@ class EditProfilePage extends React.Component {
                         <label>Username</label>
                         <input
                             type="text"
-                        // value={this.state.title}
-                        // onChange={this.handleInput('title')}
                             className="edit-username-textbox"
+                            value = {this.state.username}
+                            onChange={this.handleInput('username')}
                         />
                         <br/>
                         <label>Location</label>
                         <input
                             type="text"
                             className="edit-location-textbox"
+                            value={this.state.location}
+                            onChange={this.handleInput('location')}
                         />
                     </div>
                     <div className = "edit-right">
@@ -60,6 +72,7 @@ class EditProfilePage extends React.Component {
                         <textarea
                             cols="40"
                             rows="10"
+                            placeholder={this.state.bio}
                         />
                         <br/>
                         <label className = "sports-dropdown">Sports</label>
@@ -72,7 +85,11 @@ class EditProfilePage extends React.Component {
                                 <option value="tennis">tennis</option>
                             </select>
                         <br/>
-                        <Link to = "/" className="edit-update-btn">Update</Link>
+                        <input
+                            className="edit-update-btn"
+                            type="submit"
+                            value="Update"
+                        />
                     </div>
                 </form>
             </div>

@@ -33,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createActivity = ActivitiesActions.createActivity;
   window.dispatch = store.dispatch;
   // End testing
+  // Testing
+  window.store = store;
+  window.getState = store.getState;
 
-  const root = document.getElementById("root")
+  const root = document.getElementById("root") // Gets it from the index.html in the public folder
   ReactDOM.render(<Root store={store} />, root)
   window.store = store;
   window.getState = store.getState;

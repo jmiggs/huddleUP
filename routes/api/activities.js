@@ -27,8 +27,13 @@ router.post('/',
       description: req.body.description,
       numplayersneed: req.body.numplayersneed,
       host: req.user.id,
-      participants: [req.user.id]
+      participants: [req.user.id],
 
+
+      lat: req.body.lat,
+      lng: req.body.lng,
+      day: req.body.day,
+      startTime: req.body.startTime
     });
       
     newActivity.save().then(activity => res.json(activity));

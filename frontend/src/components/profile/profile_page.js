@@ -10,33 +10,62 @@ class ProfilePage extends React.Component {
     constructor(props) {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
-        this.getCurrentUsername = this.getCurrentUsername.bind(this);
+        this.getBio = this.getBio.bind(this);
+        this.getLocation = this.getLocation.bind(this);
+        this.getSports = this.getSports.bind(this);
     }
-
-    // componentDidMount() {
-    //     // debugger
-    //     // axios.get('http:localhost:5000/api/users/current')
-    //     //     .then(res => res.json())
-    //     //     .then(user => this.setState({username: user.username}))
-    //     this.props.getUser(this.props.currentUser)
-    // }
 
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
     }
 
-    getCurrentUsername() {
-        if (this.props.loggedIn) {
+    getLocation() {
+        if (!this.props.currentUserLocation) {
             return (
                 <div>
-                    {this.props.currentUsername}
-                    error
+                    Unknown
                 </div>
             )
         } else {
             return (
-                <div></div>
+                <div>
+                    {this.props.currentUserLocation}
+                </div>
+            )
+        }
+    }
+
+    getBio() {
+        if (!this.props.currentUserBio) {
+            return (
+                <div>
+                    No Bio
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    {this.props.currentUserBio}
+                </div>
+            )
+        }
+    }
+
+    getSports() {
+        if (this.props.currentUserSports.length === 0) {
+            return (
+                <div>No sports listed</div>
+            )
+        } else {
+            return(
+                <div>
+                    {this.props.currentUserSports.map(sport => (
+                        <li>
+                            {sport}
+                        </li>
+                    ))}
+                </div>
             )
         }
     }
@@ -55,43 +84,36 @@ class ProfilePage extends React.Component {
                                 </div>
                                 <br />
                                 <div className="profile-name">
-                                    s{this.getCurrentUsername()}
+                                    {this.props.currentUsername}
                                 </div>
                                 <br />
                                 <div className="profile-location">
                                     <div className="profile-location-icon">
                                         <GrMapLocation />
                                     </div>
-                                    {/* put in location */}
                                     <div className="profile-location-word">
-                                        Location
-                                </div>
+                                        {this.getLocation()}
+                                    </div>
                                 </div>
                                 <br />
-                                {/* replace link with edit */}
                                 <Link to="profile/edit" className="edit-link">Edit</Link>
                             </div>
                         </div>
                     </div>
                     <div className="profile-right">
                         <div className="profile-bio">
-                            {/* bio */}
                         Bio:
                         <br />
-                            <br />
-                        Young MJ coming up
-                        7'2" need ballers to play with
+                        <br />
+                        {this.getBio()}
                     </div>
                         <br />
                         <div className="profile-sports">
-                            {/* sports */}
                             <br />
-                        Sports:
-                        <br />
+                            Sports:
                             <br />
-                            <li>
-                                Basketball
-                        </li>
+                            <br />
+                            {this.getSports()}
                         </div>
                         <br />
                         <div className="profile-logout-btn">

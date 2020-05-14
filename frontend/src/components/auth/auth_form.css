@@ -89,6 +89,12 @@
     font-size: 14px;
 }
 
+.login-buttons { 
+    display: flex;
+    margin: 0px 20px;
+    justify-content: space-around;
+}
+
 .submit-auth-form { 
     background-color: #EF8354;
     border: none;
@@ -99,7 +105,7 @@
     width: 80px;
     /* align-self: flex-end; */
     align-self: center;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     font-size: 15px;
     font-weight: 800;
     font-family: 'Work Sans', sans-serif;
