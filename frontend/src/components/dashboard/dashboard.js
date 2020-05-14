@@ -32,7 +32,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Basketball</h1>
-                        <Link to="/basketball" className='see-all'>See all</Link> 
+                        <Link to='/basketball' className='see-all'>See all</Link> 
                     </div>
                     
                     <div className='event-items'>
@@ -45,7 +45,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Golf</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/golf" className='see-all'>See all</Link>
                     </div>
 
                     <div className='event-items'>
@@ -58,7 +58,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Football</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/football" className='see-all'>See all</Link>
                     </div>        
 
                     <div className='event-items'>
@@ -71,7 +71,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Soccer</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/soccer" className='see-all'>See all</Link>
                     </div>  
 
                     <div className='event-items'>
@@ -84,7 +84,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Tennis</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/tennis" className='see-all'>See all</Link>
                     </div> 
 
                     <div className='event-items'>

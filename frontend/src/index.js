@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.fetchActivity = ActivitiesActions.fetchActivity;
   window.createActivity = ActivitiesActions.createActivity;
   window.dispatch = store.dispatch;
+  window.getState = store.getState;
   // End testing
   // Testing
   window.store = store;
