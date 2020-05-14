@@ -4,6 +4,7 @@ import './dashboard.css';
 import '../../reset.css';
 import NavBarContainer from '../navbar/navbar_container'
 import DashBoardItem from './dashboard_item'
+import Footer from "../footer/footer";
 
 
 class DashBoard extends React.Component {
@@ -17,7 +18,7 @@ class DashBoard extends React.Component {
 
     render () {
         const { basketball, golf, soccer, football, tennis  } = this.props;
-        // if (!activities) return null;
+        // if (!(basketball || golf || soccer || football || tennis)) return null;
         // debugger
         return (
             <div className='outer-div-dashboard'>
@@ -44,7 +45,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Golf</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/golf" className='see-all'>See all</Link>
                     </div>
 
                     <div className='event-items'>
@@ -57,7 +58,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Football</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/football" className='see-all'>See all</Link>
                     </div>        
 
                     <div className='event-items'>
@@ -70,7 +71,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Soccer</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/soccer" className='see-all'>See all</Link>
                     </div>  
 
                     <div className='event-items'>
@@ -83,7 +84,7 @@ class DashBoard extends React.Component {
 
                     <div className='event-category-header'>
                         <h1>Tennis</h1>
-                        <Link to="/dashboard" className='see-all'>See all</Link>
+                        <Link to="/tennis" className='see-all'>See all</Link>
                     </div> 
 
                     <div className='event-items'>
@@ -91,7 +92,7 @@ class DashBoard extends React.Component {
                     </div>
 
                 </div>
-
+                <Footer />
             </div>
         )
     }

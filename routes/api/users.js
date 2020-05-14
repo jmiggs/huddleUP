@@ -8,7 +8,7 @@ const keys = require('../../config/keys');
 
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
-
+const validateUserUpdate = require('../../validation/update_user');
 
 //test route for users
 router.get("/test", (req, res) => res.json({ msg: "This is the users test route" }));
@@ -17,11 +17,10 @@ router.get("/test", (req, res) => res.json({ msg: "This is the users test route"
 //route for user register
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-
   if (!isValid) {
     return res.status(400).json(errors);
   }
-  console.log(req)
+  
     // Check to make sure nobody has already registered with a duplicate email
     User.findOne({ email: req.body.email })
       .then(user => {
@@ -53,7 +52,7 @@ router.post('/register', (req, res) => {
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
-  console.log(errors);
+ 
 
   if (!isValid) {
     return res.status(400).json(errors);
@@ -75,7 +74,8 @@ router.post('/login', (req, res) => {
             username: user.username, 
             location: user.location,
             bio: user.bio,
-            sports: user.sports
+            sports: user.sports,
+            picture: user.picture
           };
 
           jwt.sign(
@@ -98,14 +98,66 @@ router.post('/login', (req, res) => {
 })
 
 
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-  console.log(req)
-  res.json({
-    id: req.user.id,
-    username: req.user.username,
-    email: req.user.email
-  });
-})
 
+// router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+//   console.log(req)
+//   res.json({
+//     id: req.user.id,
+//     username: req.user.username,
+//     email: req.user.email,
+//     location: user.location,
+//     bio: user.bio,
+//     sports: user.sports,
+//     picture: user.picture
+//   });
+// })
+
+// update user's info
+router.patch("/:id", passport.authenticate('jwt', {session: false}), (req, res) => {
+  const { errors, isValid } = validateUserUpdate(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  let filter = {_id: req.user._id};
+  let update = req.body;
+
+  User.findOneAndUpdate(filter, update, {new: true})
+    .then(user => {
+      // console.log(user)
+      let updateUser = {
+        id: user._id,
+        username: user.username,
+        picture: user.picture,
+        location: user.location,
+        bio: user.bio,
+        sports: user.sports
+      }
+      res.json(updateUser)
+    })
+    .catch(err => 
+      res.status(400).json(err))
+
+});
+
+router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      console.log(user)
+      let returnedUser = {
+        id: user._id,
+        username: user.username,
+        picture: user.picture,
+        location: user.location,
+        bio: user.bio,
+        sports: user.sports
+      }
+      res.json(returnedUser)
+    })
+    .catch(err =>
+      res.status(400).json(err))
+
+
+});
 
 module.exports = router;

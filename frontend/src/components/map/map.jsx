@@ -29,6 +29,7 @@ class Map extends React.Component {
   }
 
   componentDidUpdate() {
+   
     this.mapMarker.updateMarkers(this.props.activities);
   }
 
@@ -43,10 +44,11 @@ class Map extends React.Component {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } 
       };
-      console.log(bounds)
+     
       // this function updates the ui slice of state with bounds as filters
       // and then uses those filters to grab the locations that are within the bounds
       this.props.updateFilter('bounds', bounds);
+      this.props.updateFilter('sport', this.props.type);
     });
 
   }
@@ -55,7 +57,7 @@ class Map extends React.Component {
   render() {
     return(
       <div className="map-container">
-        hello
+   
         <div className="map-this" ref="map">
           Map
         </div>

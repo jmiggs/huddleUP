@@ -10,11 +10,12 @@
 
 .activity-box-box {
     display: flex;
+    align-items: center;
 }
 
 .activity-form-map { 
-    width: 410px;
-    height: 410px;
+    width: 450px;
+    height: 450px;
     background-color: rgb(221, 198, 168);
 }
 
@@ -51,14 +52,7 @@
     outline: none;
 }
 
-.sport-dropdown {
-    border: none;
-    background-color: #ef825414;
-    font-size: 16px;
-    width: fit-content;
-}
-
-.num-players-dropdown { 
+.form-dropdown {
     border: none;
     background-color: #ef825414;
     font-size: 16px;
@@ -96,4 +90,16 @@
 .activity-form-spinner { 
     display: flex;
     justify-content: center;
+}
+
+.time-date-input { 
+    border: none;
+    outline: none;
+    border-left: 2px solid #EF8354;
+    background-color: #ef825414;
+    padding: 5px;
+    font-size: 16px;
+    resize: none;
+    border-radius: 0px 4px 4px 0px;
+    width: fit-content;
 }

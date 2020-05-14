@@ -14,7 +14,7 @@
 .auth-form-container { 
     width: 480px;
     background-color: #FFFFFF;
-    padding: 0px 0px 10px 0px;
+    padding: 0px 0px 20px 0px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
