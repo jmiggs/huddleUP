@@ -1,5 +1,12 @@
 .map-this {
-  width: 60vw;
-  height: 100vH;
+  width: 450px;
+  height: 450px;
+}
+
+.map-container {
+  border: 7px solid #EF8354;
+  border-radius: 8px;
+  margin-left: 150px;
+  margin-top: 5px
 }
 

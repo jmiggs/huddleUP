@@ -42,19 +42,19 @@
     align-items: center;
 }
 
-.event-item > img {
+.event-item > span {
+    padding-right: 10px;
+}
+
+.event-img {
     width: 200px;
     border-radius: 10px;
     margin-right: 13px;
     transition: transform .2s;
 }
 
-.event-item > img:hover {
+.event-img:hover {
     transform: scale(1.1);
-}
-
-.event-item > span {
-    padding-right: 10px;
 }
 
 .event-date {

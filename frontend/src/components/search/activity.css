@@ -1,0 +1,57 @@
+.activity-index {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* border: 2px solid #EF8354; */
+    width: 350px;
+}
+
+.activity-index-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EF8354;
+}
+
+.activity-title {
+    font-family: 'Ramabhadra', sans-serif;
+    font-size: 25px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.activity-date {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 16px;
+    color: #EF8354;
+    margin-bottom: 5px;
+}
+
+.activity-desc {
+    font-family: 'Hind Siliguri', sans-serif;
+    margin-bottom: 10px;
+}
+
+.see-more { 
+    height: 25px;
+    width: 130px;
+    background-color: #EF8354;
+    text-align: center;
+    padding: 6px 0px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: #2D3142;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.see-more:hover { 
+    background-color: rgb(196, 107, 69);
+}

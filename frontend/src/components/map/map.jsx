@@ -13,7 +13,7 @@ class Map extends React.Component {
   componentDidMount() {
     const mapOptions = {
       center: { lat: 37.798887, lng: -122.401373 }, 
-      zoom: 12
+      zoom: 11
     };
     // puts map on the page
     const map = this.refs.map;

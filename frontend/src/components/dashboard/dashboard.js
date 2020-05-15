@@ -36,7 +36,7 @@ class DashBoard extends React.Component {
                     </div>
                     
                     <div className='event-items'>
-                        { basketball.map(activity => <DashBoardItem activity={activity} key={activity._id} />) }
+                        {basketball.slice(0, 5).map(activity => <DashBoardItem activity={activity} />) }
                     </div>
                         
                 </div>
@@ -49,7 +49,7 @@ class DashBoard extends React.Component {
                     </div>
 
                     <div className='event-items'>
-                        {golf.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
+                        {golf.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -62,7 +62,7 @@ class DashBoard extends React.Component {
                     </div>        
 
                     <div className='event-items'>
-                        {football.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
+                        {football.slice(0,5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -75,7 +75,7 @@ class DashBoard extends React.Component {
                     </div>  
 
                     <div className='event-items'>
-                        {soccer.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
+                        {soccer.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>
@@ -88,7 +88,7 @@ class DashBoard extends React.Component {
                     </div> 
 
                     <div className='event-items'>
-                        {tennis.map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
+                        {tennis.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
                     </div>
 
                 </div>

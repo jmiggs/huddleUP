@@ -56,8 +56,8 @@ const allDays = [
 
 const FilterForm = ( props ) => (
   <div>
+    <div className="filter-header"> Filters:</div> 
     <div className="filter-container">
-      Filter for Time::: 
       <select size="1" className="time-dropdown" onChange={handleChange('time', props.updateFilter )} >
         <option value="" disabled selected>Pick a Time</option>
         <option value="all">Show All</option>
@@ -91,9 +91,8 @@ const FilterForm = ( props ) => (
         <option value="9:30PM">9:30PM</option>
         <option value="10:00PM">10:00PM</option>
       </select>
-    </div>
-    <div>
-      Filter for Days:::
+      {/* <input type="date" className="filter-date" /> */}
+
       <select className="day-dropdown" onChange={handleChange('day', props.updateFilter )} >
           <option value="" disabled selected>Pick a Day</option>
           <option value="all">Show All</option>
@@ -105,6 +104,11 @@ const FilterForm = ( props ) => (
           <option value="saturday">Saturday</option>
           <option value="sunday">Sunday</option>
       </select>
+    </div>
+    <div>
+
+      
+
     </div>
   </div>
 );

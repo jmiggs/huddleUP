@@ -1,5 +1,6 @@
 import React from "react"; 
 import { Link } from "react-router-dom";
+import EventsDropdown from './events_dropdown';
 import "../../reset.css";
 import "./navbar.css"
 
@@ -14,6 +15,12 @@ class NavBar extends React.Component {
         e.preventDefault();
         this.props.logout();
     }
+
+    componentDidMount() {
+      console.log('componentdidmount')
+      this.props.fetchUserActivities(this.props.id);
+    }
+  
 
     // getLinks() { // I like how they abstracted this away from the render. I'm going to do this from now on.
     //     if (this.props.loggedIn) { 
@@ -37,6 +44,8 @@ class NavBar extends React.Component {
     // }
 
     render() { 
+      // if (!this.props.id) return null
+      console.log(this.props.userActivities)
         return (
             <div className="navbar">
                 <div className="left-navbar">
@@ -48,6 +57,7 @@ class NavBar extends React.Component {
                 <div className="right-navbar">
                     <div className="navbar-links">
                         {/* redirect to explore page */}
+                        <EventsDropdown className="navbar-explore-link" userActivities={this.props.userActivities} id={this.props.id} />
                         <Link to="/" className="navbar-explore-link">
                             Explore
                         </Link>
@@ -58,6 +68,7 @@ class NavBar extends React.Component {
                         <Link to={`/users/${this.props.id}`} className="navbar-profile-link">
                             Profile
                         </Link>
+                        
                         {/* <button onClick={this.logoutUser}>Logout</button> */}
                     </div>
                 </div>

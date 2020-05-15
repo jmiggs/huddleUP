@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Activity = require('../../models/Activity');
+const User = require('../../models/User');
 const validateActivityInput = require('../../validation/activity');
+
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the activity test route" }));
@@ -42,7 +44,6 @@ router.post('/',
 
 // fetch all events in database
 router.get('/', (req, res) => {
-
   // if there are no filters in the request, use the first .find() to query all activities
   // if there are filters in the request, use the second .find and apply the filters
   // NOTE: will need to add more $and conditions as we implement more filters..
@@ -83,6 +84,17 @@ router.get('/:id', (req, res) => {
     );
 });
 
+//get activities that a user is attending
+router.get('/users/:id', (req, res) => {
+  console.log(req)
+  Activity.find( {participants: req.params.id} )
+    .then(activities => {res.json(activities); console.log(activities)})
+    .catch(err =>
+        res.status(404).json({ noactivityfound: 'No Activity found with that ID' })
+    );
+});
+
+
 // get activity by sport
 router.get('/sport/:sport', (req, res) => {
 
@@ -108,11 +120,42 @@ router.post('/:activityid',
       then( activity => {res.json(activity)}).
       catch(err =>
         res.status(404).json({ noactivityfound: 'Cant Join Activity' })
-      ); 
-   
+    );
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        { $addToSet: { attending: req.params.activityid } },
+      ).
+      catch( err =>
+        res.status(404).json({ noactivityfound: 'Cant Join Activity' })
+    ) 
     // activity.save().then(activity => res.json(activity))
  
   });
+
+//  unsubscribe to event
+router.patch('/:activityid', 
+  passport.authenticate('jwt', {session: false}), 
+  (req, res) => {
+
+    Activity.findOneAndUpdate(
+        {_id: req.params.activityid},
+        { $pull: { participants: req.user._id} },
+      ).
+      then( activity => {res.json(activity)}).
+      catch(err =>
+        res.status(404).json({ noactivityfound: 'Cant Unjoin Activity' })
+  );
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        { $pull: { attending: req.params.activityid } },
+      ).
+      catch( err =>
+        res.status(404).json({ noactivityfound: 'Cant Unjoin Activity' })
+  ) 
+  // activity.save().then(activity => res.json(activity))
+});
 
 
 module.exports = router;

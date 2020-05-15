@@ -1,12 +1,22 @@
 import React from "react"; 
+
 // import { Link } from "react-router-dom";
+
+import { Link, Redirect } from "react-router-dom";
+
 // import ActivityMap from '../activity_map/activity_map'
 import NavBarContainer from "../navbar/navbar_container";
 import "../../reset.css";
 import "./activity_show.css";
 import Footer from "../footer/footer";
 
+
 const google = window.google;
+
+
+// Miguel: i commented out some of the code to get the subscribe and unsubscribe to work. 
+// comment back in if the code is needed for other stuff
+
 
 class Activity extends React.Component { 
   constructor(props) { 
@@ -16,26 +26,27 @@ class Activity extends React.Component {
     this.renderSubscribe = this.renderSubscribe.bind(this);
     this.componentCleanup = this.componentCleanup.bind(this);
     this.changeSubscription = this.changeSubscription.bind(this);
+    this.changeUnsubscription = this.changeUnsubscription.bind(this);
   }
 
   componentCleanup() { // this will hold the cleanup code
     // whatever you want to do when the component is unmounted or page refreshes
-    if (this.state.subscribed && !this.state.existingSubscriptionId) { 
-      this.props.subscribeToActivity(this.props.activity._id)
-    } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
-      console.log("Delete subscription!")
-    }
+    // if (this.state.subscribed && !this.state.existingSubscriptionId) { 
+    //   this.props.subscribeToActivity(this.props.activity._id)
+    // } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
+    //   this.props.unsubscribeToActivity(this.props.activity._id)
+    // }
   }
 
   componentDidMount() { 
     this.props.fetchActivity(this.props.match.params.id)
-    window.addEventListener('beforeunload', this.componentCleanup);
+    // window.addEventListener('beforeunload', this.componentCleanup);
   }
 
-  componentWillUnmount() {
-    this.componentCleanup();
-    window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
-  }
+  // componentWillUnmount() {
+  //   // this.componentCleanup();
+  //   // window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
+  // } 
 
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
     if (this.props.subscribed !== prevProps.subscribed) { 
@@ -46,17 +57,27 @@ class Activity extends React.Component {
       this.initMap() // From Google Maps API docs
     }
   }
+ 
+  changeUnsubscription(e) { 
+    // e.preventDefault();
 
-  changeSubscription() { 
-    this.setState({ subscribed: !this.state.subscribed })
+    this.props.unsubscribeToActivity(this.props.activity._id);
+    this.setState({ subscribed: !this.state.subscribed });
+     
+  }
+  changeSubscription(e) { 
+    // e.preventDefault();
+
+    this.props.subscribeToActivity(this.props.activity._id);
+    this.setState({ subscribed: !this.state.subscribed });
   }
 
   renderSubscribe() { 
     if (this.state) { 
       if (this.state.subscribed) {
-        return <button className="unsubscribe-button" onClick={this.changeSubscription}>Unsubscribe</button>
+        return <button className="unsubscribe-button" onClick={(e) => this.changeUnsubscription(e)}>Unsubscribe</button>
       } else {
-        return <button className="subscribe-button" onClick={this.changeSubscription}>Subscribe</button>
+        return <button className="subscribe-button" onClick={(e) => this.changeSubscription(e)}>Subscribe</button>
       }
     }
   }

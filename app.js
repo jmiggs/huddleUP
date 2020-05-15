@@ -7,6 +7,7 @@ const activities = require("./routes/api/activities");
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
+// const awskeys = require('./config/aws_')
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -30,8 +31,8 @@ mongoose.set('useFindAndModify', false);
 // AWS
 const aws = require('aws-sdk');
 const S3_BUCKET = process.env.S3_BUCKET;
-
 aws.config.region = 'us-west-1';
+
 app.get('/sign-s3', (req, res) => {
   const s3 = new aws.S3();
   const fileName = req.query['file-name'];

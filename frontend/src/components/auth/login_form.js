@@ -24,15 +24,6 @@ class LoginForm extends React.Component {
         setTimeout(() => this.props.login(this.state), 0)
     }
 
-    // componentWillReceiveProps(nextProps) {
-    //     if (nextProps.currentUser === true) {
-    //         this.props.history.push('/');
-    //     }
-
-    //     // Set or clear errors
-    //     this.setState({ errors: nextProps.errors })
-    // }
-
     componentDidUpdate(prevProps) { 
         if (this.props.currentUser !== prevProps.currentUser) {
             this.props.history.push('/');
