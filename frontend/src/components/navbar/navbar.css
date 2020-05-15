@@ -3,7 +3,7 @@
 .navbar { 
     height: 50px;
     width: 100%;
-    background-color: #EF8354;;
+    background-color: #EF8354;
     font-family: 'Josefin Sans', cursive;
     position: absolute;
     top: 0px;
@@ -38,3 +38,111 @@
 .navbar-explore-link:hover, .navbar-host-link:hover, .navbar-profile-link:hover {
     color: white;
 }
+
+.dropdown-content-nav {
+  display: none;
+  position: absolute;
+  right: 200px;
+  top: 50px;
+  background-color: rgb(226, 226, 226);
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+  padding-top: 10px;
+
+}
+
+.dropdown-nav:hover .dropdown-content-nav {
+  display: block;
+}
+
+.dropdown-nav {
+  padding-top: 8px;
+  padding-right: 8px;
+}
+
+.dropdown-nav-text:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+#push {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  width: 350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+}
+
+#title-dd-nav {
+  font-size: 1.0em;
+  font-weight: 900;
+}
+
+#iteminfo {
+  font-size: .9em;
+  font-weight: 100;
+  color: rgb(127, 127, 127);
+
+}
+
+.dropdown-item-nav {
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  overflow: hidden;
+}
+.dropdown-item-nav:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: rgb(252, 215, 104);
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.dropdown-item-nav:hover:before, .dropdown-item-nav:focus:before, .dropdown-item-nav:active:before {
+  left: 0;
+  right: 0;
+}
+
+#navlink-text-dd {
+ color: rgb(212, 101, 42)
+}
+
+.item-link {
+  display: flex;
+  align-items: center;
+}
+
+
+a {
+  all: unset;
+}
+
+a:hover {
+   cursor:pointer;  
+}
+
+
+
