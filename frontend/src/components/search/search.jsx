@@ -6,30 +6,35 @@ import Map from '../map/map';
 import Filters from './filters.jsx';
 import ActivityIndex from './activity_index.jsx';
 import { render } from 'react-dom';
+import NavBarContainer from '../navbar/navbar_container'
 
 
 // filters and activity index to be added later
 class Search extends React.Component {
   render() {
     return(
-      <div className="search-container">
-        <div className="map-half">
-          <div>
-            <Map updateFilter={this.props.updateFilter} activities={this.props.activities} type={this.props.type} />
+      <div>
+        <NavBarContainer />
+        <div className="search-container">
+          <div className="map-half">
+            <div>
+              <div className="header-text">Let's play <div className="sport-type">{(this.props.type).charAt(0).toUpperCase()+(this.props.type).substring(1)} </div></div>
+              <Map updateFilter={this.props.updateFilter} activities={this.props.activities} type={this.props.type} />
+            </div>
           </div>
-        </div>
-        <div className="right-half">
-          <div className="header-text">Let's play <div className="sport-type">{this.props.type} </div></div>
-          
-          <div>
-            <Filters updateFilter={this.props.updateFilter} />
-          </div>
+          <div className="right-half">
+            
+            <div>
+              <Filters updateFilter={this.props.updateFilter} />
+            </div>
 
-          <div>
-            {/* <ActivityIndex activities={activities} /> */}
+            <div>
+              {/* <ActivityIndex activities={activities} /> */}
+            </div>
           </div>
         </div>
       </div>
+      
     )
   }
 

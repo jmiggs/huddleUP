@@ -5,22 +5,87 @@
 
 .header-text {
   font-family: 'Josefin Sans', cursive;
+  margin-left: 50px;
 }
 
 .sport-type {
-  font-size: 4em;
+  font-size: 3.5em;
+  font-weight: 900;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.map-half {
+  min-width: 55vw;
+  height: 100vh;
+  display: flex;
+  padding-top: 9vh;
+
+}
+
+.right-half {
+  padding-top: 80px;
+  display: flex;
+  justify-content: left;
 }
 
 .time-dropdown {
-  background-color: #fff;
+  /* background-color: #fff;
   background-clip: padding-box;
-  border: 0.5rem solid #EF8354;
+  border: 1px solid #EF8354;
   border-radius: 1.25rem;
   color: #EF8354;
 
   font-size: 1em;
   height: 50x;
   line-height: 1.5;
-  width: 100%;
+  width: 100%; */
 
+
+  border: none;
+  border: 1px solid #EF8354;
+  background-color: #ef825414;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #EF8354;
+  background-clip: padding-box;
+}
+
+.day-dropdown {
+  border: none;
+  border: 1px solid #EF8354;
+  background-color: #ef825414;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #EF8354;
+  background-clip: padding-box;
+}
+
+.filter-date {
+  border: none;
+  border: 1px solid #EF8354;
+  background-color: #ef825414;
+  padding: 5px;
+  font-size: 16px;
+
+  border-radius: 5px;
+  color: #EF8354;
+  height: 1rem;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  justify-content: right;
+}
+
+.filter-header {
+  font-size: 1.6rem;
+  font-weight: 100;
+  font-family: 'Josefin Sans', cursive;
 }
