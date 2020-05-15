@@ -36,7 +36,6 @@ const App = () => (
             <ProtectedRoute path ="/users/:id/edit" component={EditProfilePageContainer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
-
             <ProtectedRoute exact path="/basketball" component={SearchContainerBball} /> 
             <ProtectedRoute exact path="/soccer" component={SearchContainerSoccer} /> 
             <ProtectedRoute exact path="/golf" component={SearchContainerGolf} /> 
