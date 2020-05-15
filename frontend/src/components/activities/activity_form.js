@@ -26,9 +26,22 @@ class ActivityForm extends React.Component {
 
     formSubmission(e) { 
         e.preventDefault()
+        // let activity = { 
+        //     day: this.state.day, 
+        //     description: this.state.description, 
+        //     host: this.state.host, 
+        //     lat: this.state.lat,
+        //     lng: this.state.lng,
+        //     location: this.state.location,
+        //     numplayersneed: this.state.numplayersneed,
+        //     sport: this.state.sport,
+        //     time: this.state.time,
+        //     title: this.state.title,
+        // }
         this.props.action(this.state)
         this.setState({ clicked: true })
-        window.location.href = "/dashboard";
+        console.log(this.state)
+        // window.location.href = "/dashboard";
     }
 
     renderSubmitButton() { 

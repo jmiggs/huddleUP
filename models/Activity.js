@@ -7,6 +7,10 @@ const ActivitySchema = new Schema({
     type: String,
     required: true
   },
+  location: {
+    type: String, 
+    required: true
+  },
   lat: {
     type: Number,
     required: true
@@ -23,7 +27,7 @@ const ActivitySchema = new Schema({
     type: String,
     required: true
   },
-  startTime: {
+  time: {
     type: String,
     required: true
   },
