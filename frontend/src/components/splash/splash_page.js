@@ -13,6 +13,8 @@ import Soccer from "../../assets/soccer.png";
 //     window.location.href = '/signup';
 // }
 
+
+
 const SplashPage = props => { 
     return (
         <div>

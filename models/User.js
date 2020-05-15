@@ -29,8 +29,7 @@ const UserSchema = new Schema({
     type: [String]
   },
   profile: {
-    data: Buffer,
-    contentType: String
+    type: String
   },
   hosting: [{
     type: Schema.Types.ObjectId,

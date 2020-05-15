@@ -79,12 +79,9 @@
     font-size: 10px;
 }
 
-/* .option { 
-	color: black;
-  } */
-
 .option {
     color: black;
+    font-size: 10px;
 }
 
 .searchBox {
@@ -114,24 +111,26 @@
 .multiSelectContainer li {
   padding: 10px 10px;
 }
+
 .multiSelectContainer li:hover {
   background: #EF8354;
   color: #fff;
   cursor: pointer;
+  font-size: 10px;
 }
 
 .multiSelectContainer:hover {
     background: #EF8354
 }
 .chip {
-  padding: 4px 10px;
+  padding: 4px 8px;
   background: #EF8354;
   margin-right: 5px;
   margin-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
-  font-size: 8px;
+  font-size: 10px;
   color: #fff;
   white-space: nowrap;
 }
@@ -143,3 +142,7 @@
 .optionContainer li:hover{
     background-color: #EF8354;
 }
+
+/* .optgroup {
+    font-size: 12px;
+} */

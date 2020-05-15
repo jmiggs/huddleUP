@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import { Multiselect } from 'multiselect-react-dropdown';
 import "../../reset.css";
@@ -14,7 +12,6 @@ class EditProfilePage extends React.Component {
         this.routeBackToProfile = this.routeBackToProfile.bind(this);
         this.sportsList = this.sportsList.bind(this);
         this.handleFile = this.handleFile.bind(this); 
-        this.multiselectRef = React.createRef();
     }
 
     handleSubmit(e) {
@@ -30,16 +27,6 @@ class EditProfilePage extends React.Component {
         return (e) => { this.setState({ [type]: e.currentTarget.value }) };
     } 
 
-    handleChange(selectedSports) {
-        this.setState({selectedSports})
-    } 
-
-    handleDeselect(index) {
-        const selectedSports = this.state.sports.slice()
-        selectedSports.splice(index, 1)
-        this.setState({ selectedSports })
-    }
-
     sportsList() {
         let options = [
             { value: "basketball", text: 'basketball' },
@@ -51,44 +38,16 @@ class EditProfilePage extends React.Component {
         const selectedSports = this.state.sports
         return(   
             <div className = "edit-sports-selection">
-            <br/>
+            <br/> 
             < Multiselect
-                options={options} //Options to display in the dropdown
-                selectedValues={selectedSports} // Preselected value to persist in dropdown
-                onSelect={this.onSelect} // Function will trigger on select event
-                onRemove={this.onRemove} // Function will trigger on remove event
-                displayValue="value" //value name
+                options={options} 
+                selectedValues={selectedSports} 
+                onSelect={this.onSelect} 
+                onRemove={this.onRemove} 
+                displayValue="value" 
             />
             </div>
         )
-    }
-
-    handleFile(e) {
-        const file = e.currentTarget.files[0];
-        if (file) {
-             this.getSignedRequest(file)
-        }
-    }
-
-
-    getSignedRequest(file) {
-        const xhr = new XMLHttpRequest();
-        // here
-        xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                debugger
-                // makes status === 0
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    this.uploadFile(file, response.signedRequest, response.url);
-                }
-                else {
-                    alert('Could not get signed URL.');
-                }
-            }
-        };
-        xhr.send();
     }
 
     uploadFile(file, signedRequest, url) {
@@ -107,6 +66,32 @@ class EditProfilePage extends React.Component {
         xhr.send(file);
     }
 
+    getSignedRequest(file) {
+        const xhr = new XMLHttpRequest();
+        // here
+        xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    this.uploadFile(file, response.signedRequest, response.url);
+                }
+                else {
+                    alert('Could not get signed URL.');
+                }
+            }
+        };
+        xhr.send();
+    }
+
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        if (file) {
+            this.getSignedRequest(file)
+        }
+    }
+
     render() {
         return(
         <div>
@@ -119,8 +104,9 @@ class EditProfilePage extends React.Component {
                                 Upload profile picture
                                 <br/>
                                 <input
-                                type="file"
-                                onChange={this.handleFile}
+                                    type="file"
+                                    id="file-input"
+                                    onChange={this.handleFile}
                                 />
                                 {/* <input
                                     accept = "image/*"
