@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Activity = require('../../models/Activity');
+const User = require('../../models/User');
 const validateActivityInput = require('../../validation/activity');
+
 
 
 router.get("/test", (req, res) => res.json({ msg: "This is the activity test route" }));
@@ -108,11 +110,42 @@ router.post('/:activityid',
       then( activity => {res.json(activity)}).
       catch(err =>
         res.status(404).json({ noactivityfound: 'Cant Join Activity' })
-      ); 
-   
+    );
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        { $addToSet: { attending: req.params.activityid } },
+      ).
+      catch( err =>
+        res.status(404).json({ noactivityfound: 'Cant Join Activity' })
+    ) 
     // activity.save().then(activity => res.json(activity))
  
   });
+
+//  unsubscribe to event
+router.patch('/:activityid', 
+  passport.authenticate('jwt', {session: false}), 
+  (req, res) => {
+
+    Activity.findOneAndUpdate(
+        {_id: req.params.activityid},
+        { $pull: { participants: req.user._id} },
+      ).
+      then( activity => {res.json(activity)}).
+      catch(err =>
+        res.status(404).json({ noactivityfound: 'Cant Unjoin Activity' })
+  );
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        { $pull: { attending: req.params.activityid } },
+      ).
+      catch( err =>
+        res.status(404).json({ noactivityfound: 'Cant Unjoin Activity' })
+  ) 
+  // activity.save().then(activity => res.json(activity))
+});
 
 
 module.exports = router;

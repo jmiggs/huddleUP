@@ -41,9 +41,17 @@ export const createActivity = activity => dispatch => {
         .catch(err => console.log("BAD"))
 };
 
-//Didn't test yet
+
 export const subscribeToActivity = activityId => dispatch => {
+
     return ActivitiesAPIUtil.subscribeToActivity(activityId)
         .then(res => dispatch(receiveActivity(res.data)))
         .catch(err => console.log("Can't subscribe to this activity"))
+}
+
+export const unsubscribeToActivity = activityId => dispatch => {
+
+  return ActivitiesAPIUtil.unsubscribeToActivity(activityId)
+      .then(res => console.log(res))
+      .catch(err => console.log("Can't unsubscribe to this activity"))
 }
