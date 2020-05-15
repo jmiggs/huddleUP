@@ -14,8 +14,8 @@
 }
 
 .activity-form-map { 
-    width: 450px;
-    height: 450px;
+    width: 532px;
+    height: 532px;
     background-color: rgb(221, 198, 168);
 }
 
@@ -103,3 +103,17 @@
     border-radius: 0px 4px 4px 0px;
     width: fit-content;
 }
+
+/* #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      } */

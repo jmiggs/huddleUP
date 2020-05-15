@@ -1,8 +1,10 @@
 import React from "react";
+
 import NavBar from "../navbar/navbar_container";
 import { Multiselect } from 'multiselect-react-dropdown';
 import "../../reset.css";
 import "./edit_profile_page.css"
+
 
 class EditProfilePage extends React.Component {
     constructor(props) {
@@ -28,6 +30,7 @@ class EditProfilePage extends React.Component {
     } 
 
     sportsList() {
+
         let options = [
             { value: "basketball", text: 'basketball' },
             { value: "golf", text: 'golf' },

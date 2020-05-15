@@ -1,10 +1,17 @@
 import React from "react"; 
+
+// import { Link } from "react-router-dom";
+
 import { Link, Redirect } from "react-router-dom";
+
 // import ActivityMap from '../activity_map/activity_map'
 import NavBarContainer from "../navbar/navbar_container";
 import "../../reset.css";
 import "./activity_show.css";
 import Footer from "../footer/footer";
+
+
+const google = window.google;
 
 
 // Miguel: i commented out some of the code to get the subscribe and unsubscribe to work. 
@@ -45,6 +52,10 @@ class Activity extends React.Component {
     if (this.props.subscribed !== prevProps.subscribed) { 
       this.setState({ subscribed: this.props.subscribed })
     }
+
+    if (this.props.activity !== prevProps.activity) { 
+      this.initMap() // From Google Maps API docs
+    }
   }
  
   changeUnsubscription(e) { 
@@ -71,6 +82,16 @@ class Activity extends React.Component {
     }
   }
 
+  initMap() { // From Google Maps API Docs
+  // The location of Uluru
+    let uluru = { lat: this.props.activity.lat, lng: this.props.activity.lng };
+    // The map, centered at Uluru
+    let map = new google.maps.Map(
+      document.getElementById('map'), { zoom: 15, center: uluru });
+    // The marker, positioned at Uluru
+    let marker = new google.maps.Marker({ position: uluru, map: map });
+  } 
+
   render() { 
     if (!this.props.activity) return null;
     
@@ -95,7 +116,7 @@ class Activity extends React.Component {
 
             {this.renderSubscribe()}
 
-            <div className="activity-show-map">
+            <div id="map" className="activity-show-map">
             </div>
           </div>
         </div>

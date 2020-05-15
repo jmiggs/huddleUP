@@ -1,12 +1,13 @@
 import React from "react"; 
-import { Switch, Route } from "react-router-dom"; 
+// import { Switch, Route } from "react-router-dom"; 
+import { Switch } from "react-router-dom"; 
 import SplashPage from "./splash/splash_page"; 
 import LoginFormContainer from "./auth/login_form_container";
 import SignupFormContainer from "./auth/signup_form_container";
-import NavBarContainer from "./navbar/navbar_container";
+// import NavBarContainer from "./navbar/navbar_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProfilePageContainer from "./profile/profile_page_container";
-import EditProfilePage from "./profile/edit_profile_page";
+// import EditProfilePage from "./profile/edit_profile_page";
 
 import DashBoardContainer from './dashboard/dashboard_container';
 import ActivityContainer from './activity/activity_container'
