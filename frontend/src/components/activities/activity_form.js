@@ -28,6 +28,7 @@ class ActivityForm extends React.Component {
         e.preventDefault()
         this.props.action(this.state)
         this.setState({ clicked: true })
+        // console.log(this.state)
         window.location.href = "/dashboard";
     }
 

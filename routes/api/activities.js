@@ -35,7 +35,7 @@ router.post('/',
       lat: req.body.lat,
       lng: req.body.lng,
       day: req.body.day,
-      startTime: req.body.startTime
+      time: req.body.time
     });
       
     newActivity.save().then(activity => res.json(activity));
