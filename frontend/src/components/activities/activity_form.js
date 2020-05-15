@@ -40,8 +40,8 @@ class ActivityForm extends React.Component {
             this.state.numplayersneed.trim().length && 
             this.state.day.trim().length && 
             this.state.time.trim().length && 
-            this.state.lat.trim().length && 
-            this.state.lng.trim().length) { 
+            this.state.lat && 
+            this.state.lng) { 
             return <input type="submit" value="Host" className="submit-activity" />
         } else { 
             return < input type="submit" value="Host" className="submit-activity-faded" />
@@ -56,8 +56,8 @@ class ActivityForm extends React.Component {
 
     initMap() { // Google
         let map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 8,
-            center: { lat: -34.397, lng: 150.644 }
+            zoom: 10,
+            center: { lat: 37.7749295, lng: -122.4194155 }
         });
         let geocoder = new google.maps.Geocoder();
 
