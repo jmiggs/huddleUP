@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../navbar/navbar";
+import NavBar from "../navbar/navbar_container";
 import { Multiselect } from 'multiselect-react-dropdown';
 import "../../reset.css";
 import "./edit_profile_page.css"

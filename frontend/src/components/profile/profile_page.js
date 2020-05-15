@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./profile_page.css"
-import NavBar from '../navbar/navbar';
+import NavBar from '../navbar/navbar_container';
 import { GrMapLocation } from 'react-icons/gr';
 import MJPic from '../../assets/Michael-Jordan-1987.png';
 import Footer from "../footer/footer";

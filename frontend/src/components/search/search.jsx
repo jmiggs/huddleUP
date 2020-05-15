@@ -25,15 +25,12 @@ class Search extends React.Component {
 
           </div>
           <div className="right-half">
-            
             <div>
               <Filters updateFilter={this.props.updateFilter} />
             </div>
-
-
-          <div>
-            <ActivityIndex activities={this.props.activities} />
-
+            <div>
+              <ActivityIndex activities={this.props.activities} />
+            </div>
           </div>
         </div>
       </div>
