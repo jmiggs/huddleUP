@@ -42,11 +42,6 @@ router.post('/',
 
 // fetch all events in database
 router.get('/', (req, res) => {
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> 37076093d90e7faf427500b707b4999582f2f3fc
   // if there are no filters in the request, use the first .find() to query all activities
   // if there are filters in the request, use the second .find and apply the filters
   // NOTE: will need to add more $and conditions as we implement more filters..
