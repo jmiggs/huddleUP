@@ -4,10 +4,16 @@ import "../../reset.css";
 import "./splash_page.css";
 import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
+import BayAreaPic from "../../assets/bay-area.png";
+import MessagePic from "../../assets/message.png";
+import Basketball from "../../assets/basketball.png";
+import Soccer from "../../assets/soccer.png";
 
 // const goToSignUp = () => {
 //     window.location.href = '/signup';
 // }
+
+
 
 const SplashPage = props => { 
     return (
@@ -37,28 +43,36 @@ const SplashPage = props => {
                 <h1 className="what-is-huddleup">What is huddleUP?</h1>
                 <div className="huddleup-is"> 
                     <div className="huddleup-is-one">
-                        <div className="huddleup-is-bottom-text-pic"></div>
+                        <div className="huddleup-is-bottom-text-pic">
+                            <img className="huddleup-is-bottom-text-pic" src={BayAreaPic} />
+                        </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>1. Find a loction</h2>
                             <p>Pick a location near you for convenience.</p>
                         </div>
                     </div>
                     <div className="huddleup-is-two">
-                        <div className="huddleup-is-bottom-text-pic"></div>
+                        <div className="huddleup-is-bottom-text-pic">
+                            <img className="huddleup-is-bottom-text-pic" src={Soccer} />
+                        </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>2. Host or Join</h2>
                             <p>Found a fun event? Join it. Can't find any? Why not just host them.</p>
                         </div>
                     </div>
                     <div className="huddleup-is-three">
-                        <div className="huddleup-is-bottom-text-pic"></div>
+                        <div className="huddleup-is-bottom-text-pic">
+                            <img className="huddleup-is-bottom-text-pic" src={MessagePic}/>
+                        </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>3. Now or later</h2>
                             <p>Tell everyone you're out right now, or make plans for the future.</p>
                         </div>
                     </div>
                     <div className="huddleup-is-four">
-                        <div className="huddleup-is-bottom-text-pic"></div>
+                        <div className="huddleup-is-bottom-text-pic">
+                            <img className="huddleup-is-bottom-text-pic" src={Basketball} />
+                        </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>4. Play</h2>
                             <p>Go out and have some fun.</p>

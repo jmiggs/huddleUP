@@ -3,7 +3,7 @@ import { logout } from "../../actions/session_actions";
 import { fetchUser } from "../../actions/users_actions";
 import ProfilePage from "./profile_page";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         loggedIn: state.session.isAuthenticated,
         user: {
