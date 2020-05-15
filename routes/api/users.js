@@ -156,8 +156,6 @@ router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) 
     })
     .catch(err =>
       res.status(400).json(err))
-
-
 });
 
 module.exports = router;

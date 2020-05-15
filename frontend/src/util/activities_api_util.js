@@ -9,6 +9,12 @@ export const getActivitiesFiltered = (filters) => {
   return axios.get("/api/activities/", {params: {filters: filters}})
 };
 
+export const getUserActivities = (userId) => {
+
+  return axios.get(`/api/activities/users/${userId}`)
+};
+
+
 export const test = () => {
     return axios.get("/api/activities/test")
 }
