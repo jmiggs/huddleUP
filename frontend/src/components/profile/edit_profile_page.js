@@ -25,6 +25,7 @@ class EditProfilePage extends React.Component {
     routeBackToProfile() {
         this.props.history.push(`/users/${this.props.id}`)
     }
+
     update(type) {
         return (e) => { this.setState({ [type]: e.currentTarget.value }) };
     } 
@@ -121,6 +122,11 @@ class EditProfilePage extends React.Component {
                                 type="file"
                                 onChange={this.handleFile}
                                 />
+                                {/* <input
+                                    accept = "image/*"
+                                    type="file"
+                                    onChange={this.update('picture')}
+                                /> */}
                             </label>
                         <br/>
                         <label>Username</label>

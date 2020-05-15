@@ -21,6 +21,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "react-filtered-multiselect": "^0.5.1",
+    "react-spinners-kit": "^1.9.1",
     "validator": "^13.0.0"
   },
   "devDependencies": {

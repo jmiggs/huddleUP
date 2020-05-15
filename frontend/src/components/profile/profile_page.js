@@ -5,11 +5,8 @@ import "../../reset.css";
 import "./profile_page.css"
 import NavBar from '../navbar/navbar';
 import { GrMapLocation } from 'react-icons/gr';
-<<<<<<< HEAD
 import MJPic from '../../assets/Michael-Jordan-1987.png';
-=======
 import Footer from "../footer/footer";
->>>>>>> 37076093d90e7faf427500b707b4999582f2f3fc
 
 class ProfilePage extends React.Component {
     constructor(props) {
@@ -105,11 +102,11 @@ class ProfilePage extends React.Component {
                         <div className="profile-left-corner">
                             <div className="profile-picture-w-name">
                                 <div className="profile-picture-box">
-                                    <div className="profile-picture">
+                                    {/* <div className="profile-picture"> */}
                                     {
                                         this.props.user.currentUserPicture ? 
                                             <img className = "profile-picture" src={this.props.user.currentUserPicture} alt="" height="290" width="220" /> : 
-                                            <img className="mj" src={MJPic} alt="" height="292" width="220"/>}
+                                            <img className="profile-picture" src={MJPic} alt=""/>}
                                     {/* <img 
                                         className="profile-picture"
                                         src={this.props.currentUserPicture}
@@ -117,7 +114,7 @@ class ProfilePage extends React.Component {
                                         height="80"
                                         alt="user-profile-picture"
                                     /> */}
-                                    </div>
+                                    {/* </div> */}
                                 </div>
                                 <br />
                                 <div className="profile-name">
@@ -139,16 +136,18 @@ class ProfilePage extends React.Component {
                     </div>
                     <div className="profile-right">
                         <div className="profile-bio">
-                        Bio:
-                        <br />
-                        <br />
+                            <div className="profile-bio-title">
+                                Bio:
+                            </div>
+                            <br/>
                         {this.getBio()}
                     </div>
                         <br />
                         <div className="profile-sports">
                             <br />
-                            Sports:
-                            <br />
+                            <div className="profile-sports-title">
+                                Sports:
+                            </div>
                             <br />
                             {this.getSports()}
                         </div>
