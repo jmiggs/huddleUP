@@ -17,7 +17,7 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-      console.log('componentdidmount')
+    //   console.log('componentdidmount')
       this.props.fetchUserActivities(this.props.id);
     }
   
@@ -45,7 +45,7 @@ class NavBar extends React.Component {
 
     render() { 
       // if (!this.props.id) return null
-      console.log(this.props.userActivities)
+    //   console.log(this.props.userActivities)
         return (
             <div className="navbar">
                 <div className="left-navbar">

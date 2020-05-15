@@ -143,7 +143,7 @@ router.patch("/:id", passport.authenticate('jwt', {session: false}), (req, res) 
 router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
   User.findById(req.params.id)
     .then(user => {
-      console.log(user)
+      // console.log(user)
       let returnedUser = {
         id: user._id,
         username: user.username,

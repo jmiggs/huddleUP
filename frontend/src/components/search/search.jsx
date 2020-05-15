@@ -5,7 +5,6 @@ import './search.css';
 import Map from '../map/map';
 import Filters from './filters.jsx';
 import ActivityIndex from './activity_index.jsx';
-import { render } from 'react-dom';
 import NavBarContainer from '../navbar/navbar_container'
 
 

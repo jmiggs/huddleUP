@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const EventsItem = (props) => {
 
-  console.log(props)
+  // console.log(props)
   return(
     <div className="dropdown-item-nav">
       <div id="push"> 

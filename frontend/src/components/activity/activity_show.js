@@ -1,9 +1,5 @@
 import React from "react"; 
 
-// import { Link } from "react-router-dom";
-
-import { Link, Redirect } from "react-router-dom";
-
 // import ActivityMap from '../activity_map/activity_map'
 import NavBarContainer from "../navbar/navbar_container";
 import ShowMap from './map_show';
@@ -38,28 +34,41 @@ class Activity extends React.Component {
     //   this.props.unsubscribeToActivity(this.props.activity._id)
     // }
   }
-
+  
   componentDidMount() { 
-    this.props.fetchActivity(this.props.match.params.id)
+      this.props.fetchActivity(this.props.match.params.id)
     // From Google Maps API docs
     // window.addEventListener('beforeunload', this.componentCleanup);
   }
-
+  
+  componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
+    // if (this.props.subscribed !== prevProps.subscribed) { 
+    //   this.setState({ subscribed: this.props.subscribed })
+    // }
+    // prevProps.activity
+    if (prevProps.activity) {
+      // debugger
+      if (this.props.activity) {
+        if (this.props.activity._id !== prevProps.activity._id) { 
+          // this.initMap() // From Google Maps API docs
+          // debugger
+          this.props.fetchActivity(this.props.match.params.id)
+        } 
+      } else {
+          this.props.fetchActivity(this.props.match.params.id)
+      }
+    } 
+  }
+  
   // componentWillUnmount() {
   //   // this.componentCleanup();
   //   // window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
   // } 
 
-  componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
-    // if (this.props.subscribed !== prevProps.subscribed) { 
-    //   this.setState({ subscribed: this.props.subscribed })
-    // }
+  // componentWillMount() {
+    
+  // }
 
-    if (this.props.activity !== prevProps.activity) { 
-      // this.initMap() // From Google Maps API docs
-      this.props.fetchActivity(this.props.match.params.id)
-    }
-  }
  
   changeUnsubscription(e) { 
     // e.preventDefault();

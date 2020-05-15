@@ -43,7 +43,7 @@ export const fetchActivity = activityId => dispatch => {
 };
 
 export const fetchUserActivities = userId => dispatch => {
-  console.log(userId)
+//   console.log(userId)
   return ActivitiesAPIUtil.getUserActivities(userId)
       .then(res => dispatch(receiveUserActivities(res.data)))
       .catch(err => console.log("BAD"))

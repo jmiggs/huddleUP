@@ -36,7 +36,8 @@ class DashBoard extends React.Component {
                     </div>
                     
                     <div className='event-items'>
-                        {basketball.slice(0, 5).map(activity => <DashBoardItem activity={activity} />) }
+                        {basketball.slice(0, 5).map(activity => 
+                        <DashBoardItem activity={activity} key={activity._id} />) }
                     </div>
                         
                 </div>
@@ -49,7 +50,7 @@ class DashBoard extends React.Component {
                     </div>
 
                     <div className='event-items'>
-                        {golf.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
+                        {golf.slice(0, 5).map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -62,7 +63,7 @@ class DashBoard extends React.Component {
                     </div>        
 
                     <div className='event-items'>
-                        {football.slice(0,5).map(activity => <DashBoardItem activity={activity} />)}
+                        {football.slice(0, 5).map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -75,7 +76,7 @@ class DashBoard extends React.Component {
                     </div>  
 
                     <div className='event-items'>
-                        {soccer.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
+                        {soccer.slice(0, 5).map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>
@@ -88,7 +89,7 @@ class DashBoard extends React.Component {
                     </div> 
 
                     <div className='event-items'>
-                        {tennis.slice(0, 5).map(activity => <DashBoardItem activity={activity} />)}
+                        {tennis.slice(0, 5).map(activity => <DashBoardItem activity={activity} key={activity._id} />)}
                     </div>
 
                 </div>

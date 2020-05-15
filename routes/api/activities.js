@@ -57,7 +57,7 @@ router.get('/', (req, res) => {
     // formatting/deconstructing bounds passed from front end component
     let boundsObj = JSON.parse(req.query.filters);
     let { bounds } = boundsObj;
-    console.log(boundsObj)
+    // console.log(boundsObj)
     // applying filters to select activities
     Activity.find({
       $and: [
@@ -86,7 +86,7 @@ router.get('/:id', (req, res) => {
 
 //get activities that a user is attending
 router.get('/users/:id', (req, res) => {
-  console.log(req)
+  // console.log(req)
   Activity.find( {participants: req.params.id} )
     .then(activities => {res.json(activities); console.log(activities)})
     .catch(err =>
