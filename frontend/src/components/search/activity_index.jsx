@@ -4,7 +4,8 @@ import './activity.css';
 import ActivityIndexItem from './activity_index_item';
 
 // Receives props from search container
-const ActivityIndex = ({ activities }) => {
+const ActivityIndex = ( {activities} ) => {
+  console.log(activities)
     return (
         <div className='activity-index'>
             {
