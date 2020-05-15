@@ -23,7 +23,7 @@ const ActivitySchema = new Schema({
     type: String,
     required: true
   },
-  startTime: {
+  time: {
     type: String,
     required: true
   },
