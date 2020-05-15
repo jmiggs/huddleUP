@@ -32,6 +32,7 @@ class ProfilePage extends React.Component {
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
+        window.location.href = "/";
     }
 
     getLocation() {
