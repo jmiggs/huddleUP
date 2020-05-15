@@ -5,6 +5,8 @@ import "../../reset.css";
 import "./activity_form.css";
 import Footer from "../footer/footer";
 
+const google = window.google;
+
 class ActivityForm extends React.Component { 
     constructor(props) { 
         super(props)
@@ -13,6 +15,7 @@ class ActivityForm extends React.Component {
         this.update = this.update.bind(this);
         this.formSubmission = this.formSubmission.bind(this);
         this.renderSubmitButton = this.renderSubmitButton.bind(this);
+        this.initMap = this.initMap.bind(this);
     }
 
     update(field) { 
@@ -45,6 +48,46 @@ class ActivityForm extends React.Component {
         }
     }
 
+    componentDidMount() { 
+        if (this.props.currentUser) { 
+            this.initMap()
+        }
+    }
+
+    initMap() { // Google
+        let map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: { lat: -34.397, lng: 150.644 }
+        });
+        let geocoder = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', () => {
+            this.geocodeAddress(geocoder, map);
+        });
+    }
+
+    geocodeAddress(geocoder, resultsMap) { // Google
+        let address = document.getElementById('address').value;
+        geocoder.geocode({ 'address': address }, (results, status) => {
+            if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+
+                let marker = new google.maps.Marker({
+                    map: resultsMap,
+                    position: results[0].geometry.location
+                });
+
+                let lat = results[0].geometry.location.lat()
+                let lng = results[0].geometry.location.lng()
+                let location = results[0].formatted_address
+                this.setState({ location, lat, lng })
+                console.log(this.state)
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
     render() {
         if (!this.props.currentUser) return null;
         // debugger 
@@ -53,8 +96,14 @@ class ActivityForm extends React.Component {
                 <NavBarContainer />
                 <div className="activity-form-page">
                     <div className="activity-box-box">
-                        <div className="activity-form-map">
+                        {/* <div className="activity-form-map">
+                        </div> */}
+
+                        <div id="floating-panel"> {/* Google */} 
+                            <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} />
+                            <input id="submit" type="button" value="Geocode" />
                         </div>
+                        <div id="map" className="activity-form-map"></div>
                         
                         <form className="activity-form" onSubmit={this.formSubmission}>
                             <div className="activity-input-container">
