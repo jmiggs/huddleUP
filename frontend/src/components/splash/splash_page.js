@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./splash_page.css";
+// import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
 
-// const goToSignUp = () => {
-//     window.location.href = '/signup';
-// }
+const goToSignUp = () => {
+    window.location.href = '/#/signup';
+}
 
 const SplashPage = props => { 
     return (
@@ -21,10 +22,13 @@ const SplashPage = props => {
             <div className="top-banner"> 
                 <div className="top-banner-text">
                     <h1 className="main-phrase">Nobody to play with? We got you covered.</h1>
-                    <p className="main-phrase-caption">Go outside knowing that you won't be bored playing by yourself</p>
+                    <p className="main-phrase-caption">Go outside knowing that you won't be bored playing by yourself.</p>
                     <div>
-                        <div className="signup-splash-button"> {/* onClick={goToSignUp}> */}
-                            <Link to="/signup" className="signup-splash-button-text">Sign Up, Have Fun</Link> 
+                        {/* <div className="signup-splash-button">
+                            <Link to="/signup" className="signup-splash-button-text">Sign Up, Have Fun</Link>
+                        </div> */}
+                        <div className="signup-splash-button" onClick={goToSignUp}> 
+                            <p className="signup-splash-button-text">Sign Up, Have Fun</p>
                         </div>
                         <p className="signin-splash-text">Already using huddleUP? <Link to="/login" className="signin-splash-link">Log In</Link></p>
                     </div>
@@ -62,10 +66,12 @@ const SplashPage = props => {
                         </div>
                     </div>
                 </div>
-                <div className="signup-bottom-button">
+                {/* <div className="signup-bottom-button">
                     <Link to="/signup" className="signup-bottom-button-text">Let's Go</Link>
+                </div> */}
+                <div className="signup-bottom-button" onClick={goToSignUp}>
+                    <p className="signup-bottom-button-text">Let's Go</p>
                 </div>
-                
             </div>
             <Footer />
         </div>

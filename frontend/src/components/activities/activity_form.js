@@ -81,7 +81,7 @@ class ActivityForm extends React.Component {
                 let lng = results[0].geometry.location.lng()
                 let location = results[0].formatted_address
                 this.setState({ location, lat, lng })
-                console.log(this.state)
+                // console.log(this.state)
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }
@@ -97,10 +97,10 @@ class ActivityForm extends React.Component {
                 <div className="activity-form-page">
                     <div className="activity-box-box">
 
-                        <div id="floating-panel"> {/* Google */} 
+                        {/* <div id="floating-panel"> Google 
                             <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} />
                             <input id="submit" type="button" value="Geocode" />
-                        </div>
+                        </div> */}
                         <div id="map" className="activity-form-map"></div>
                         
                         {/* <form className="activity-form" onSubmit={this.formSubmission}></form> */}
@@ -112,7 +112,9 @@ class ActivityForm extends React.Component {
 
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Location</label>
-                                <input type="text" value={this.state.location} onChange={this.update("location")} className="activity-input-field" />
+                                {/* <input type="text" value={this.state.location} onChange={this.update("location")} className="activity-input-field" /> */}
+                                <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} className="activity-input-field" />
+                                <input id="submit" type="button" value="Find" />
                             </div>
 
                             <div className="activity-input-container">

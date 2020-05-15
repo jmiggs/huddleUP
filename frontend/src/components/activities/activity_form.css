@@ -104,7 +104,7 @@
     width: fit-content;
 }
 
-#floating-panel {
+/* #floating-panel {
         position: absolute;
         top: 10px;
         left: 25%;
@@ -116,4 +116,4 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 10px;
-      }
+      } */
