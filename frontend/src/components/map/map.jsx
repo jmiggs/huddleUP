@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
+// import ReactDOM from 'react-dom';
+// import { withRouter } from 'react-router-dom';
 import MapMarker from './mapmarker'
 
 import "../../reset.css";

@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./edit_profile_page.css"
-import ImageUploader from "react-images-upload";
+// import ImageUploader from "react-images-upload";
 import NavBar from "../navbar/navbar";
-import { fetchUser } from "../../actions/users_actions";
-import axios from 'axios';
-import { GrFedora } from "react-icons/gr";
+// import { fetchUser } from "../../actions/users_actions";
+// import axios from 'axios';
+// import { GrFedora } from "react-icons/gr";
 
 class EditProfilePage extends React.Component {
     constructor(props) {
@@ -47,7 +47,7 @@ class EditProfilePage extends React.Component {
 
     sportsList() {
         const selected = document.querySelectorAll('#sports option:checked');
-        const values = Array.from(selected).map(el => el.value);
+        // const values = Array.from(selected).map(el => el.value);
         return (
             <div>
                 <select id="sports" multiple="multiple">

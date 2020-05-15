@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./splash_page.css";
-import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
 
 // const goToSignUp = () => {
@@ -12,11 +11,9 @@ import Footer from "../footer/footer";
 const SplashPage = props => { 
     return (
         <div>
-            {/* <NavBarContainer /> Take this line out and put it on the dashboard after we merge */}
             <div className="splash-nav">
                 <Link to="/" className="splash-nav-link">huddleUP</Link>
                 <div className="auth-nav">
-                    {/* <Link to="/" className="splash-nav-link">Explore</Link> */}
                     <Link to="/login" className="splash-nav-link">Log In</Link>
                     <Link to="/signup" className="splash-nav-link">Sign Up</Link>
                 </div>

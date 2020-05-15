@@ -96,8 +96,6 @@ class ActivityForm extends React.Component {
                 <NavBarContainer />
                 <div className="activity-form-page">
                     <div className="activity-box-box">
-                        {/* <div className="activity-form-map">
-                        </div> */}
 
                         <div id="floating-panel"> {/* Google */} 
                             <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} />
@@ -105,7 +103,8 @@ class ActivityForm extends React.Component {
                         </div>
                         <div id="map" className="activity-form-map"></div>
                         
-                        <form className="activity-form" onSubmit={this.formSubmission}>
+                        {/* <form className="activity-form" onSubmit={this.formSubmission}></form> */}
+                        <form className="activity-form" onSubmit={e => this.formSubmission(e)}>
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Title</label>
                                 <input type="text" value={this.state.title} onChange={this.update("title")} className="activity-input-field" />
@@ -126,9 +125,6 @@ class ActivityForm extends React.Component {
                                     <option value="tennis">Tennis</option>
                                     <option value="golf">Golf</option>
                                 </select>
-
-                                {/* <label className="activity-form-label">Sport</label>
-                                <input type="text" value={this.state.sport} onChange={this.update("sport")} /> */}
                             </div>
 
                             <div className="activity-input-container">
@@ -166,9 +162,6 @@ class ActivityForm extends React.Component {
                                     <option value="24">24</option>
                                     <option value="25">25</option>
                                 </select>
-
-                                {/* <label className="activity-form-label">Number of Players Needed</label>
-                                <input type="text" value={this.state.numplayersneed} onChange={this.update("numplayersneed")} /> */}
                             </div>
 
                             <div className="activity-input-container">
@@ -215,7 +208,7 @@ class ActivityForm extends React.Component {
                                 </select>
                             </div>
 
-                            <div className="activity-input-container">
+                            {/* <div className="activity-input-container">
                                 <label className="activity-form-label">Latitude</label>
                                 <input type="text" onChange={this.update("lat")} value={this.state.lat} className="activity-input-field" />
                             </div>
@@ -223,7 +216,7 @@ class ActivityForm extends React.Component {
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Longitude</label>
                                 <input type="text" onChange={this.update("lng")} value={this.state.lng} className="activity-input-field" />
-                            </div>
+                            </div> */}
 
                             {this.renderSubmitButton()}
                         </form>
