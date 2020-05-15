@@ -11,14 +11,18 @@
     "busboy-body-parser": "^0.3.2",
     "concurrently": "^5.2.0",
     "connect-busboy": "0.0.2",
+    "ejs": "^3.1.2",
     "express": "^4.17.1",
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.13",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
+    "multiselect-react-dropdown": "^1.5.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-filtered-multiselect": "^0.5.1",
+    "react-spinners-kit": "^1.9.1",
     "validator": "^13.0.0"
   },
   "devDependencies": {

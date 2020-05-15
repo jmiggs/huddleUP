@@ -1,2 +1,4 @@
 /config/keys.js
+/config/aws_dev.js
 /node_modules
+.env

@@ -5,6 +5,7 @@ import "../../reset.css";
 import "./profile_page.css"
 import NavBar from '../navbar/navbar';
 import { GrMapLocation } from 'react-icons/gr';
+import MJPic from '../../assets/Michael-Jordan-1987.png';
 import Footer from "../footer/footer";
 
 class ProfilePage extends React.Component {
@@ -15,6 +16,7 @@ class ProfilePage extends React.Component {
         this.getBio = this.getBio.bind(this);
         this.getLocation = this.getLocation.bind(this);
         this.getSports = this.getSports.bind(this);
+        this.editLink = this.editLink.bind(this);
     }
 
     // componentDidUpdate(prevProps) {
@@ -82,6 +84,15 @@ class ProfilePage extends React.Component {
         }
     }
 
+    editLink() {
+        // might have to change to verify this is the same user to allow editing
+        if (this.props.user) {
+            return (
+                <Link to={`${this.props.user.id}/edit`} className="edit-link">Edit</Link>
+            )
+        }
+    }
+
     render() { 
         return (
             <div>
@@ -91,13 +102,19 @@ class ProfilePage extends React.Component {
                         <div className="profile-left-corner">
                             <div className="profile-picture-w-name">
                                 <div className="profile-picture-box">
-                                    <img 
+                                    {/* <div className="profile-picture"> */}
+                                    {
+                                        this.props.user.currentUserPicture ? 
+                                            <img className = "profile-picture" src={this.props.user.currentUserPicture} alt="" height="290" width="220" /> : 
+                                            <img className="profile-picture" src={MJPic} alt=""/>}
+                                    {/* <img 
                                         className="profile-picture"
                                         src={this.props.currentUserPicture}
                                         width="100"
                                         height="80"
                                         alt="user-profile-picture"
-                                    />
+                                    /> */}
+                                    {/* </div> */}
                                 </div>
                                 <br />
                                 <div className="profile-name">
@@ -113,26 +130,28 @@ class ProfilePage extends React.Component {
                                     </div>
                                 </div>
                                 <br />
-                                <Link to= {`${this.props.user.id}/edit`} className="edit-link">Edit</Link>
+                                {this.editLink()}
                             </div>
                         </div>
                     </div>
                     <div className="profile-right">
                         <div className="profile-bio">
-                        Bio:
-                        <br />
-                        <br />
+                            <div className="profile-bio-title">
+                                Bio:
+                            </div>
+                            <br/>
                         {this.getBio()}
                     </div>
                         <br />
                         <div className="profile-sports">
                             <br />
-                            Sports:
-                            <br />
+                            <div className="profile-sports-title">
+                                Sports:
+                            </div>
                             <br />
                             {this.getSports()}
                         </div>
-                        <br />
+                        <br/>
                         <div className="profile-logout-btn">
                             <Link to="/" onClick={this.logoutUser} className="profile-logout-btn-text">Logout</Link>
                         </div>
