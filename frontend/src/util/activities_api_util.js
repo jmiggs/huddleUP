@@ -26,3 +26,7 @@ export const createActivity = data => {
 export const subscribeToActivity = id => {
     return axios.post(`/api/activities/${id}`)
 }
+
+export const unsubscribeToActivity = id => {
+  return axios.patch(`/api/activities/${id}`)
+}
