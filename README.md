@@ -6,16 +6,41 @@ skills, but need a tennis partner? Look no further! Sign up for huddleUp!
 
 [Live Demo](https://huddleups.herokuapp.com/) 
 
+
+![Splash Page](https://media.giphy.com/media/dyWvPAXq3tq7Q8pI2X/giphy.gif)
+
+
 ## Funtionality and MVP
-- [ ] Users authorization: sign up and log in users (including a demo login)
-- [ ] Users can host events and signup for events 
-- [ ] Users can search for events by: location, time, and type of sport
-- [ ] Web and mobile applicatication with responsive design
-- [ ] Production README
+- [X] Users authorization: sign up and log in users (including a demo login)
+
+![User Auth](https://media.giphy.com/media/J3AUvjtaqNV4LYvEN2/giphy.gif)
+
+
+- [X] Users can host events and signup for events 
+- [X] Implement Google Maps API
+
+![Hosting](https://media.giphy.com/media/Y1wHOViu6b4pB8AC2o/giphy.gif)
+
+![Golf](https://media.giphy.com/media/S9zYwGndsnjH9aYpYf/giphy.gif)
+
+![Unsubscribed](https://media.giphy.com/media/iJ7NfsBPFLw9NeGP8y/giphy.gif)
+
+
+
+- [X] Users can search for events by: location, time, and type of sport
+
+![Filter](https://media.giphy.com/media/TGW9id1IiDrKrlkVMM/giphy.gif)
+
+
+- [ ] Users can create and update a profile
+
+![Profile](https://media.giphy.com/media/horgl6EfFkPT4cBCNw/giphy.gif)
+
+- [X] Production README
 
 ### Bonus Features 
 - [ ] Users can be able to comment/chat on the sporting event page they are signed up for
-- [ ] Implement Google Maps API
+- [ ] Web and mobile applicatication with responsive design
 - [ ] Users can review other users who attended the same sporting event (give ratings for reliability, on-time, sportsmanship, etc.)
 - [ ] Pictures of the locations
 
@@ -71,31 +96,36 @@ Meetings at 11:30AM
 #### May 11 (Monday) - Day 1
 - [X] User Authorization and Users can create and signup for events (Miguel)
 - [X] Build login and signup page (Backend) (Dorian)
-- [X] Build profile page (allows for editing) (Ngoc)
+- [X] Build profile page layout (creating and editing) (Ngoc)
 - [X] Create dashboard page that shows all events (Bryan)
 
 #### May 12 (Tuesday) - Day 2
-- [ ] User can edit profile and research Google Maps API (Miguel)
-- [ ] Implement Amazon Web Services (AWS) (Dorian and Bryan)
-- [ ] Layout page for an event (Bryan)
-- [ ] Search engine and filter (Ngoc)
-- [ ] Log in demo (Dorian)
+- [X] Research Google Maps API (Miguel)
+- [X] Create Amazon Web Service (AWS) bucket and research AWS (Bryan)
+- [X] Add backend routes and make a functioning edit profile (Ngoc)
+- [X] Log in demo and activities backend routes (Dorian)
 
 #### May 13 (Wednesday) - Day 3
-- [ ] User can search for event by: location, time, sporting event (Miguel and Bryan/Ngoc)
-- [ ] Search in Navbar and search page (Dorian and Bryan/Ngoc)
-- [ ] Push to Heroku
+- [X] User can filter event by: location, time, sporting event (Miguel)
+- [X] Implement Google API (Miguel)
+- [X] Hosting event and individual event page layout (Dorian)
+- [X] Push to Heroku and Work on uploading a picture with AWS (Ngoc)
+- [X] Have a functioning dashboard (Bryan)
 
 #### May 14 (Thursday) - Day 4
-- [ ] Make app mobile friendly (Miguel and Bryan/Ngoc)
-- [ ] Fix any CSS to make it responsive (Dorian and Bryan/Ngoc)
+- [X] Add dropdown of all events an User is attending and fix backend routes (Miguel)
+- [X] Users can create an event to host and geocode Google APIs (Dorian)
+- [X] Find splash pictures and favicon icon (Ngoc) 
+= [X] AWS research and edits to dashboard (Bryan)
 
 #### May 15 (Friday) - Day 5
-- [ ] Seed database (Everyone)
-- [ ] Finish testing and debugging (Miguel and Bryan/Ngoc)
-- [ ] Complete Production README.md (Ngoc)
-- [ ] Refine CSS styling and design (Dorian)
+- [X] Finish testing and debugging (Everyone)
+- [X] Refine CSS styling and design (Everyone)
+- [X] Complete Production README.md (Ngoc)
 
 ### Last weekend (May 16 and May 17, 2020)
 - [ ] Finish any work that should've been done by now
+- [ ] Fix bugs
 - [ ] Work on bonus features
+- [ ] Make app mobile friendly
+- [ ] Add events User are hosting 
