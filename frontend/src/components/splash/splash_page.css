@@ -23,6 +23,20 @@
     font-size: 16px;
 }
 
+#splash-huddleup { 
+    font-family: 'Josefin Sans', cursive;
+    text-decoration: none;
+    color: black;
+    margin: 0px 10px;
+    font-size: 16px;
+    cursor: default;
+}
+
+#login:hover,
+#signup:hover { 
+    color: white;
+}
+
 .auth-nav { 
     display: flex; 
     align-items: center;

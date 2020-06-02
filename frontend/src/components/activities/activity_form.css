@@ -104,6 +104,16 @@
     width: fit-content;
 }
 
+.find-form-button { 
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #EF8354;
+    border-radius: 25px;
+    width: 100px;
+}
+
+
 /* #floating-panel {
         position: absolute;
         top: 10px;

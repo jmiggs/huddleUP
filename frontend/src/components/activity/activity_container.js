@@ -32,8 +32,6 @@ const mapStateToProps = (state, ownProps) => {
   
     }
 
-
-
     return { activity, subscribed, existingSubscriptionId, numOfPlayers }
 };
 

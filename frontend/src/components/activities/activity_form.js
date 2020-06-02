@@ -37,13 +37,17 @@ class ActivityForm extends React.Component {
             return <div className="activity-form-spinner"><GuardSpinner size={20} frontColor="#EF8354" backColor="#2D3142" loading={this.state.clicked} /></div>;
         } else if (this.state.title.trim().length &&
             this.state.location.trim().length &&
-            this.state.sport.trim().length &&
-            this.state.numplayersneed.trim().length && 
+            this.state.sport.trim().length && 
+            this.state.numplayersneed.toString().trim().length && // This doesn't work for the edit page because it's a number when it's brought up from the db
             this.state.day.trim().length && 
             this.state.time.trim().length && 
             this.state.lat && 
             this.state.lng) { 
-            return <input type="submit" value="Host" className="submit-activity" />
+                if (this.props.formType === "Host") { 
+                    return <input type="submit" value="Host" className="submit-activity" />
+                } else if (this.props.formType === "Edit") { 
+                    return <input type="submit" value="Edit" className="submit-activity" />
+                }
         } else { 
             return < input type="submit" value="Host" className="submit-activity-faded" />
         }
@@ -115,13 +119,13 @@ class ActivityForm extends React.Component {
                                 <label className="activity-form-label">Location</label>
                                 {/* <input type="text" value={this.state.location} onChange={this.update("location")} className="activity-input-field" /> */}
                                 <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} className="activity-input-field" />
-                                <input id="submit" type="button" value="Find" />
+                                <input id="submit" type="button" value="Find" className="find-form-button" />
                             </div>
 
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Sport</label>
                                 <select onChange={this.update("sport")} className="form-dropdown">
-                                    <option value=""></option>
+                                    <option value={this.state.sport}></option>
                                     <option value="basketball">Basketball</option>
                                     <option value="football">Football</option>
                                     <option value="soccer">Soccer</option>
@@ -138,7 +142,7 @@ class ActivityForm extends React.Component {
                             <div className="activity-input-container"> 
                                 <label className="activity-form-label">Number of Players Needed</label>
                                 <select onChange={this.update("numplayersneed")} className="form-dropdown">
-                                    <option value=""></option>
+                                    <option value={this.state.numplayersneed}></option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -176,7 +180,7 @@ class ActivityForm extends React.Component {
                                 <label className="activity-form-label">Choose a Start Time (HH:MM A/P)</label>
                                 {/* <input type="time" onChange={this.update("time")} value={this.state.time} className="time-date-input" /> */}
                                 <select onChange={this.update("time")} className="form-dropdown">
-                                    <option value=""></option>
+                                    <option value={this.state.time}></option>
                                     <option value="7:00AM">7:00AM</option>
                                     <option value="7:30AM">7:30AM</option>
                                     <option value="8:00AM">8:00AM</option>

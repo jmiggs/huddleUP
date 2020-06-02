@@ -16,7 +16,8 @@ const mapStateToProps = state => ({
         clicked: false, 
         lat: "", 
         lng: ""
-    }
+    },
+    formType: "Host"
 })
 
 const mapDispatchToProps = dispatch => ({

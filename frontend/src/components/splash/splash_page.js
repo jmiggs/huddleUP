@@ -19,10 +19,11 @@ const SplashPage = props => {
     return (
         <div>
             <div className="splash-nav">
-                <Link to="/" className="splash-nav-link">huddleUP</Link>
+                {/* <Link to="/" className="splash-nav-link">huddleUP</Link> */}
+                <p id="splash-huddleup">huddleUP</p>
                 <div className="auth-nav">
-                    <Link to="/login" className="splash-nav-link">Log In</Link>
-                    <Link to="/signup" className="splash-nav-link">Sign Up</Link>
+                    <Link to="/login" id="login" className="splash-nav-link">Log In</Link>
+                    <Link to="/signup" id="signup" className="splash-nav-link">Sign Up</Link>
                 </div>
             </div>
             <div className="top-banner"> 
