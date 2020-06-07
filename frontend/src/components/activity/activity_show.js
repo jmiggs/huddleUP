@@ -119,6 +119,7 @@ class Activity extends React.Component {
             </div>
 
             {this.renderSubscribe()}
+            {(this.props.currentUser.id === this.props.activity.host) ? <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`}>Edit</button> : null}
           <ShowMap activity={this.props.activity} />
 
           </div>

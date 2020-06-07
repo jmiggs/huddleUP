@@ -26,10 +26,9 @@ class ActivityForm extends React.Component {
 
     formSubmission(e) { 
         e.preventDefault()
-        this.props.action(this.state)
         this.setState({ clicked: true })
-        // console.log(this.state)
-        window.location.href = "/dashboard";
+        this.props.action(this.state)
+            .then(window.location.href = "/dashboard");
     }
 
     renderSubmitButton() { 
@@ -94,7 +93,7 @@ class ActivityForm extends React.Component {
     }
 
     render() {
-        if (!this.props.currentUser) return null;
+        if (!this.props.currentUser && !this.props.activity) return null;
         // debugger 
         return (
             <div>
@@ -132,6 +131,7 @@ class ActivityForm extends React.Component {
                                     <option value="tennis">Tennis</option>
                                     <option value="golf">Golf</option>
                                 </select>
+                                <p>Original: {this.state.sport}</p>
                             </div>
 
                             <div className="activity-input-container">
@@ -169,6 +169,7 @@ class ActivityForm extends React.Component {
                                     <option value="24">24</option>
                                     <option value="25">25</option>
                                 </select>
+                                <p>Original: {this.state.numplayersneed}</p>
                             </div>
 
                             <div className="activity-input-container">
@@ -213,6 +214,7 @@ class ActivityForm extends React.Component {
                                     <option value="9:30PM">9:30PM</option>
                                     <option value="10:00PM">10:00PM</option>
                                 </select>
+                                <p>Original: {this.state.time}</p>
                             </div>
 
                             {/* <div className="activity-input-container">

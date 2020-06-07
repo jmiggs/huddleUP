@@ -32,7 +32,7 @@ const mapStateToProps = (state, ownProps) => {
   
     }
 
-    return { activity, subscribed, existingSubscriptionId, numOfPlayers }
+    return { activity, subscribed, existingSubscriptionId, numOfPlayers, currentUser }
 };
 
 const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,7 @@
 import React from "react"; 
 import { connect } from "react-redux";
 import ActivityForm from "./activity_form";
-import { fetchActivity } from "../../actions/activities_actions";
+import { fetchActivity, updateActivity } from "../../actions/activities_actions";
 
 class Edit extends React.Component { 
     componentDidMount() { 
@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchActivity: id => dispatch(fetchActivity(id)),
-    action: null // Need to make the backend edit action and the whole redux cycle
+    action: activity => dispatch(updateActivity(activity)) // Need to make the backend edit action and the whole redux cycle
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Edit)

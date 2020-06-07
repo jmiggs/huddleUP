@@ -55,6 +55,11 @@ export const createActivity = activity => dispatch => {
         .catch(err => console.log("BAD"))
 };
 
+export const updateActivity = activity => dispatch => { 
+    return ActivitiesAPIUtil.updateActivity(activity)
+        .then(res => dispatch(receiveActivity(res.data)))
+        .catch(err => console.log("BAD"))
+}
 
 export const subscribeToActivity = activityId => dispatch => {
 
