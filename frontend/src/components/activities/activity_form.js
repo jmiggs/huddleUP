@@ -20,15 +20,25 @@ class ActivityForm extends React.Component {
 
     update(field) { 
         return e => {
-            this.setState({ [field]: e.target.value })
+            if (field === "location") { 
+                this.setState({ [field]: e.target.value, lat: null, lng: null })
+            } else { 
+                this.setState({ [field]: e.target.value })
+            }
         }
     }
 
     formSubmission(e) { 
         e.preventDefault()
         this.setState({ clicked: true })
-        this.props.action(this.state)
-            .then(window.location.href = "/dashboard");
+        if (this.props.formType === "Edit") { 
+            this.props.action(this.state)
+                .then(window.location.href = `/#/activity/${this.state._id}`);
+        } else { 
+            this.props.action(this.state)
+                .then(window.location.href = "/#/dashboard");
+        }
+        
     }
 
     renderSubmitButton() { 
@@ -94,7 +104,7 @@ class ActivityForm extends React.Component {
 
     render() {
         if (!this.props.currentUser && !this.props.activity) return null;
-        // debugger 
+        
         return (
             <div>
                 <NavBarContainer />
@@ -131,7 +141,9 @@ class ActivityForm extends React.Component {
                                     <option value="tennis">Tennis</option>
                                     <option value="golf">Golf</option>
                                 </select>
-                                <p>Original: {this.state.sport}</p>
+                                {(this.props.formType === "Edit") ? 
+                                <p className="original-values">Original: {this.state.sport.charAt(0).toUpperCase() + this.state.sport.slice(1)}</p> : 
+                                null }
                             </div>
 
                             <div className="activity-input-container">
@@ -169,7 +181,9 @@ class ActivityForm extends React.Component {
                                     <option value="24">24</option>
                                     <option value="25">25</option>
                                 </select>
-                                <p>Original: {this.state.numplayersneed}</p>
+                                {(this.props.formType === "Edit") ?
+                                    <p className="original-values">Original: {this.state.numplayersneed}</p> :
+                                null}                           
                             </div>
 
                             <div className="activity-input-container">
@@ -214,7 +228,9 @@ class ActivityForm extends React.Component {
                                     <option value="9:30PM">9:30PM</option>
                                     <option value="10:00PM">10:00PM</option>
                                 </select>
-                                <p>Original: {this.state.time}</p>
+                                {(this.props.formType === "Edit") ?
+                                    <p className="original-values">Original: {this.state.time}</p> :
+                                null}  
                             </div>
 
                             {/* <div className="activity-input-container">

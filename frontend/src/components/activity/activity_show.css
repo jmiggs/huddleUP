@@ -84,6 +84,19 @@
     width: 110px;
 }
 
+.show-edit-button { 
+    border: none;
+    background: none;
+    padding-bottom: 10px;
+    color: #2D3142;
+    cursor: pointer;
+    outline: none;
+}
+
+.show-edit-button:hover { 
+    color: #EF8354;
+}
+
 .activity-show-map { 
     width: 600px;
     height: 600px;

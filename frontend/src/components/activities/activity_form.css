@@ -11,6 +11,8 @@
 .activity-box-box {
     display: flex;
     align-items: center;
+    width: 85%;
+    justify-content: space-evenly;
 }
 
 .activity-form-map { 
@@ -46,6 +48,7 @@
     font-size: 16px;
     resize: none;
     border-radius: 0px 4px 4px 0px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .activity-input-field:focus { 
@@ -57,6 +60,12 @@
     background-color: #ef825414;
     font-size: 16px;
     width: fit-content;
+}
+
+.original-values { 
+    font-family: 'Josefin Sans', cursive;
+    padding-top: 3px;
+    font-size: 16px;
 }
 
 .submit-activity { 
@@ -111,6 +120,7 @@
     background-color: #EF8354;
     border-radius: 25px;
     width: 100px;
+    padding-top: 3px;
 }
 
 

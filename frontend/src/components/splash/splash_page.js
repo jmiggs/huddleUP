@@ -8,6 +8,9 @@ import BayAreaPic from "../../assets/bay-area.png";
 import MessagePic from "../../assets/message.png";
 import Basketball from "../../assets/basketball.png";
 import Soccer from "../../assets/soccer.png";
+// import SoccerCartoon from "../../assets/little-soccer-boy.png";
+import CartoonSoccerPlayer from "../../assets/cartoon-soccer-players.png";
+
 
 const goToSignUp = () => {
     window.location.href = '/#/signup';
@@ -18,29 +21,34 @@ const goToSignUp = () => {
 const SplashPage = props => { 
     return (
         <div>
-            <div className="splash-nav">
-                {/* <Link to="/" className="splash-nav-link">huddleUP</Link> */}
-                <p id="splash-huddleup">huddleUP</p>
-                <div className="auth-nav">
-                    <Link to="/login" id="login" className="splash-nav-link">Log In</Link>
-                    <Link to="/signup" id="signup" className="splash-nav-link">Sign Up</Link>
-                </div>
-            </div>
-            <div className="top-banner"> 
-                <div className="top-banner-text">
-                    <h1 className="main-phrase">Nobody to play with? We got you covered.</h1>
-                    <p className="main-phrase-caption">Go outside knowing that you won't be bored playing by yourself.</p>
-                    <div>
-                        {/* <div className="signup-splash-button">
-                            <Link to="/signup" className="signup-splash-button-text">Sign Up, Have Fun</Link>
-                        </div> */}
-                        <div className="signup-splash-button" onClick={goToSignUp}> 
-                            <p className="signup-splash-button-text">Sign Up, Have Fun</p>
-                        </div>
-                        <p className="signin-splash-text">Already using huddleUP? <Link to="/login" className="signin-splash-link">Log In</Link></p>
+
+            <div className="top-banner">
+                <div className="splash-nav">
+                    {/* <Link to="/" className="splash-nav-link">huddleUP</Link> */}
+                    <p id="splash-huddleup">huddleUP</p>
+                    <div className="auth-nav">
+                        <Link to="/login" id="login" className="splash-nav-link">Log In</Link>
+                        <Link to="/signup" id="signup" className="splash-nav-link">Sign Up</Link>
                     </div>
+                </div> 
+                <div className="top-banner-not-the-nav"> 
+                    <div className="top-banner-text">
+                        <h1 className="main-phrase">Nobody to play with? We got you covered.</h1>
+                        <p className="main-phrase-caption">Go outside knowing that you won't be bored playing by yourself.</p>
+                        <div>
+                            {/* <div className="signup-splash-button">
+                                <Link to="/signup" className="signup-splash-button-text">Sign Up, Have Fun</Link>
+                            </div> */}
+                            <div className="signup-splash-button" onClick={goToSignUp}> 
+                                <p className="signup-splash-button-text">Sign Up, Have Fun</p>
+                            </div>
+                            <p className="signin-splash-text">Already using huddleUP? <Link to="/login" className="signin-splash-link">Log In</Link></p>
+                        </div>
+                    </div>
+                    <img className="top-banner-picture" src={CartoonSoccerPlayer} alt="Soccer Cartoon" />
                 </div>
             </div>
+
             <div className="bottom-half-of-splash">
                 <h1 className="what-is-huddleup">What is huddleUP?</h1>
                 <div className="huddleup-is"> 
@@ -88,7 +96,9 @@ const SplashPage = props => {
                     <p className="signup-bottom-button-text">Let's Go</p>
                 </div>
             </div>
+
             <Footer />
+            
         </div>
     )
 }
