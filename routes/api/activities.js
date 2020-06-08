@@ -68,6 +68,7 @@ router.get('/', (req, res) => {
         { sport: boundsObj.sport },
         { time: {$in: boundsObj.time } },
         { day: {$in: boundsObj.day } },
+        { location: boundsObj.location }
       ]}).
       then(activities => {res.json(activities); console.log(activities)}).
       catch( err => res.status(404).json({ noactivities: 'No activities found' }));
@@ -77,11 +78,43 @@ router.get('/', (req, res) => {
 
 // get activity by ID
 router.get('/:id', (req, res) => {
+  // console.log(res) // My console logs don't work (Dorian)
   Activity.findById(req.params.id)
-    .then(activity => res.json(activity))
+    .then(activity => res.json(activity)) 
     .catch(err =>
         res.status(404).json({ noactivityfound: 'No Activity found with that ID' })
     );
+});
+
+// update activity by ID
+router.patch("/:id", (req, res) => {
+  // console.log(req)
+
+  let filter = { _id: req.params.id };
+  let update = req.body;
+
+  Activity.findOneAndUpdate(filter, update, { new: true })
+    .then(activity => {
+      // console.log(user)
+      let updateActivity = {
+        id: activity._id,
+        title: activity.title,
+        location: activity.location,
+        lat: activity.lat,
+        lng: activity.lng,
+        sport: activity.sport,
+        day: activity.day,
+        time: activity.time,
+        date: activity.date,
+        description: activity.description,
+        numplayersneed: activity.numplayersneed,
+        participants: activity.participants,
+        host: activity.host
+      }
+      res.json(updateActivity)
+    })
+    .catch(err =>
+      res.status(400).json(err))
 });
 
 //get activities that a user is attending

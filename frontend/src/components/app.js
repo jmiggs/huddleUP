@@ -12,6 +12,7 @@ import ProfilePageContainer from "./profile/profile_page_container";
 import DashBoardContainer from './dashboard/dashboard_container';
 import ActivityContainer from './activity/activity_container'
 import CreateActivityContainer from "./activities/create_activity_container";
+import EditActivityContainer from "./activities/edit_activity_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
 
 import SearchContainerBball from "./search/search_container_bball";
@@ -36,6 +37,7 @@ const App = () => (
             <Route exact path="/users/:id" component={ProfilePageContainer} />
             <ProtectedRoute path ="/users/:id/edit" component={EditProfilePageContainer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
+            <ProtectedRoute path="/activity/:id/edit" component={EditActivityContainer} />
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
             <ProtectedRoute exact path="/basketball" component={SearchContainerBball} /> 
             <ProtectedRoute exact path="/soccer" component={SearchContainerSoccer} /> 
