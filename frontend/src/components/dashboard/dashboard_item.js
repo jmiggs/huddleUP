@@ -16,10 +16,8 @@ const DashBoardItem = ({ activity }) => {
                     )
                 )
             }
-            {/* <img className='event-img' alt="" src='event-img.jpg' /> */}
-
             <br/>
-            <span className='event-date'>{activity.day}, {activity.date.slice(0,10)} </span>
+            <span className='event-date'>{activity.day}</span>
             <span className='event-title'>{activity.title}</span>
         </div>
     )
