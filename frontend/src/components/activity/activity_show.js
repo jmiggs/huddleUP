@@ -28,30 +28,28 @@ class Activity extends React.Component {
 
   componentCleanup() { // this will hold the cleanup code
     // whatever you want to do when the component is unmounted or page refreshes
-    // if (this.state.subscribed && !this.state.existingSubscriptionId) { 
-    //   this.props.subscribeToActivity(this.props.activity._id)
-    // } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
-    //   this.props.unsubscribeToActivity(this.props.activity._id)
-    // }
+    if (this.state.subscribed && !this.state.existingSubscriptionId) { 
+      this.props.subscribeToActivity(this.props.activity._id)
+    } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
+      this.props.unsubscribeToActivity(this.props.activity._id)
+    }
   }
   
   componentDidMount() { 
-      this.props.fetchActivity(this.props.match.params.id)
+    this.props.fetchActivity(this.props.match.params.id)
     // From Google Maps API docs
-    // window.addEventListener('beforeunload', this.componentCleanup);
+    window.addEventListener('beforeunload', this.componentCleanup);
   }
   
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
-    // if (this.props.subscribed !== prevProps.subscribed) { 
-    //   this.setState({ subscribed: this.props.subscribed })
-    // }
-    // prevProps.activity
+    if (this.props.subscribed !== prevProps.subscribed) { 
+      this.setState({ subscribed: this.props.subscribed, existingSubscriptionId: this.props.existingSubscriptionId })
+    }
+    
     if (prevProps.activity) {
-      // debugger
       if (this.props.activity) {
         if (this.props.activity._id !== prevProps.activity._id) { 
           // this.initMap() // From Google Maps API docs
-          // debugger
           this.props.fetchActivity(this.props.match.params.id)
         } 
       } else {
@@ -60,36 +58,33 @@ class Activity extends React.Component {
     } 
   }
   
-  // componentWillUnmount() {
-  //   // this.componentCleanup();
-  //   // window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
-  // } 
-
-  // componentWillMount() {
-    
-  // }
+  componentWillUnmount() {
+    this.componentCleanup();
+    window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
+  } 
 
  
   changeUnsubscription(e) { 
-    // e.preventDefault();
+    e.preventDefault();
 
-    this.props.unsubscribeToActivity(this.props.activity._id);
+    // this.props.unsubscribeToActivity(this.props.activity._id);
     this.setState({ subscribed: !this.state.subscribed });
      
   }
-  changeSubscription(e) { 
-    // e.preventDefault();
 
-    this.props.subscribeToActivity(this.props.activity._id);
+  changeSubscription(e) { 
+    e.preventDefault();
+
+    // this.props.subscribeToActivity(this.props.activity._id);
     this.setState({ subscribed: !this.state.subscribed });
   }
 
   renderSubscribe() { 
     if (this.state) { 
       if (this.state.subscribed) {
-        return <button className="unsubscribe-button" onClick={(e) => this.changeUnsubscription(e)}>Unsubscribe</button>
+        return <button className="unsubscribe-button" onClick={this.changeUnsubscription}>Unsubscribe</button>
       } else {
-        return <button className="subscribe-button" onClick={(e) => this.changeSubscription(e)}>Subscribe</button>
+        return <button className="subscribe-button" onClick={this.changeSubscription}>Subscribe</button>
       }
     }
   }
@@ -98,7 +93,7 @@ class Activity extends React.Component {
 
   render() { 
     if (!this.props.activity) return null;
-    
+    // console.log(this.state)
     return (
       <div>
         <NavBarContainer />

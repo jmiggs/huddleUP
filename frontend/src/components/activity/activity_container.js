@@ -31,7 +31,7 @@ const mapStateToProps = (state, ownProps) => {
       }
   
     }
-
+    // debugger
     return { activity, subscribed, existingSubscriptionId, numOfPlayers, currentUser }
 };
 

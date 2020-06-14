@@ -37,5 +37,5 @@ export const subscribeToActivity = id => {
 }
 
 export const unsubscribeToActivity = id => {
-  return axios.patch(`/api/activities/${id}`)
+  return axios.patch(`/api/activities/unsubscribe/${id}`)
 }
