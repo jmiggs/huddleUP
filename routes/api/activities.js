@@ -167,7 +167,7 @@ router.post('/:activityid',
   });
 
 //  unsubscribe to event
-router.patch('/:activityid', 
+router.patch('/subscribe/:activityid', 
   passport.authenticate('jwt', {session: false}), 
   (req, res) => {
 
