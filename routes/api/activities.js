@@ -70,7 +70,7 @@ router.get('/', (req, res) => {
         { day: {$in: boundsObj.day } },
         { location: boundsObj.location }
       ]}).
-      then(activities => {res.json(activities); console.log(activities)}).
+      then(activities => {res.json(activities);}).
       catch( err => res.status(404).json({ noactivities: 'No activities found' }));
   }
 
@@ -121,7 +121,7 @@ router.patch("/:id", (req, res) => {
 router.get('/users/:id', (req, res) => {
   // console.log(req)
   Activity.find( {participants: req.params.id} )
-    .then(activities => {res.json(activities); console.log(activities)})
+    .then(activities => {res.json(activities);})
     .catch(err =>
         res.status(404).json({ noactivityfound: 'No Activity found with that ID' })
     );
