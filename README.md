@@ -84,48 +84,6 @@ a user's information and an event's information).
 * **Flex**: [Ngoc Ly](https://github.com/ngocthily)
   * Splits between frontend and backend based on the needs of the application
 
-### Over The Weekend (May 9 and May 10, 2020)
-Meetings at 11:30AM
-- [X] Set up Git repo (Miguel)
-- [X] Repo README (Ngoc)
-- [X] AWS setup (Bryan and Dorian)
-- [X] Mapping out frontend components and Visual (Dorian)
-- [X] Splash page (Dorian)
-
-### Week (May 11-15, 2020) -*Tentative* (Bryan and Ngoc will go where needed)
-#### May 11 (Monday) - Day 1
-- [X] User Authorization and Users can create and signup for events (Miguel)
-- [X] Build login and signup page (Backend) (Dorian)
-- [X] Build profile page layout (creating and editing) (Ngoc)
-- [X] Create dashboard page that shows all events (Bryan)
-
-#### May 12 (Tuesday) - Day 2
-- [X] Research Google Maps API (Miguel)
-- [X] Create Amazon Web Service (AWS) bucket and research AWS (Bryan)
-- [X] Add backend routes and make a functioning edit profile (Ngoc)
-- [X] Log in demo and activities backend routes (Dorian)
-
-#### May 13 (Wednesday) - Day 3
-- [X] User can filter event by: location, time, sporting event (Miguel)
-- [X] Implement Google API (Miguel)
-- [X] Hosting event and individual event page layout (Dorian)
-- [X] Push to Heroku and Work on uploading a picture with AWS (Ngoc)
-- [X] Have a functioning dashboard (Bryan)
-
-#### May 14 (Thursday) - Day 4
-- [X] Add dropdown of all events an User is attending and fix backend routes (Miguel)
-- [X] Users can create an event to host and geocode Google APIs (Dorian)
-- [X] Find splash pictures and favicon icon (Ngoc) 
-= [X] AWS research and edits to dashboard (Bryan)
-
-#### May 15 (Friday) - Day 5
-- [X] Finish testing and debugging (Everyone)
-- [X] Refine CSS styling and design (Everyone)
-- [X] Complete Production README.md (Ngoc)
-
-### Last weekend (May 16 and May 17, 2020)
-- [ ] Finish any work that should've been done by now
-- [ ] Fix bugs
-- [ ] Work on bonus features
-- [ ] Make app mobile friendly
-- [ ] Add events User are hosting 
+## Future Features
+* Make app mobile friendly
+* Add events User are hosting 
