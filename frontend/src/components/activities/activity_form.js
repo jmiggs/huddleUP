@@ -47,7 +47,7 @@ class ActivityForm extends React.Component {
         } else if (this.state.title.trim().length &&
             this.state.location.trim().length &&
             this.state.sport.trim().length && 
-            this.state.numplayersneed.toString().trim().length && // This doesn't work for the edit page because it's a number when it's brought up from the db
+            this.state.numplayersneed.toString().trim().length && // Have to convert it to a string because an integer is brought up from the db with the edit form
             this.state.day.trim().length && 
             this.state.time.trim().length && 
             this.state.lat && 
@@ -243,7 +243,16 @@ class ActivityForm extends React.Component {
                                 <input type="text" onChange={this.update("lng")} value={this.state.lng} className="activity-input-field" />
                             </div> */}
 
-                            {this.renderSubmitButton()}
+                            <div className="form-buttons-container"> 
+                                {this.renderSubmitButton()}
+                                <button className="cancel-form-button" onClick={() => {
+                                    if (this.props.formType === "Edit") {
+                                        window.location.href = `/#/activity/${this.state._id}`;
+                                    } else {
+                                        window.location.href = "/#/dashboard";
+                                    }
+                                }}>Cancel</button>
+                            </div>
                         </form>
                     </div>
                 </div>
