@@ -62,13 +62,9 @@
 
 }
 
-/* .dropdown-nav-text:hover{ 
+.dropdown-nav-text:hover{
   color: white;
   cursor: pointer;
-} */
-.dropdown-nav-text:hover{ /* Dorian changed it to this after Joey's review */
-  color: black;
-  cursor: default;
 }
 
 .item-info {

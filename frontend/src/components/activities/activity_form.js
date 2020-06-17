@@ -36,7 +36,7 @@ class ActivityForm extends React.Component {
                 .then(window.location.href = `/#/activity/${this.state._id}`);
         } else { 
             this.props.action(this.state)
-                .then(window.location.href = "/#/dashboard");
+                .then(data => window.location.href = `/#/activity/${data.activity._id}`);
         }
         
     }
@@ -63,6 +63,7 @@ class ActivityForm extends React.Component {
     }
 
     componentDidMount() { 
+        window.scrollTo({ top: 0 });
         if (this.props.currentUser) { 
             this.initMap()
         }
@@ -245,10 +246,12 @@ class ActivityForm extends React.Component {
 
                             <div className="form-buttons-container"> 
                                 {this.renderSubmitButton()}
-                                <button className="cancel-form-button" onClick={() => {
+                                <button className="cancel-form-button" onClick={(e) => {
                                     if (this.props.formType === "Edit") {
+                                        e.preventDefault();
                                         window.location.href = `/#/activity/${this.state._id}`;
                                     } else {
+                                        e.preventDefault();
                                         window.location.href = "/#/dashboard";
                                     }
                                 }}>Cancel</button>
