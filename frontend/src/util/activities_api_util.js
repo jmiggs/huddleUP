@@ -5,7 +5,6 @@ export const getActivities = () => {
 };
 
 export const getActivitiesFiltered = (filters) => {
-
   return axios.get("/api/activities/", {params: {filters: filters}})
 };
 

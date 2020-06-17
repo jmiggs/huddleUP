@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { updateFilter} from '../../actions/filter_actions'
-import { fetchActivities } from '../../actions/activities_actions'
+import { fetchActivities, fetchActivity } from '../../actions/activities_actions'
+import { fetchActivitiesFiltered } from '../../actions/activities_actions'
 
 import Search from './search';
 
@@ -18,8 +19,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
-  fetchActivities: () => dispatch(fetchActivities())
-
+  fetchActivities: () => dispatch(fetchActivities()), 
+  fetchActivitiesFiltered: () => dispatch(fetchActivitiesFiltered())
 });
 
 export default connect(

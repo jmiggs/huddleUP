@@ -47,31 +47,56 @@ router.get('/', (req, res) => {
   // if there are no filters in the request, use the first .find() to query all activities
   // if there are filters in the request, use the second .find and apply the filters
   // NOTE: will need to add more $and conditions as we implement more filters..
+
   if (!req.query.filters) {
     Activity.find()
       .sort({ date: -1 })
       .then(activities => res.json(activities))
       .catch(err => res.status(404).json({ noactivities: 'No activities found' }));
   } else {
+   
 
     // formatting/deconstructing bounds passed from front end component
     let boundsObj = JSON.parse(req.query.filters);
     let { bounds } = boundsObj;
-    // console.log(boundsObj)
-    // applying filters to select activities
-    Activity.find({
-      $and: [
-        { lat: {$lt: bounds.northEast.lat } },
-        { lng: {$lt: bounds.northEast.lng } },
-        { lat: {$gt: bounds.southWest.lat } },
-        { lng: {$gt: bounds.southWest.lng } },
-        { sport: boundsObj.sport },
-        { time: {$in: boundsObj.time } },
-        { day: {$in: boundsObj.day } },
-        { location: boundsObj.location }
-      ]}).
-      then(activities => {res.json(activities); console.log(activities)}).
-      catch( err => res.status(404).json({ noactivities: 'No activities found' }));
+   
+    // if there is a day filter, or if the day filter is reset to null, use the first fetch, else
+    // use the second fetch
+    if (Object.keys(boundsObj).includes('day') && boundsObj.day !== 'null') {
+      
+      Activity.find({
+        $and: [
+          { lat: {$lt: bounds.northEast.lat } },
+          { lng: {$lt: bounds.northEast.lng } },
+          { lat: {$gt: bounds.southWest.lat } },
+          { lng: {$gt: bounds.southWest.lng } },
+          { sport: boundsObj.sport },
+          { time: {$in: boundsObj.time } },
+          { day: {$in: boundsObj.day } },
+          // { location: boundsObj.location }
+        ]}).
+        then(activities => {
+          console.log(boundsObj.day)
+          console.log(boundsObj.time)
+          res.json(activities)}).
+        catch( err => res.status(404).json({ noactivities: 'No activities found' }));
+    } else {
+      Activity.find({
+        $and: [
+          { lat: {$lt: bounds.northEast.lat } },
+          { lng: {$lt: bounds.northEast.lng } },
+          { lat: {$gt: bounds.southWest.lat } },
+          { lng: {$gt: bounds.southWest.lng } },
+          { sport: boundsObj.sport },
+          { time: {$in: boundsObj.time } },
+          // { day: {$in: boundsObj.day } },
+          // { location: boundsObj.location }
+        ]}).
+        then(activities => {
+          res.json(activities)}).
+        catch( err => res.status(404).json({ noactivities: 'No activities found' }));
+    }
+
   }
 
 });
@@ -121,7 +146,7 @@ router.patch("/:id", (req, res) => {
 router.get('/users/:id', (req, res) => {
   // console.log(req)
   Activity.find( {participants: req.params.id} )
-    .then(activities => {res.json(activities); console.log(activities)})
+    .then(activities => {res.json(activities);})
     .catch(err =>
         res.status(404).json({ noactivityfound: 'No Activity found with that ID' })
     );

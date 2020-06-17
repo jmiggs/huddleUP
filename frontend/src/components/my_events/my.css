@@ -1,0 +1,48 @@
+.my-wrapper {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+}
+
+.my-header{
+  height: 70px;
+  font-size: 3.5em;
+  font-weight: 900;
+  font-family: 'Josefin Sans', cursive;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+.my-right {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-left: 100px;
+  padding-top: 20px;
+}
+
+.my-buttontab {
+  border: 1px solid #EF8354;
+  background-color: #ef825414;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #EF8354;
+}
+
+.my-buttontab-active {
+  border: 1px solid #EF8354;
+  background-color: #EF8354;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+.my-buttontab:hover {
+  cursor: pointer;
+}
+
+button:focus {outline:0;}

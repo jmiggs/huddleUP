@@ -40,6 +40,7 @@ class Activity extends React.Component {
     this.props.fetchActivity(this.props.match.params.id)
     
     // window.addEventListener('beforeunload', this.componentCleanup);
+
   }
   
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
@@ -95,6 +96,7 @@ class Activity extends React.Component {
   }
 
   render() { 
+
     if (!this.props.activity) return null;
     // console.log(this.state)
     return (

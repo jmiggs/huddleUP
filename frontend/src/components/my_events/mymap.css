@@ -1,13 +1,11 @@
-.map-this {
+.mymap-this {
   width: 450px;
   height: 450px;
 }
 
-.map-container {
+.mymap-container {
   border: 7px solid #EF8354;
   border-radius: 8px;
   margin-left: 150px;
   margin-top: 5px;
-  
 }
-

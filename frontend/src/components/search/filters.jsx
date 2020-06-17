@@ -2,13 +2,33 @@ import React from 'react';
 import './search.css';
 
 
-const handleChange = (filter, updateFilter) => e => {
-
-  if (e.currentTarget.value === 'all') {
-    updateFilter(filter, filter === 'time'? allTimes : allDays)
-  } else {
+const handleChange = (filter, updateFilter, fetchActivitiesFiltered) => e => {
+  const p1 = new Promise( (resolve, reject) => {
     updateFilter(filter, [e.currentTarget.value]);
-  }
+    resolve()
+  })
+  const p2 = new Promise( (resolve, reject) => {
+    fetchActivitiesFiltered()
+    resolve()
+  })
+};
+
+const handleReset = (updateFilter, fetchActivitiesFiltered) => e => {
+  // need to seperate the updatefilter and fetching methods.
+  const p1 = new Promise( (resolve, reject) => {
+    updateFilter('time', allTimes)
+    updateFilter('day', 'null')
+    resolve()
+  })
+  const p2 = new Promise( (resolve, reject) => {
+    fetchActivitiesFiltered()
+    resolve()
+  })
+
+  p1.then(() => p2)
+
+  document.getElementById('filter-date').value = ''
+  document.getElementById('time-dropdown').selectedIndex = 0
 };
 
 const allTimes = [
@@ -58,9 +78,13 @@ const FilterForm = ( props ) => (
   <div>
     <div className="filter-header"> Filters:</div> 
     <div className="filter-container">
-      <select size="1" className="time-dropdown" onChange={handleChange('time', props.updateFilter )} >
-        <option value="" disabled selected>Pick a Time</option>
-        <option value="all">Show All</option>
+      <select size="1" 
+              className="time-dropdown" 
+              id="time-dropdown" 
+              onChange={handleChange('time', props.updateFilter, props.fetchActivitiesFiltered )}
+              defaultValue={''}
+      >
+        <option value="" disabled>Pick a Time</option>
         <option value="8:00AM">8:00AM</option>
         <option value="8:30AM">8:30AM</option>
         <option value="9:00AM">9:00AM</option>
@@ -91,9 +115,20 @@ const FilterForm = ( props ) => (
         <option value="9:30PM">9:30PM</option>
         <option value="10:00PM">10:00PM</option>
       </select>
-      {/* <input type="date" className="filter-date" /> */}
+      <input 
+        type="date" 
+        className="filter-date" 
+        id="filter-date" 
+        onChange={handleChange('day', props.updateFilter, props.fetchActivitiesFiltered )}
+      />
+      <button 
+        onClick={handleReset(props.updateFilter, props.fetchActivitiesFiltered )}
+        className="reset-filters"
+      >
+        Reset Filters
+      </button>
 
-      <select className="day-dropdown" onChange={handleChange('day', props.updateFilter )} >
+      {/* <select className="day-dropdown" onChange={handleChange('day', props.updateFilter )} >
           <option value="" disabled selected>Pick a Day</option>
           <option value="all">Show All</option>
           <option value="monday">Monday</option>
@@ -103,7 +138,9 @@ const FilterForm = ( props ) => (
           <option value="friday">Friday</option>
           <option value="saturday">Saturday</option>
           <option value="sunday">Sunday</option>
-      </select>
+      </select> */}
+
+
     </div>
     <div>
 

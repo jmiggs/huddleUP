@@ -23,7 +23,7 @@
 }
 
 .right-half {
-  padding-top: 80px;
+  padding-top: 70px;
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -54,7 +54,6 @@
 }
 
 .day-dropdown {
-  border: none;
   border: 1px solid #EF8354;
   background-color: #ef825414;
   padding: 5px;
@@ -66,15 +65,14 @@
 }
 
 .filter-date {
-  border: none;
+
   border: 1px solid #EF8354;
   background-color: #ef825414;
   padding: 5px;
   font-size: 16px;
-
+  margin-right: 10px;
   border-radius: 5px;
   color: #EF8354;
-  height: 1rem;
 }
 
 .filter-container {
@@ -88,4 +86,15 @@
   font-size: 1.6rem;
   font-weight: 100;
   font-family: 'Josefin Sans', cursive;
+}
+
+.reset-filters {
+  border: 1px solid #EF8354;
+  background-color: #ef825414;
+  color:#EF8354;
+  border-radius: 5px;
+}
+
+.reset-filters:hover {
+  cursor: pointer;
 }
