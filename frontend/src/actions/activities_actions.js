@@ -64,7 +64,7 @@ export const updateActivity = activity => dispatch => {
 export const subscribeToActivity = activityId => dispatch => {
 
     return ActivitiesAPIUtil.subscribeToActivity(activityId)
-        // .then(res => dispatch(receiveActivity(res.data))) // I don't even need an action for this since I'm doing it when the user leaves the page
+        .then(res => dispatch(receiveActivity(res.data))) // I don't even need an action for this since I'm doing it when the user leaves the page
         // .then(res => console.log(res))
         .catch(err => console.log("Can't subscribe to this activity"))
 }
@@ -72,7 +72,7 @@ export const subscribeToActivity = activityId => dispatch => {
 export const unsubscribeToActivity = activityId => dispatch => {
 
   return ActivitiesAPIUtil.unsubscribeToActivity(activityId)
-    //   .then(res => dispatch(receiveActivity(res.data)))
+      .then(res => dispatch(receiveActivity(res.data)))
     //   .then(res => console.log(res))
       .catch(err => console.log("Can't unsubscribe to this activity"))
 }
