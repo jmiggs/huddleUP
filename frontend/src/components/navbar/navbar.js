@@ -17,8 +17,7 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-    //   console.log('componentdidmount')
-      this.props.fetchUserActivities(this.props.id);
+
     }
   
 
@@ -57,7 +56,8 @@ class NavBar extends React.Component {
                 <div className="right-navbar">
                     <div className="navbar-links">
                         {/* redirect to explore page */}
-                        <EventsDropdown className="navbar-explore-link" userActivities={this.props.userActivities} id={this.props.id} />
+                        {/* <EventsDropdown className="navbar-explore-link" userActivities={this.props.userActivities} id={this.props.id} /> */}
+                        <Link to={`/users/${this.props.id}/myevents`} className="navbar-explore-link">My Events</Link>
                         <Link to="/" className="navbar-explore-link">
                             Explore
                         </Link>

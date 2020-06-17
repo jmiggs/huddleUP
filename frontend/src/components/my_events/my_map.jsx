@@ -1,19 +1,17 @@
-import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { withRouter } from 'react-router-dom';
-import MapMarker from './mapmarker'
-
 import "../../reset.css";
-import "./map.css"
+import "./mymap.css"
+
+import React from 'react';
+import MapMarker from './../map/mapmarker'
 
 const google = window.google
 
-class Map extends React.Component {
+class MyMap extends React.Component {
 
   componentDidMount() {
     const mapOptions = {
-      center: { lat: 37.798887, lng: -122.401373 }, 
-      zoom: 11
+      center: { lat: 36.77883, lng: -119.4179 }, 
+      zoom: 6
     };
     // puts map on the page
     const map = this.refs.map;
@@ -28,7 +26,6 @@ class Map extends React.Component {
   }
 
   componentDidUpdate() {
-   
     this.mapMarker.updateMarkers(this.props.activities);
   }
 
@@ -47,26 +44,27 @@ class Map extends React.Component {
       // this function updates the ui slice of state with bounds as filters
       // and then uses those filters to grab the locations that are within the bounds
 
-      const p1 = new Promise( (resolve, reject)=> {
-        this.props.updateFilter('bounds', bounds);
-        this.props.updateFilter('sport', this.props.type);
-      })
+      // const p1 = new Promise( (resolve, reject)=> {
+      //   this.props.updateFilter('bounds', bounds);
+      //   this.props.updateFilter('sport', this.props.type);
+      // })
 
-      const p2 = new Promise( (resolve, reject) => {
-        this.props.fetchActivitiesFiltered()
-      })
+      // const p2 = new Promise( (resolve, reject) => {
+      //   this.props.fetchActivitiesFiltered()
+      // })
 
-      p1.then(()=> p2)
+      // p1.then(()=> p2)
       
     });
-
   }
 
 
   render() {
+
     return(
       <div className="map-container">
-        <div className="map-this" ref="map">
+   
+        <div className="mymap-this" ref="map">
           Map
         </div>
       </div>
@@ -74,4 +72,4 @@ class Map extends React.Component {
   }
 };
 
-export default Map
+export default MyMap

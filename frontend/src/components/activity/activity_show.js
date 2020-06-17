@@ -38,7 +38,18 @@ class Activity extends React.Component {
   componentDidMount() { 
     this.props.fetchActivity(this.props.match.params.id)
     // From Google Maps API docs
-    window.addEventListener('beforeunload', this.componentCleanup);
+    window.addEventListener('beforeunload', () => {
+      const p1 = new Promise( (resolve, reject) => {
+        this.componentCleanup()
+      })
+
+      const p2 = new Promise( (resolve, reject) => {
+        this.props.fetchUserActivities(this.props.currentUser.id)
+      })
+
+      console.log('hit')
+      p1.then(() => p2)
+    });
   }
   
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
@@ -90,6 +101,7 @@ class Activity extends React.Component {
   }
 
   render() { 
+
     if (!this.props.activity) return null;
     // console.log(this.state)
     return (

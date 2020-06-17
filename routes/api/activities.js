@@ -81,7 +81,6 @@ router.get('/', (req, res) => {
           res.json(activities)}).
         catch( err => res.status(404).json({ noactivities: 'No activities found' }));
     } else {
-      console.log('hit')
       Activity.find({
         $and: [
           { lat: {$lt: bounds.northEast.lat } },

@@ -14,6 +14,7 @@ import ActivityContainer from './activity/activity_container'
 import CreateActivityContainer from "./activities/create_activity_container";
 import EditActivityContainer from "./activities/edit_activity_container";
 import EditProfilePageContainer from "./profile/edit_profile_page_container";
+import MyEventsContianer from './my_events/my_events_container';
 
 import SearchContainerBball from "./search/search_container_bball";
 import SearchContainerFootball from "./search/search_container_football";
@@ -36,6 +37,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <Route exact path="/users/:id" component={ProfilePageContainer} />
             <ProtectedRoute path ="/users/:id/edit" component={EditProfilePageContainer} />
+            <ProtectedRoute path ="/users/:id/myevents" component={MyEventsContianer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
             <ProtectedRoute path="/activity/:id/edit" component={EditActivityContainer} />
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
