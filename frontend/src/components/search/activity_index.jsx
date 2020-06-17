@@ -8,7 +8,7 @@ const ActivityIndex = ( {activities} ) => {
     return (
         <div className='activity-index'>
             {
-                activities.map(activity => <ActivityIndexItem activity={activity} />)
+                activities.map(activity => <ActivityIndexItem activity={activity} key={activity._id}/>)
             }
         </div>
     )

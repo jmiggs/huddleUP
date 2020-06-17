@@ -11,6 +11,5 @@ export const changeFilter = (filter, value) => ({
 export const updateFilter = (filter, value) => (dispatch, getState) => {
   // dispatches action to change ui filters
   // uses those new filters to grab the activities that satisfies those filters
-  dispatch(changeFilter(filter, value));
-  return fetchActivitiesFiltered(getState().ui.filters)(dispatch);
+  dispatch(changeFilter(filter, value))
 };

@@ -6,8 +6,6 @@ const google = window.google;
 
 
 class ShowMap extends React.Component {
-
-
   componentDidMount() {
     // The location of Uluru
     let uluru = { lat: this.props.activity.lat, lng: this.props.activity.lng };

@@ -20,7 +20,6 @@ class Map extends React.Component {
     this.map = new google.maps.Map(map, mapOptions);
 
     // create class MapMarker that helps place markers on the map
-
     this.mapMarker = new MapMarker(this.map);
     this.mapMarker.updateMarkers(this.props.activities);
 
@@ -47,8 +46,18 @@ class Map extends React.Component {
      
       // this function updates the ui slice of state with bounds as filters
       // and then uses those filters to grab the locations that are within the bounds
-      this.props.updateFilter('bounds', bounds);
-      this.props.updateFilter('sport', this.props.type);
+
+      const p1 = new Promise( (resolve, reject)=> {
+        this.props.updateFilter('bounds', bounds);
+        this.props.updateFilter('sport', this.props.type);
+      })
+
+      const p2 = new Promise( (resolve, reject) => {
+        this.props.fetchActivitiesFiltered()
+      })
+
+      p1.then(()=> p2)
+      
     });
 
   }

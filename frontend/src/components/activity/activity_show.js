@@ -89,8 +89,6 @@ class Activity extends React.Component {
     }
   }
 
-
-
   render() { 
     if (!this.props.activity) return null;
     // console.log(this.state)
