@@ -21,35 +21,26 @@ class Activity extends React.Component {
     this.state = { subscribed: props.subscribed, existingSubscriptionId: props.existingSubscriptionId }
 
     this.renderSubscribe = this.renderSubscribe.bind(this);
-    this.componentCleanup = this.componentCleanup.bind(this);
+    // this.componentCleanup = this.componentCleanup.bind(this);
     this.changeSubscription = this.changeSubscription.bind(this);
     this.changeUnsubscription = this.changeUnsubscription.bind(this);
   }
 
-  componentCleanup() { // this will hold the cleanup code
-    // whatever you want to do when the component is unmounted or page refreshes
-    if (this.state.subscribed && !this.state.existingSubscriptionId) { 
-      this.props.subscribeToActivity(this.props.activity._id)
-    } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
-      this.props.unsubscribeToActivity(this.props.activity._id)
-    }
-  }
+  // componentCleanup() { // this will hold the cleanup code
+  //   // whatever you want to do when the component is unmounted or page refreshes
+  //   if (this.state.subscribed && !this.state.existingSubscriptionId) { 
+  //     this.props.subscribeToActivity(this.props.activity._id)
+  //   } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
+  //     this.props.unsubscribeToActivity(this.props.activity._id)
+  //   }
+  // }
   
   componentDidMount() { 
+    window.scrollTo({ top: 0 });
     this.props.fetchActivity(this.props.match.params.id)
-    // From Google Maps API docs
-    window.addEventListener('beforeunload', () => {
-      const p1 = new Promise( (resolve, reject) => {
-        this.componentCleanup()
-      })
+    
+    // window.addEventListener('beforeunload', this.componentCleanup);
 
-      const p2 = new Promise( (resolve, reject) => {
-        this.props.fetchUserActivities(this.props.currentUser.id)
-      })
-
-      console.log('hit')
-      p1.then(() => p2)
-    });
   }
   
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
@@ -69,25 +60,29 @@ class Activity extends React.Component {
     } 
   }
   
-  componentWillUnmount() {
-    this.componentCleanup();
-    window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
-  } 
+  // componentWillUnmount() {
+  //   this.componentCleanup();
+  //   window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
+  // } 
 
  
   changeUnsubscription(e) { 
     e.preventDefault();
 
-    // this.props.unsubscribeToActivity(this.props.activity._id);
-    this.setState({ subscribed: !this.state.subscribed });
+    this.props.unsubscribeToActivity(this.props.activity._id) // I just needed to add { new: true } to the backend
+      // .then(() => this.setState({ subscribed: !this.state.subscribed }));
+
+    // this.setState({ subscribed: !this.state.subscribed })
      
   }
 
   changeSubscription(e) { 
     e.preventDefault();
 
-    // this.props.subscribeToActivity(this.props.activity._id);
-    this.setState({ subscribed: !this.state.subscribed });
+    this.props.subscribeToActivity(this.props.activity._id)
+      // .then(() => this.setState({ subscribed: !this.state.subscribed }));
+
+    // this.setState({ subscribed: !this.state.subscribed })
   }
 
   renderSubscribe() { 
@@ -113,7 +108,7 @@ class Activity extends React.Component {
             <p className="show-page-description">{this.props.activity.description}</p>
             <div className="show-page-details">
               <p className="show-page-numamountplayers">Players Attending: {this.props.numOfPlayers}</p>
-              <p className="show-page-numplayersneed">Remaining Players Needed: {this.props.activity.numplayersneed}</p>
+              <p className="show-page-numplayersneed">Remaining Players Needed: {this.props.activity.numplayersneed - this.props.numOfPlayers}</p>
 
               {/* Change the class names  */}
               <p className="show-page-location">Date: {this.props.activity.day}</p>

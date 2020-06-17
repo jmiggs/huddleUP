@@ -174,6 +174,7 @@ router.post('/:activityid',
     Activity.findOneAndUpdate(
         {_id: req.params.activityid},
         { $addToSet: { participants: req.user._id} },
+        { new: true } // You have to put this, or else it will return what it was before the update
       ).
       then( activity => {res.json(activity)}).
       catch(err =>
@@ -199,6 +200,7 @@ router.patch('/unsubscribe/:activityid',
     Activity.findOneAndUpdate(
         {_id: req.params.activityid},
         { $pull: { participants: req.user._id} },
+        { new: true } // You have to put this, or else it will return what it was before the update
       ).
       then( activity => {res.json(activity)}).
       catch(err =>
