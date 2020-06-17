@@ -36,6 +36,7 @@ class Activity extends React.Component {
   }
   
   componentDidMount() { 
+    window.scrollTo({ top: 0 });
     this.props.fetchActivity(this.props.match.params.id)
     // From Google Maps API docs
     window.addEventListener('beforeunload', this.componentCleanup);
@@ -67,16 +68,18 @@ class Activity extends React.Component {
   changeUnsubscription(e) { 
     e.preventDefault();
 
-    // this.props.unsubscribeToActivity(this.props.activity._id);
-    this.setState({ subscribed: !this.state.subscribed });
+    // this.props.unsubscribeToActivity(this.props.activity._id)
+    //   .then(() => this.setState({ subscribed: !this.state.subscribed }));
+    this.setState({ subscribed: !this.state.subscribed })
      
   }
 
   changeSubscription(e) { 
     e.preventDefault();
 
-    // this.props.subscribeToActivity(this.props.activity._id);
-    this.setState({ subscribed: !this.state.subscribed });
+    // this.props.subscribeToActivity(this.props.activity._id)
+    //   .then(() => this.setState({ subscribed: !this.state.subscribed }));
+    this.setState({ subscribed: !this.state.subscribed })
   }
 
   renderSubscribe() { 
@@ -88,8 +91,6 @@ class Activity extends React.Component {
       }
     }
   }
-
-
 
   render() { 
     if (!this.props.activity) return null;

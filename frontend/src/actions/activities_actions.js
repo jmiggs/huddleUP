@@ -72,6 +72,7 @@ export const subscribeToActivity = activityId => dispatch => {
 export const unsubscribeToActivity = activityId => dispatch => {
 
   return ActivitiesAPIUtil.unsubscribeToActivity(activityId)
+    //   .then(res => dispatch(receiveActivity(res.data)))
     //   .then(res => console.log(res))
       .catch(err => console.log("Can't unsubscribe to this activity"))
 }
