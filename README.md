@@ -119,7 +119,7 @@ Here's an example of what that looks like:
 
 ![GoogleMaps1](https://i.imgur.com/GRNg0JQ.gif)
 
-As you can see from above, the events are being filtered by the  **location (the current area displayed on the map), time, and by date.**, as stated previously!
+As you can see from above, the events are being filtered by the  **location (the current area displayed on the map), time, and by date**, as stated previously!
 
 To make this work, first the Google Map must be configured in our component. As soon as the component mounts, this function is invoked:
 
