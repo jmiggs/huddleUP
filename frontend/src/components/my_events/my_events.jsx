@@ -17,8 +17,6 @@ class MyEvents extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps.activitiesCount)
-    console.log(this.props.activitiesCount)
 
     if (prevProps) {
       if (prevProps.activitiesCount !== this.props.activitiesCount) {
@@ -26,11 +24,6 @@ class MyEvents extends React.Component {
       }
     }
   }
-
-  // shouldComponentUpdate(nextProps) {
-
-  //   return true
-  // }
 
   handleTabChangeHosting() {
     if (this.state.tab !== 'host') {

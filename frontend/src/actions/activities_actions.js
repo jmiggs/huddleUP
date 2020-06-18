@@ -39,7 +39,10 @@ export const fetchActivitiesFiltered = (filters) => (dispatch, getState) => {
 
 export const fetchActivity = activityId => dispatch => {
     return ActivitiesAPIUtil.getActivity(activityId)
-        .then(res => dispatch(receiveActivity(res.data)))
+        .then(res => {
+          console.log(res)
+          dispatch(receiveActivity(res.data))
+        })
         .catch(err => console.log("BAD"))
 };
 

@@ -11,6 +11,8 @@ const handleChange = (filter, updateFilter, fetchActivitiesFiltered) => e => {
     fetchActivitiesFiltered()
     resolve()
   })
+
+  p1.then(() => p2)
 };
 
 const handleReset = (updateFilter, fetchActivitiesFiltered) => e => {

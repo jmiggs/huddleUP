@@ -103,7 +103,6 @@ router.get('/', (req, res) => {
 
 // get activity by ID
 router.get('/:id', (req, res) => {
-  // console.log(res) // My console logs don't work (Dorian)
   Activity.findById(req.params.id)
     .then(activity => res.json(activity)) 
     .catch(err =>
