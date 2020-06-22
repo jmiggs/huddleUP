@@ -3,7 +3,7 @@ import DashBoard from './dashboard';
 import { fetchActivities } from '../../actions/activities_actions'
 
 const mapStateToProps = state => {
-    let activities = Object.values(state.entities.activities)
+    let activities = Object.values(state.entities.activities).filter(activity => new Date(activity.day) - new Date() > 0);
     let basketball = [];
     let golf = [];
     let football = [];
