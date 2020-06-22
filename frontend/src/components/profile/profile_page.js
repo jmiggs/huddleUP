@@ -66,23 +66,23 @@ class ProfilePage extends React.Component {
         }
     }
 
-    getSports() {
-        if (this.props.user.currentUserSports.length === 0) {
-            return (
-                <div>No sports listed</div>
-            )
-        } else {
-            return(
-                <div>
-                    {this.props.user.currentUserSports.map(sport => (
-                        <li>
-                            {sport}
-                        </li>
-                    ))}
-                </div>
-            )
-        }
-    }
+    // getSports() {
+    //     if (this.props.user.currentUserSports.length === 0) {
+    //         return (
+    //             <div>No sports listed</div>
+    //         )
+    //     } else {
+    //         return(
+    //             <div>
+    //                 {this.props.user.currentUserSports.map(sport => (
+    //                     <li>
+    //                         {sport}
+    //                     </li>
+    //                 ))}
+    //             </div>
+    //         )
+    //     }
+    // }
 
     editLink() {
         // might have to change to verify this is the same user to allow editing
@@ -143,14 +143,14 @@ class ProfilePage extends React.Component {
                         {this.getBio()}
                     </div>
                         <br />
-                        <div className="profile-sports">
+                        {/* <div className="profile-sports">
                             <br />
                             <div className="profile-sports-title">
                                 Sports:
                             </div>
                             <br />
                             {this.getSports()}
-                        </div>
+                        </div> */}
                         <br/>
                         <div className="profile-logout-btn">
                             <Link to="/" onClick={this.logoutUser} className="profile-logout-btn-text">Logout</Link>
