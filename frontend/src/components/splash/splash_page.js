@@ -4,12 +4,12 @@ import "../../reset.css";
 import "./splash_page.css";
 // import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
-import BayAreaPic from "../../assets/bay-area.png";
-import MessagePic from "../../assets/message.png";
-import Basketball from "../../assets/basketball.png";
-import Soccer from "../../assets/soccer.png";
+import BayAreaPic from "../../assets/bay-area.jpg";
+import MessagePic from "../../assets/message.jpg";
+import Outside from "../../assets/outside.jpg";
+import Subscribe from "../../assets/subscribe-event.jpg";
 // import SoccerCartoon from "../../assets/little-soccer-boy.png";
-import CartoonSoccerPlayer from "../../assets/cartoon-soccer-players.png";
+import CartoonSoccerPlayer from "../../assets/cartoon-soccer-players.jpg";
 
 
 const goToSignUp = () => {
@@ -63,7 +63,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-two">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={Soccer} alt="bayareapic"/>
+                            <img className="huddleup-is-bottom-text-pic" src={Subscribe} alt="subscribepic"/>
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>2. Host or Join</h2>
@@ -72,7 +72,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-three">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={MessagePic} alt="messagepic"/>
+                            <img className="huddleup-is-bottom-text-pic-except" src={MessagePic} alt="messagepic"/>
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>3. Now or later</h2>
@@ -81,7 +81,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-four">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={Basketball} alt="basketballpic" />
+                            <img className="huddleup-is-bottom-text-pic" src={Outside} alt="outsidepic" />
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>4. Play</h2>

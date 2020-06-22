@@ -186,9 +186,16 @@
 } */
 
 .huddleup-is-bottom-text-pic { 
-    height: 250px;
-    width: 100%; /* For the actual thing, only have height so the picture doesn't get tiny when the width of the window resizes */
-    background-color: aliceblue;
+    max-height: 300px;
+    width: 100%;
+    max-width: 400px;
+    /* background-color: aliceblue; */
+}
+
+.huddleup-is-bottom-text-pic-except {
+    max-height: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .huddleup-is-bottom-text { 
@@ -240,4 +247,10 @@
     font-size: 16px;
 }
 
+.huddleup-is-two {
+    margin-top: 30px;
+}
 
+.huddleup-is-four {
+    margin-top: 30px;
+}
