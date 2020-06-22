@@ -5,7 +5,6 @@ import "../../reset.css";
 import "./profile_page.css"
 import NavBar from '../navbar/navbar_container';
 import { GrMapLocation } from 'react-icons/gr';
-import MJPic from '../../assets/Michael-Jordan-1987.png';
 import Footer from "../footer/footer";
 
 class ProfilePage extends React.Component {
@@ -107,7 +106,7 @@ class ProfilePage extends React.Component {
                                     {
                                         this.props.user.currentUserPicture ? 
                                             <img className = "profile-picture" src={this.props.user.currentUserPicture} alt="" height="290" width="220" /> : 
-                                            <img className="profile-picture" src={MJPic} alt=""/>}
+                                            <img className="profile-picture" src="Michael-Jordan-1987.png" alt=""/>}
                                     {/* <img 
                                         className="profile-picture"
                                         src={this.props.currentUserPicture}
