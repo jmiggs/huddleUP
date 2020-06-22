@@ -4,12 +4,7 @@ import "../../reset.css";
 import "./splash_page.css";
 // import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
-import BayAreaPic from "../../assets/bay-area.jpg";
-import MessagePic from "../../assets/message.jpg";
-import Outside from "../../assets/outside.jpg";
-import Subscribe from "../../assets/subscribe-event.jpg";
-// import SoccerCartoon from "../../assets/little-soccer-boy.png";
-import CartoonSoccerPlayer from "../../assets/cartoon-soccer-players.jpg";
+
 
 
 const goToSignUp = () => {
@@ -45,7 +40,7 @@ const SplashPage = props => {
                             <p className="signin-splash-text">Already using huddleUP? <Link to="/login" className="signin-splash-link">Log In</Link></p>
                         </div>
                     </div>
-                    <img className="top-banner-picture" src={CartoonSoccerPlayer} alt="Soccer Cartoon" />
+                    <img className="top-banner-picture" src="cartoon-soccer-players.jpg" alt="Soccer Cartoon" />
                 </div>
             </div>
 
@@ -54,7 +49,7 @@ const SplashPage = props => {
                 <div className="huddleup-is"> 
                     <div className="huddleup-is-one">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={BayAreaPic} alt="bayareapic" />
+                            <img className="huddleup-is-bottom-text-pic" src="bay-area.jpg" alt="bayareapic" />
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>1. Find a loction</h2>
@@ -63,7 +58,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-two">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={Subscribe} alt="subscribepic"/>
+                            <img className="huddleup-is-bottom-text-pic" src="subscribe-event.jpg" alt="subscribepic"/>
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>2. Host or Join</h2>
@@ -72,7 +67,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-three">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic-except" src={MessagePic} alt="messagepic"/>
+                            <img className="huddleup-is-bottom-text-pic-except" src="message.jpg" alt="messagepic"/>
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>3. Now or later</h2>
@@ -81,7 +76,7 @@ const SplashPage = props => {
                     </div>
                     <div className="huddleup-is-four">
                         <div className="huddleup-is-bottom-text-pic">
-                            <img className="huddleup-is-bottom-text-pic" src={Outside} alt="outsidepic" />
+                            <img className="huddleup-is-bottom-text-pic" src="outside.jpg" alt="outsidepic" />
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>4. Play</h2>
