@@ -213,7 +213,6 @@ router.patch('/unsubscribe/:activityid',
       catch( err =>
         res.status(404).json({ noactivityfound: 'Cant Unjoin Activity' })
   ) 
-  // activity.save().then(activity => res.json(activity))
 });
 
 
