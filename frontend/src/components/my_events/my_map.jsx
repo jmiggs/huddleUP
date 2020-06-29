@@ -30,7 +30,6 @@ class MyMap extends React.Component {
   }
 
   registerListeners() {
-
     // when the map on the page is idle, the callback fx is invoked.
     // the call back grabs the maps current idle bounds, and formats it in a way that the updateFilter function
     // can use to send to the backend. the updateFilter 
