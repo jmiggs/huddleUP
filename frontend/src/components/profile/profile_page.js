@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
         this.logoutUser = this.logoutUser.bind(this);
         this.getBio = this.getBio.bind(this);
         this.getLocation = this.getLocation.bind(this);
-        this.getSports = this.getSports.bind(this);
+        // this.getSports = this.getSports.bind(this);
         this.editLink = this.editLink.bind(this);
     }
 
