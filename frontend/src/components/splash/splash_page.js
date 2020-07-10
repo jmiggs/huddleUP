@@ -30,7 +30,7 @@ const SplashPage = props => {
                     <div className="top-banner-text">
                         <h1 className="main-phrase">Nobody to play with? We got you covered.</h1>
                         <p className="main-phrase-caption">Go outside knowing that you won't be bored playing by yourself.</p>
-                        <div>
+                        <div className="signup-div">
                             {/* <div className="signup-splash-button">
                                 <Link to="/signup" className="signup-splash-button-text">Sign Up, Have Fun</Link>
                             </div> */}
@@ -47,6 +47,7 @@ const SplashPage = props => {
             <div className="bottom-half-of-splash">
                 <h1 className="what-is-huddleup">What is huddleUP?</h1>
                 <div className="huddleup-is"> 
+
                     <div className="huddleup-is-one">
                         <div className="huddleup-is-bottom-text-pic">
                             <img className="huddleup-is-bottom-text-pic" src="bay-area.jpg" alt="bayareapic" />
@@ -56,6 +57,7 @@ const SplashPage = props => {
                             <p>Pick a location near you for convenience.</p>
                         </div>
                     </div>
+
                     <div className="huddleup-is-two">
                         <div className="huddleup-is-bottom-text-pic">
                             <img className="huddleup-is-bottom-text-pic" src="subscribe-event.jpg" alt="subscribepic"/>
@@ -65,15 +67,17 @@ const SplashPage = props => {
                             <p>Found a fun event? Join it. Can't find any? Why not just host them.</p>
                         </div>
                     </div>
+
                     <div className="huddleup-is-three">
                         <div className="huddleup-is-bottom-text-pic">
                             <img className="huddleup-is-bottom-text-pic-except" src="message.jpg" alt="messagepic"/>
                         </div>
                         <div className="huddleup-is-bottom-text">
                             <h2>3. Now or later</h2>
-                            <p>Tell everyone you're out right now, or make plans for the future.</p>
+                            <p>Tell everyone you're out right now, or make plans for the future. </p>
                         </div>
                     </div>
+
                     <div className="huddleup-is-four">
                         <div className="huddleup-is-bottom-text-pic">
                             <img className="huddleup-is-bottom-text-pic" src="outside.jpg" alt="outsidepic" />

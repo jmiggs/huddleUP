@@ -57,6 +57,7 @@
     background-color: transparent;
     height: 355.5px;
     width: 410px;
+    font-size: 20px;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
@@ -118,7 +119,6 @@
 }
 
 .top-banner-picture { 
-    height: 100%;
     width: 400px;
 }
 
@@ -134,6 +134,7 @@
     font-size: 32px;
     margin: 30px 0px;
     color: #2D3142;
+    text-align: center;
 }
 
 
@@ -164,7 +165,7 @@
     background-color: #00F5D4;
 } */
 
-.huddleup-is-one, 
+/* .huddleup-is-one, 
 .huddleup-is-two,
 .huddleup-is-three,
 .huddleup-is-four { 
@@ -174,22 +175,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* box-shadow: 0px 0px 10px black; */
-    /* border: 1px solid black; */
+    border-radius: 5px; */
+    /* box-shadow: 0px 0px 10px #c5c5c5; */
+    /* border: 1px solid #c7c7c7; */
+/* } */
+
+.huddleup-is > div { 
+    background-color: #ffffff;
+    transition-duration: 0.5s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
 }
 
-/* .huddleup-is-one:hover, 
-.huddleup-is-two:hover,
-.huddleup-is-three:hover,
-.huddleup-is-four:hover { 
+/* .huddleup-is > div:hover { 
     box-shadow: 0px 0px 10px red;
+    transform: scale(1.1);
 } */
 
 .huddleup-is-bottom-text-pic { 
     max-height: 300px;
     width: 100%;
     max-width: 400px;
-    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: center;
 }
 
 .huddleup-is-bottom-text-pic-except {
@@ -200,11 +211,9 @@
 
 .huddleup-is-bottom-text { 
     width: 100%;
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* bottom: 0px; */
     margin-top: 30px;
 }
 
@@ -212,6 +221,7 @@
     color: black;
     font-family: 'Work Sans', sans-serif;
     font-size: 24px;
+    text-align: center;
 }
 
 .huddleup-is-bottom-text p { 
@@ -247,10 +257,58 @@
     font-size: 16px;
 }
 
-.huddleup-is-two {
-    margin-top: 30px;
+/* 768, 480, 320 for responsive sizes */
+@media only screen and (max-width: 768px) { 
+    .huddleup-is { 
+        display: flex;
+        flex-direction: column;
+        padding: 5vw 0;
+        width: 70%;
+    }
+
+    .huddleup-is > div { 
+        margin: 80px 0px;
+    }
+
+    .top-banner-picture { 
+        width: 32vw;
+    }
+
+    .main-phrase { 
+        font-size: 240%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .main-phrase-caption { 
+        font-size: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .top-banner-text {
+        justify-content: flex-end;
+        width: 90%;
+        align-items: center;
+    }
+
+    .top-banner-not-the-nav { 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .signup-div { 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+    }
 }
 
-.huddleup-is-four {
-    margin-top: 30px;
+@media only screen and (max-width: 480px) { 
+    
+}
+
+@media only screen and (max-width: 320px) {
+
 }
