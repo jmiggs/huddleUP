@@ -42,3 +42,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* Dorian added this */
+/* html { 
+	display: flex;
+	justify-content: center;
+} */
+
+/* body { 
+	max-width: 1440px;
+}  */
