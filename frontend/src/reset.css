@@ -44,10 +44,9 @@ table {
 }
 
 /* Dorian added this */
-/* html { 
-	display: flex;
-	justify-content: center;
-} */
+html { 
+	/* max-width: 1444px; */
+}
 
 /* body { 
 	max-width: 1440px;

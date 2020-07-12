@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: fit-content;
     margin-top: 69px;
 }
 
@@ -12,7 +12,6 @@
     display: flex;
     align-items: center;
     width: 85%;
-    min-width: 575px;
     max-width: 1040px;
     justify-content: space-evenly;
 }
@@ -165,3 +164,18 @@
         padding-left: 10px;
       } */
 
+@media only screen and (max-width: 768px) { 
+    .activity-box-box { 
+        flex-direction: column-reverse;
+    }
+
+    .activity-form-map { 
+        margin-top: 30px;
+        width: 100%;
+        height: 85vw;
+    }
+
+    .activity-form { 
+        width: 100%;
+    }
+}
