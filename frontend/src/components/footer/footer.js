@@ -6,10 +6,12 @@ import { FaGithubAlt } from "react-icons/fa";
 const footer = props => {
     return (
         <div className="footer">
+
             <div className="huddleUP-repo"> 
                 <h1 className="engineer-name">huddleUP</h1>
                 <a href="https://github.com/jmiggs/huddleUP" target="_blank" rel="noopener noreferrer" className="huddleUP-icon"><FaGithubAlt /></a>
             </div>
+
             <div className="engineers-contacts-container"> 
                 <div className="contact-info-container"> 
                     <h1 className="engineer-name">Bryan Linda</h1>
@@ -18,6 +20,7 @@ const footer = props => {
                         <a href="https://github.com/blindaa121" target="_blank" rel="noopener noreferrer" className="footer-icon"><AiFillGithub /></a>
                     </div>
                 </div>
+
                 <div className="contact-info-container">
                     <h1 className="engineer-name">Miguel DelaCruz</h1>
                     <div className="symbol-icons-box"> 
@@ -25,6 +28,7 @@ const footer = props => {
                         <a href="https://github.com/jmiggs" target="_blank" rel="noopener noreferrer" className="footer-icon"><AiFillGithub /></a>
                     </div>
                 </div>
+
                 <div className="contact-info-container"> 
                     <h1 className="engineer-name">Ngoc Ly</h1>
                     <div className="symbol-icons-box"> 
@@ -32,6 +36,7 @@ const footer = props => {
                         <a href="https://github.com/ngocthily" target="_blank" rel="noopener noreferrer" className="footer-icon"><AiFillGithub /></a>
                     </div>
                 </div>
+                
                 <div className="contact-info-container">
                     <h1 className="engineer-name">Dorian Brown</h1>
                     <div className="symbol-icons-box">

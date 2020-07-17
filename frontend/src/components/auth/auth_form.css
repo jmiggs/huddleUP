@@ -118,3 +118,28 @@
 .submit-auth-form:focus {
     outline: none;
 }
+
+@media only screen and (max-width: 480px) { 
+    .auth-form-page { 
+        background-color: #FFFFFF;
+    }
+
+    .auth-form-container { 
+        box-shadow: none;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .auth-close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 320px) { 
+    .opposite-auth-description {
+        margin: 0px 40px 20px 20px;
+        line-height: 1.2; /* same as 120% */
+    }
+}

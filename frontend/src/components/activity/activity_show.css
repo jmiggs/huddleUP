@@ -98,7 +98,21 @@
 }
 
 .activity-show-map { 
-    width: 600px;
+    width: 100%;
     height: 600px;
     background-color: aquamarine;
+}
+
+@media only screen and (max-width: 768px) { 
+    .activity-show-container { 
+        width: 80%;
+    }
+
+    .show-page-description { 
+        width: 100%;
+    }
+
+    .activity-show-map { 
+        height: 80vw;
+    }
 }

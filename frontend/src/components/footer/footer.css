@@ -38,7 +38,8 @@
 .engineer-name { 
     color: white;
     font-size: 24px;
-    font-family: 'Work Sans', sans-serif;;
+    font-family: 'Work Sans', sans-serif;
+    text-align: center;
 }
 
 .symbol-icons-box { 
@@ -51,4 +52,27 @@
 .footer-icon { 
     font-size: 26px;
     color: #EF8354;
+}
+
+@media only screen and (max-width: 480px) { 
+    .engineers-contacts-container {
+        flex-direction: column;
+    }
+
+    .contact-info-container { 
+        margin-bottom: 40px;
+    }
+
+    .footer-icon { 
+        font-size: 48px;
+    }
+    
+    .symbol-icons-box { 
+        width: 150px;
+        margin-top: 10px;
+    }
+
+    .huddleUP-icon { 
+        margin-top: 10px;
+    }
 }
