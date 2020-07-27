@@ -3,6 +3,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@531&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+.splash-container {
+    margin: 0 auto;
+}
+
+.splash-nav-container {
+    display: flex;
+    justify-content: center;
+}
+
 .splash-nav { 
     height: 69px;
     width: 100%;
@@ -13,6 +22,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
+    max-width: 1500px;
 } 
 
 .splash-nav-link  {
@@ -45,7 +55,7 @@
 .top-banner { 
     background-color: #EF8354;
     width: 100%;
-    height: 614px;
+    /* height: 614px; */
     /* padding-left: 110px; */
     /* padding-top: 140px; */
     display: flex;
@@ -53,22 +63,40 @@
     justify-content: center;
 }
 
+.top-banner-not-the-nav { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* width: 100%; */
+    padding: 40px;
+}
+
 .top-banner-text { 
     background-color: transparent;
-    height: 355.5px;
-    width: 410px;
+    /* height: 355.5px; */
+    /* width: 410px; */
+    max-width: 500px;
     font-size: 20px;
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0px 0px 0px 6px;
+    /* justify-content: space-between; */
+    /* padding: 0px 0px 0px 6px; */
+    /* margin-top: 80px; */
+    justify-content: center;
+    padding: 40px;
+}
+
+.top-banner-picture { 
+    max-width: 740px;
+    width: 100%;
 }
 
 .main-phrase { 
     font-family: 'Work Sans', sans-serif;
     font-size: 55px;
     color: black;
+    padding: 5px;
 }
 
 .main-phrase-caption { 
@@ -76,6 +104,11 @@
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.3;
+    padding: 8px;
+}
+
+.signup-splash-button-wrapper {
+    padding-top: 20px;
 }
 
 .signup-splash-button { 
@@ -114,13 +147,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.top-banner-not-the-nav { 
-    display: flex;
-    justify-content: space-around;
-}
 
-.top-banner-picture { 
-    width: 400px;
+.bottom-half-of-splash-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
 }
 
 .bottom-half-of-splash { 
@@ -141,13 +172,15 @@
 
 
 .huddleup-is { 
-    display: grid;
+    /* display: grid; */
     /* grid-template-columns: 350px 350px; */
-    grid-template-columns: 40vw 40vw;
+    /* grid-template-columns: 40vw 40vw;
     grid-template-rows: auto auto;
     column-gap: 60px;
     row-gap: 60px;
-    padding: 50px 0px;
+    padding: 50px 0px; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* .huddleup-is-one { 
@@ -189,6 +222,8 @@
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
+    flex: 0 50%;
+    padding: 10px;
 }
 
 /* .huddleup-is > div:hover { 
@@ -196,18 +231,13 @@
     transform: scale(1.1);
 } */
 
-.huddleup-is-bottom-text-pic { 
+.huddleup-is-bottom-text-pic > img {
+    height: 100%;
     max-height: 300px;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; 
     display: flex;
     justify-content: center;
-}
-
-.huddleup-is-bottom-text-pic-except {
-    max-height: 300px;
-    width: 100%;
-    max-width: 300px;
 }
 
 .huddleup-is-bottom-text { 
@@ -232,6 +262,11 @@
     text-align: center;
     margin: 20px 0px;
     line-height: 1.4;
+    max-width: 380px;
+}
+
+.signup-bottom-button-container {
+    padding: 20px;
 }
 
 .signup-bottom-button { 
@@ -258,27 +293,28 @@
     font-size: 16px;
 }
 
-/* 768, 480, 320 for responsive sizes */
-@media only screen and (max-width: 768px) { 
-    .huddleup-is { 
+/* added */
+@media only screen and (max-width: 812px) { 
+    /* .huddleup-is { 
         display: flex;
         flex-direction: column;
         padding: 5vw 0;
         width: 70%;
-    }
+    } */
 
-    .huddleup-is > div { 
-        margin: 80px 0px;
-    }
+    /* .huddleup-is > div { 
+        margin: 50px 0px;
+    } */
 
-    .top-banner-picture { 
+    /* .top-banner-picture { 
         width: 32vw;
-    }
+    } */
 
     .main-phrase { 
         font-size: 240%;
         text-align: center;
         margin-bottom: 15px;
+        margin-top: 40px;
     }
 
     .main-phrase-caption { 
@@ -304,6 +340,68 @@
         align-items: center;
         margin-bottom: 25px;
     }
+
+    .huddleup-is-bottom-text-pic > img {
+        max-width: 300px;
+    }
+
+    .huddleup-is-bottom-text p { 
+        font-size: 16px;
+    }
+}
+
+/* 768, 480, 320 for responsive sizes */
+@media only screen and (max-width: 768px) { 
+    /* .huddleup-is { 
+        display: flex;
+        flex-direction: column;
+        padding: 5vw 0;
+        width: 70%;
+    }
+
+    .huddleup-is > div { 
+        margin: 80px 0px; 
+        margin: 50px 0px;
+    } */
+
+    /* .top-banner-picture { 
+        width: 32vw;
+    } */
+
+    .main-phrase { 
+        font-size: 240%;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-top: 40px;
+    }
+
+    .main-phrase-caption { 
+        font-size: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .top-banner-text {
+        justify-content: flex-end;
+        width: 90%;
+        align-items: center;
+    }
+
+    .top-banner-not-the-nav { 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .signup-div { 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .huddleup-is-bottom-text-pic img {
+        max-width: 200px;
+    }
 }
 
 @media only screen and (max-width: 480px) { 
@@ -313,6 +411,20 @@
 
     .splash-nav-link { 
         margin: 0px 10px;
+    }
+
+    .huddleup-is-bottom-text-pic > img {
+        max-width: 200px;
+    }
+
+    .huddleup-is {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .huddleup-is > div { 
+        padding: 20px;
     }
 }
 
@@ -327,5 +439,9 @@
 
     .splash-nav-link { 
         margin: 0px 10px;
+    }
+
+    .huddleup-is-bottom-text-pic > img {
+        max-width: 150px;
     }
 }
