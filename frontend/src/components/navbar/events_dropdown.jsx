@@ -11,7 +11,6 @@ class EventsDropdown extends React.Component {
   
 
   render() {
-    // console.log(this.props.userActivities)
     if (!this.props.userActivities) return null
     return(
       <div className="dropdown-nav">
