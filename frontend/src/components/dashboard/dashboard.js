@@ -25,7 +25,7 @@ class DashBoard extends React.Component {
             <NavBarContainer />
                 <div className='dashboard-top-header'>
                     <h1>Find a huddle for all the events you love</h1>
-                    <img className='dashboard-top-header-img'src='dashboard-header-img2.png' alt="" />
+                    {/* <img className='dashboard-top-header-img'src='dashboard-header-img2.png' alt="" /> */}
                 </div>
 
                 <div className='event-category'>
