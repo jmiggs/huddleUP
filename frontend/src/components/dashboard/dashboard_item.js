@@ -34,7 +34,7 @@ const DashBoardItem = ({ activity }) => {
                 )
             }
             <br/>
-            <span className='event-date'>{activity.day}</span>
+            <span className='event-date'>{activity.day.slice(5,7) + "-" + activity.day.slice(8) + "-" + activity.day.slice(0,4)}</span>
             <span className='event-title'>{activity.title}</span>
         </div>
     )
