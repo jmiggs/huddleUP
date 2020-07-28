@@ -6,11 +6,28 @@ const DashBoardItem = ({ activity }) => {
     return (
         <div className="event-item">
             {
-                activity.sport === 'basketball' ? <Link to={`/activity/${activity._id}`}><img className='event-img' alt="" src='event-img.jpg' /></Link> : (
-                    activity.sport === 'golf' ? <Link to={`/activity/${activity._id}`}><img className='event-img' alt="" src='event2-img.jpg' /></Link> : (
-                        activity.sport === 'football' ? <Link to={`/activity/${activity._id}`}><img className='event-img' alt="" src='event3-img.jpg' /></Link> : (
-                            activity.sport === 'soccer' ? <Link to={`/activity/${activity._id}`}><img className='event-img' alt="" src='event4-img.jpg' /></Link> : (
-                                <Link to={`/activity/${activity._id}`}><img className='event-img' alt="" src='event5-img.jpg' /></Link>
+                activity.sport === 'basketball' ? 
+                <Link to={`/activity/${activity._id}`}>
+                    {/* <img className='event-img' alt="" src='event-img.jpg' /> */}
+                        <img className='event-img' alt='basketball-card' src='basketball-card.png' />
+                </Link> : (
+                    activity.sport === 'golf' ? 
+                    <Link to={`/activity/${activity._id}`}>
+                        {/* <img className='event-img' alt="" src='event2-img.jpg' /> */}
+                        <img className='event-img' alt='golf-card' src='golf-card.png' />
+                    </Link> : (
+                        activity.sport === 'football' ? 
+                        <Link to={`/activity/${activity._id}`}>
+                            {/* <img className='event-img' alt="" src='event3-img.jpg' /> */}
+                                        <img className='event-img' alt='football-card' src='football-card.png' />
+                        </Link> : (
+                            activity.sport === 'soccer' ? 
+                            <Link to={`/activity/${activity._id}`}>
+                                <img className='event-img' alt='soccer-card' src='soccer-card.png' />
+                            </Link> : (
+                                <Link to={`/activity/${activity._id}`}>
+                                    <img className='event-img' alt='tennis-card' src='tennis-card.png' />
+                                </Link>
                             )
                         )
                     )

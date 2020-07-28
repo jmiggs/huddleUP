@@ -53,8 +53,8 @@
 }
 
 .event-img {
-    width: 200px;
-    border-radius: 10px;
+    width: 250px;
+    border-radius: 20px;
     margin-right: 13px;
     transition: transform .2s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
