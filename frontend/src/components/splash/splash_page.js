@@ -41,7 +41,16 @@ const SplashPage = props => {
                                     <p className="signup-splash-button-text">Sign Up, Have Fun</p>
                                 </div>
                             </div>
-                            <p className="signin-splash-text">Already using huddleUP? <Link to="/login" className="signin-splash-link">Log In</Link></p>
+                            <div className="signin-splash-text">
+                                <div className="signin-splash-text1">
+                                    Already using huddleUP? 
+                                </div>
+                                <div className="signin-splash-text2">
+                                    <Link to="/login" className="signin-splash-link">
+                                        Log In
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     {/* <img className="top-banner-picture" src="cartoon-soccer-players.jpg" alt="Soccer Cartoon" /> */}
