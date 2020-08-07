@@ -30,7 +30,10 @@ export const updateActivity = data => {
   return axios.patch(`/api/activities/${data._id}`, data)
 }
 
-// Didn't test this yet
+export const deleteActivity = id => { 
+  return axios.delete(`/api/activities/${id}`);
+}
+
 export const subscribeToActivity = id => {
     return axios.post(`/api/activities/${id}`)
 }

@@ -1,6 +1,7 @@
 import Activity from "./activity_show";
 import { connect } from "react-redux";
 import { subscribeToActivity, fetchActivity, unsubscribeToActivity, fetchUserActivities } from "../../actions/activities_actions";
+import { deleteActivity } from "../../actions/activities_actions";
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -39,7 +40,8 @@ const mapDispatchToProps = dispatch => ({
     subscribeToActivity: activityId => dispatch(subscribeToActivity(activityId)), 
     fetchActivity: activityId => dispatch(fetchActivity(activityId)),
     unsubscribeToActivity: activityId => dispatch(unsubscribeToActivity(activityId)), 
-    fetchUserActivities: userId => dispatch(fetchUserActivities(userId))
+    fetchUserActivities: userId => dispatch(fetchUserActivities(userId)),
+    deleteActivity: activityId => dispatch(deleteActivity(activityId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Activity);

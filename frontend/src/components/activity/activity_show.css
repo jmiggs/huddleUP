@@ -84,6 +84,10 @@
     width: 110px;
 }
 
+.show-buttons { 
+
+}
+
 .show-edit-button { 
     border: none;
     background: none;
@@ -95,6 +99,10 @@
 
 .show-edit-button:hover { 
     color: #EF8354;
+}
+
+.show-delete-button { 
+    
 }
 
 .activity-show-map { 

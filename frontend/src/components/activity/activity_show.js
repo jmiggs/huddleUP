@@ -6,6 +6,7 @@ import ShowMap from './map_show';
 import "../../reset.css";
 import "./activity_show.css";
 import Footer from "../footer/footer";
+// import { deleteActivity } from "../../util/activities_api_util";
 
 
 
@@ -24,6 +25,7 @@ class Activity extends React.Component {
     // this.componentCleanup = this.componentCleanup.bind(this);
     this.changeSubscription = this.changeSubscription.bind(this);
     this.changeUnsubscription = this.changeUnsubscription.bind(this);
+    this.deleteActivity = this.deleteActivity.bind(this);
   }
 
   // componentCleanup() { // this will hold the cleanup code
@@ -95,10 +97,15 @@ class Activity extends React.Component {
     }
   }
 
-  render() { 
+  deleteActivity(e) { 
+    e.preventDefault();
+    this.props.deleteActivity(this.props.activity._id)
+      .then(window.location.href = "/");
+  };
 
+  render() { 
     if (!this.props.activity) return null;
-    // console.log(this.state)
+    
     return (
       <div>
         <NavBarContainer />
@@ -120,7 +127,10 @@ class Activity extends React.Component {
 
             {this.renderSubscribe()}
             {(this.props.currentUser.id === this.props.activity.host) ? 
-            <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`} className="show-edit-button">Edit</button> : 
+            <div className="show-buttons"> 
+              <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`} className="show-edit-button">Edit</button> 
+              <button onClick={e => this.deleteActivity(e)} className="show-delete-button">Delete</button>
+            </div> : 
             null}
           <ShowMap activity={this.props.activity} />
 
