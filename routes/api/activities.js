@@ -215,6 +215,16 @@ router.patch('/unsubscribe/:activityid',
   ) 
 });
 
+router.delete("/:activityid", passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Activity.deleteOne({ _id: req.params.activityid })
+      .then (e => {res.json(e)}) 
+      .catch(e => res.status(404).json({ noactivityfound: 'No Activity Found' }))
+  }
+);
+
+
+
 
 module.exports = router;
 

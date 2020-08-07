@@ -1,4 +1,4 @@
-import { RECEIVE_ACTIVITIES, RECEIVE_ACTIVITY } from "../actions/activities_actions";
+import { RECEIVE_ACTIVITIES, RECEIVE_ACTIVITY, REMOVE_ACTIVITY } from "../actions/activities_actions";
 
 const ActivitiesReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
@@ -10,6 +10,10 @@ const ActivitiesReducer = (oldState = {}, action) => {
             // return Object.assign({}, oldState, { [action.activity._id]: action.activity })
             // debugger
             return { [action.activity._id]: action.activity }
+        case REMOVE_ACTIVITY: 
+            let newState = Object.assign({}, oldState);
+            delete newState[action.activityid];
+            return newState;
         default:
             return oldState
     }
