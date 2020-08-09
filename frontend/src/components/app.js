@@ -39,6 +39,7 @@ const App = () => (
             <ProtectedRoute path ="/users/:id/edit" component={EditProfilePageContainer} />
             <ProtectedRoute path ="/users/:id/myevents" component={MyEventsContianer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
+            <ProtectedRoute path="/activity/host" component={CreateActivityContainer} />
             <ProtectedRoute path="/activity/:id/edit" component={EditActivityContainer} />
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
             <ProtectedRoute exact path="/basketball" component={SearchContainerBball} /> 
