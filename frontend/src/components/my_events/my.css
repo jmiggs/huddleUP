@@ -22,18 +22,18 @@
 }
 
 .my-buttontab {
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   background-color: #ef825414;
   padding: 5px;
   font-size: 16px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #EF8354;
+  color: var(--orange-color);
 }
 
 .my-buttontab-active {
-  border: 1px solid #EF8354;
-  background-color: #EF8354;
+  border: 1px solid var(--orange-color);
+  background-color: var(--orange-color);
   padding: 5px;
   font-size: 16px;
   margin-right: 10px;

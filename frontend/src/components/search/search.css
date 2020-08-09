@@ -32,9 +32,9 @@
 .time-dropdown {
   /* background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   border-radius: 1.25rem;
-  color: #EF8354;
+  color: var(--orange-color);
 
   font-size: 1em;
   height: 50x;
@@ -43,36 +43,36 @@
 
 
   border: none;
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   background-color: #ef825414;
   padding: 5px;
   font-size: 16px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #EF8354;
+  color: var(--orange-color);
   background-clip: padding-box;
 }
 
 .day-dropdown {
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   background-color: #ef825414;
   padding: 5px;
   font-size: 16px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #EF8354;
+  color: var(--orange-color);
   background-clip: padding-box;
 }
 
 .filter-date {
 
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   background-color: #ef825414;
   padding: 5px;
   font-size: 16px;
   margin-right: 10px;
   border-radius: 5px;
-  color: #EF8354;
+  color: var(--orange-color);
 }
 
 .filter-container {
@@ -89,9 +89,9 @@
 }
 
 .reset-filters {
-  border: 1px solid #EF8354;
+  border: 1px solid var(--orange-color);
   background-color: #ef825414;
-  color:#EF8354;
+  color:var(--orange-color);
   border-radius: 5px;
 }
 

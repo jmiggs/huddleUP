@@ -6,15 +6,6 @@ import ShowMap from './map_show';
 import "../../reset.css";
 import "./activity_show.css";
 import Footer from "../footer/footer";
-// import { deleteActivity } from "../../util/activities_api_util";
-
-
-
-
-
-// Miguel: i commented out some of the code to get the subscribe and unsubscribe to work. 
-// comment back in if the code is needed for other stuff
-
 
 class Activity extends React.Component { 
   constructor(props) { 
@@ -22,27 +13,14 @@ class Activity extends React.Component {
     this.state = { subscribed: props.subscribed, existingSubscriptionId: props.existingSubscriptionId }
 
     this.renderSubscribe = this.renderSubscribe.bind(this);
-    // this.componentCleanup = this.componentCleanup.bind(this);
     this.changeSubscription = this.changeSubscription.bind(this);
     this.changeUnsubscription = this.changeUnsubscription.bind(this);
     this.deleteActivity = this.deleteActivity.bind(this);
   }
-
-  // componentCleanup() { // this will hold the cleanup code
-  //   // whatever you want to do when the component is unmounted or page refreshes
-  //   if (this.state.subscribed && !this.state.existingSubscriptionId) { 
-  //     this.props.subscribeToActivity(this.props.activity._id)
-  //   } else if (!this.state.subscribed && this.state.existingSubscriptionId) { 
-  //     this.props.unsubscribeToActivity(this.props.activity._id)
-  //   }
-  // }
   
   componentDidMount() { 
     window.scrollTo({ top: 0 });
     this.props.fetchActivity(this.props.match.params.id)
-    
-    // window.addEventListener('beforeunload', this.componentCleanup);
-
   }
   
   componentDidUpdate(prevProps) { // Need this for the constructor to be run again. It only gets ran one if you don't have this in here.
@@ -61,20 +39,11 @@ class Activity extends React.Component {
       }
     } 
   }
-  
-  // componentWillUnmount() {
-  //   this.componentCleanup();
-  //   window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
-  // } 
 
- 
   changeUnsubscription(e) { 
     e.preventDefault();
 
     this.props.unsubscribeToActivity(this.props.activity._id) // I just needed to add { new: true } to the backend
-      // .then(() => this.setState({ subscribed: !this.state.subscribed }));
-
-    // this.setState({ subscribed: !this.state.subscribed })
      
   }
 
@@ -82,9 +51,6 @@ class Activity extends React.Component {
     e.preventDefault();
 
     this.props.subscribeToActivity(this.props.activity._id)
-      // .then(() => this.setState({ subscribed: !this.state.subscribed }));
-
-    // this.setState({ subscribed: !this.state.subscribed })
   }
 
   renderSubscribe() { 
@@ -128,8 +94,8 @@ class Activity extends React.Component {
             {this.renderSubscribe()}
             {(this.props.currentUser.id === this.props.activity.host) ? 
             <div className="show-buttons"> 
-              <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`} className="show-edit-button">Edit</button> 
-              <button onClick={e => this.deleteActivity(e)} className="show-delete-button">Delete</button>
+              <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`} className="owned-activity-button edit">Edit</button> 
+                <button onClick={e => this.deleteActivity(e)} className="owned-activity-button delete">Delete</button>
             </div> : 
             null}
           <ShowMap activity={this.props.activity} />

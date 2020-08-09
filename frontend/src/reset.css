@@ -51,3 +51,11 @@ html {
 /* body { 
 	max-width: 1440px;
 }  */
+
+:root {
+  --orange-color: #EF8354;
+  --dark-gray-color: #2D3142;
+  --armor-gray-color: #4F5D75;
+  --light-gray-color: #BFC0C0;
+  --white-color: #FFFFFF;
+}

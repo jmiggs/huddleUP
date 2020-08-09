@@ -43,7 +43,7 @@
 
 .activity-input-field { 
     border: none;
-    border-left: 2px solid #EF8354;
+    border-left: 2px solid var(--orange-color);
     background-color: #ef825414;
     padding: 5px;
     font-size: 16px;
@@ -72,8 +72,8 @@
 .submit-activity { 
     cursor: pointer;
     border: none;
-    background-color: #2D3142;
-    color: #EF8354;
+    background-color: var(--dark-gray-color);
+    color: var(--orange-color);
     border-radius: 25px;
     height: 25px;
     width: 60%;
@@ -106,7 +106,7 @@
 .time-date-input { 
     border: none;
     outline: none;
-    border-left: 2px solid #EF8354;
+    border-left: 2px solid var(--orange-color);
     background-color: #ef825414;
     padding: 5px;
     font-size: 16px;
@@ -119,7 +119,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     border-radius: 25px;
     width: 100px;
     padding-top: 3px;
