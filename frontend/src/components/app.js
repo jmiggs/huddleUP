@@ -39,7 +39,7 @@ const App = () => (
             <ProtectedRoute path ="/users/:id/edit" component={EditProfilePageContainer} />
             <ProtectedRoute path ="/users/:id/myevents" component={MyEventsContianer} />
             <ProtectedRoute exact path="/dashboard" component={DashBoardContainer} /> 
-            <ProtectedRoute path="/activity/host" component={CreateActivityContainer} />
+            <ProtectedRoute exact path="/activity/host" component={CreateActivityContainer} />
             <ProtectedRoute path="/activity/:id/edit" component={EditActivityContainer} />
             <ProtectedRoute path="/activity/:id" component={ActivityContainer} />
             <ProtectedRoute exact path="/basketball" component={SearchContainerBball} /> 
@@ -48,9 +48,6 @@ const App = () => (
             <ProtectedRoute exact path="/football" component={SearchContainerFootball} /> 
             <ProtectedRoute exact path="/tennis" component={SearchContainerTennis} /> 
             <Route path="*" component={SplashPage} />
-
-            {/* <ProtectedRoute path="/sport/:sport" component={SportContainer} /> */}
-            <ProtectedRoute exact path="/activities/host" component={CreateActivityContainer} /> 
         </Switch>
         
     </div>
