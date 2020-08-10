@@ -7,19 +7,20 @@ import "./navbar.css"
 class NavBar extends React.Component { 
     constructor(props) { 
         super(props)
+
         this.logoutUser = this.logoutUser.bind(this);
         // this.getLinks = this.getLinks.bind(this);
+        this.huddleUpTab = this.huddleUpTab.bind(this);
+        this.myEventsTab = this.myEventsTab.bind(this);
+        this.exploreTab = this.exploreTab.bind(this);
+        this.hostTab = this.hostTab.bind(this); 
+        this.profileTab = this.profileTab.bind(this);
     }
 
     logoutUser(e) { 
         e.preventDefault();
         this.props.logout();
     }
-
-    componentDidMount() {
-
-    }
-  
 
     // getLinks() { // I like how they abstracted this away from the render. I'm going to do this from now on.
     //     if (this.props.loggedIn) { 
@@ -42,34 +43,60 @@ class NavBar extends React.Component {
     //     }
     // }
 
+    huddleUpTab() {
+        return (
+            <Link to="/" className="navbar-name">
+                huddleUP
+            </Link>
+        )
+    }
+
+    myEventsTab() { 
+        return (
+            <Link to={`/users/${this.props.id}/myevents`} className="navbar-explore-link">
+                My Events
+            </Link>
+        )
+    }
+
+    exploreTab() { 
+        return (
+            <Link to="/" className="navbar-explore-link"> 
+                Explore 
+            </Link>
+        )
+    }
+
+    hostTab() { 
+        return (
+            <Link to="/activity/host" className="navbar-host-link">
+                Host
+            </Link> 
+        )
+    }
+
+    profileTab() { 
+        return (
+            <Link to={`/users/${this.props.id}`} className="navbar-profile-link">
+                Profile
+            </Link>
+        )
+    }
+
+
+
     render() { 
-      // if (!this.props.id) return null
-    //   console.log(this.props.userActivities)
         return (
             <div className="navbar">
                 <div className="left-navbar">
-                    {/* should later redirect to their home page */}
-                    <Link to="/" className="navbar-name">
-                        huddleUP
-                    </Link>
+                    { this.huddleUpTab() }
                 </div>
                 <div className="right-navbar">
                     <div className="navbar-links">
-                        {/* redirect to explore page */}
-                        {/* <EventsDropdown className="navbar-explore-link" userActivities={this.props.userActivities} id={this.props.id} /> */}
-                        <Link to={`/users/${this.props.id}/myevents`} className="navbar-explore-link">My Events</Link>
-                        <Link to="/" className="navbar-explore-link">
-                            Explore
-                        </Link>
-                        {/* redirect to host page */}
-                        <Link to="/activities/host" className="navbar-host-link">
-                            Host
-                        </Link>
-                        <Link to={`/users/${this.props.id}`} className="navbar-profile-link">
-                            Profile
-                        </Link>
-                        
-                        {/* <button onClick={this.logoutUser}>Logout</button> */}
+                        { this.myEventsTab() }
+                        { this.exploreTab() }
+                        { this.hostTab() }
+                        { this.profileTab() }
                     </div>
                 </div>
             </div>

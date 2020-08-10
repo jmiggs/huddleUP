@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    border-bottom: 1px solid #EF8354;
+    border-bottom: 1px solid var(--orange-color);
 }
 
 .activity-title {
@@ -29,7 +29,7 @@
 .activity-date {
     font-family: 'Hind Siliguri', sans-serif;
     font-size: 16px;
-    color: #EF8354;
+    color: var(--orange-color);
     margin-bottom: 8px;
 }
 
@@ -41,7 +41,7 @@
 .see-more-button { 
     height: 30px;
     width: 150px;
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     text-align: center;
     padding: 7px 0px;
     border-radius: 25px;

@@ -53,7 +53,7 @@
 }
 
 .top-banner { 
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -90,7 +90,7 @@
 }
 
 .main-phrase-caption { 
-    color: #FFFFFF;
+    color: var(--white-color);
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.3;
@@ -104,7 +104,7 @@
 .signup-splash-button { 
     height: 50px;
     width: 170px;
-    background-color: #2D3142;
+    background-color: var(--dark-gray-color);
     text-align: center;
     padding: 17px 0px;
     border-radius: 25px;
@@ -119,7 +119,7 @@
 
 .signup-splash-button-text { 
     text-decoration: none;
-    color: #EF8354;
+    color: var(--orange-color);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -127,7 +127,7 @@
 
 .signin-splash-text { 
     font-size: 16px;
-    color: #FFFFFF;
+    color: var(--white-color);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
@@ -139,7 +139,7 @@
 
 .signin-splash-link { 
     font-size: 16px;
-    color: #2D3142;
+    color: var(--dark-gray-color);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -150,7 +150,7 @@
 }
 
 .bottom-half-of-splash { 
-    background-color: #FFFFFF;
+    background-color: var(--white-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -160,7 +160,7 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 32px;
     margin: 30px 0px;
-    color: #2D3142;
+    color: var(--dark-gray-color);
     text-align: center;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .huddleup-is > div { 
-    background-color: #ffffff;
+    background-color: var(--white-color);
     transition-duration: 0.5s;
     position: relative;
     display: flex;
@@ -206,7 +206,7 @@
 }
 
 .huddleup-is-bottom-text p { 
-    color: #BFC0C0;
+    color: var(--light-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-align: center;
@@ -222,7 +222,7 @@
 .signup-bottom-button { 
     height: 50px;
     width: 170px;
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     text-align: center;
     padding: 17px 0px;
     border-radius: 25px;
@@ -237,7 +237,7 @@
 
 .signup-bottom-button-text { 
     text-decoration: none;
-    color: #2D3142;
+    color: var(--dark-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 16px;

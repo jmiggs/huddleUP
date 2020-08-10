@@ -3,7 +3,7 @@
 .navbar { 
     height: 50px;
     width: 100%;
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     font-family: 'Josefin Sans', cursive;
     position: absolute;
     top: 0px;

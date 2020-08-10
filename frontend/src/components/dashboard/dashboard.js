@@ -11,18 +11,13 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 
 class DashBoard extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // };
-
     componentDidMount() {
         this.props.fetchActivities();
     }
 
     render () {
         const { basketball, golf, soccer, football, tennis  } = this.props;
-        // if (!(basketball || golf || soccer || football || tennis)) return null;
-        // debugger
+        
         const settings = {
             arrows: true,
             infinite: true,

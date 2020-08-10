@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@531&display=swap");
 
 .footer-container {
-    background-color: #2D3142;
+    background-color: var(--dark-gray-color);
     width: 100%;
     overflow: hidden
 }
@@ -25,7 +25,7 @@
 
 .huddleUP-icon { 
     font-size: 48px;
-    color: #EF8354;
+    color: var(--orange-color);
 }
 
 .engineers-contacts-container { 
@@ -59,7 +59,7 @@
 
 .footer-icon { 
     font-size: 26px;
-    color: #EF8354;
+    color: var(--orange-color);
 }
 
 @media only screen and (max-width: 667px) { 

@@ -20,7 +20,7 @@
 }
 
 /* .profile-picture-box {
-    border: 4px solid #EF8354;
+    border: 4px solid var(--orange-color);
     border-radius: 6px;
     height: 320px;
     height: 100%;
@@ -28,7 +28,7 @@
 } */
 
 .profile-picture {
-    /* border: 4px solid #EF8354; */
+    /* border: 4px solid var(--orange-color); */
     /* border-radius: 6px; */
     height: 280px;
     width: 240px;
@@ -36,7 +36,7 @@
 }
 
 .profile-name {
-    color: #2D3142;
+    color: var(--dark-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
@@ -52,7 +52,7 @@
 }
 
 .profile-location-word {
-    color: #4F5D75;
+    color: var(--armor-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     padding: 3px;
@@ -63,15 +63,15 @@
 }
 
 .profile-bio {
-    color: #4F5D75;
+    color: var(--armor-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: normal;
 }
 .profile-sports {
-    border-top: 2px solid #EF8354;
+    border-top: 2px solid var(--orange-color);
     margin-top: 60px;
-    color: #4F5D75;
+    color: var(--armor-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: normal;
@@ -81,17 +81,17 @@
 .edit-link {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: #EF8354;
+    color: var(--orange-color);
 }
 
 .edit-link:hover {
-    color: #4F5D75;
+    color: var(--armor-gray-color);
 }
 
 .profile-logout-btn { 
     height: 50px;
     width: 170px;
-    background-color: #EF8354;
+    background-color: var(--orange-color);
     text-align: center;
     padding: 17px 0px;
     border-radius: 25px;
@@ -106,7 +106,7 @@
 
 .profile-logout-btn-text { 
     text-decoration: none;
-    color: #2D3142;
+    color: var(--dark-gray-color);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 16px;
