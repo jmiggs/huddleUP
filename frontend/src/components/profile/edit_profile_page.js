@@ -143,12 +143,12 @@ class EditProfilePage extends React.Component {
                             onChange={this.update('bio')}
                         />
                         <br/>
-                        <label className = "sports-dropdown">Sports</label>
+                        {/* <label className = "sports-dropdown">Sports</label>
                             <div className ="drop-down-description"> 
                                 hold cmd button to select multiples 
                             </div>
                             {this.sportsList()}
-                        <br/>
+                        <br/> */}
                         <input
                             className="edit-update-btn"
                             type="submit"

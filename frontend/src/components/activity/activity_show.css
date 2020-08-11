@@ -53,6 +53,14 @@
     /* margin-bottom: 10px; */
 }
 
+.max-players { 
+    color: var(--light-gray-color);
+    font-family: 'Josefin Sans', cursive;
+    margin: 10px 0;
+    font-size: 16px;
+    /* height: 35px; */
+}
+
 .unsubscribe-button { 
     margin-bottom: 10px;
     border: none;
