@@ -55,7 +55,10 @@ class Activity extends React.Component {
 
   renderSubscribe() { 
     if (this.state) { 
-      if (this.state.subscribed) {
+      if ((this.props.activity.numplayersneed - this.props.numOfPlayers) === 0 && !this.state.existingSubscriptionId) { 
+        // if ((this.props.activity.numplayersneed - this.props.numOfPlayers) === 0) { 
+        return <p className="max-players">No Players Needed</p>
+      } else if (this.state.subscribed) {
         return <button className="unsubscribe-button" onClick={this.changeUnsubscription}>Unsubscribe</button>
       } else {
         return <button className="subscribe-button" onClick={this.changeSubscription}>Subscribe</button>
