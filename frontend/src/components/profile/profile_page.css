@@ -30,7 +30,8 @@
 .profile-picture {
     /* border: 4px solid var(--orange-color); */
     /* border-radius: 6px; */
-    height: 280px;
+    /* height: 280px;
+    width: 240px; */
     width: 240px;
     border-radius: 6px;
 }
@@ -68,6 +69,11 @@
     font-size: 18px;
     line-height: normal;
 }
+
+.profile-bio-description {
+    white-space: pre-wrap;
+}
+
 .profile-sports {
     border-top: 2px solid var(--orange-color);
     margin-top: 60px;

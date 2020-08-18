@@ -76,8 +76,8 @@ router.get('/', (req, res) => {
           // { location: boundsObj.location }
         ]}).
         then(activities => {
-          console.log(boundsObj.day)
-          console.log(boundsObj.time)
+          // console.log(boundsObj.day)
+          // console.log(boundsObj.time)
           res.json(activities)}).
         catch( err => res.status(404).json({ noactivities: 'No activities found' }));
     } else {

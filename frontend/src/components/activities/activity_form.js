@@ -105,6 +105,11 @@ class ActivityForm extends React.Component {
 
     render() {
         if (!this.props.currentUser && !this.props.activity) return null;
+        let today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
         
         return (
             <div>
@@ -189,7 +194,7 @@ class ActivityForm extends React.Component {
 
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Pick a Day</label>
-                                <input type="date" onChange={this.update("day")} value={this.state.day} className="time-date-input" />
+                                <input type="date" min={today} onChange={this.update("day")} value={this.state.day} className="time-date-input" />
                             </div>
 
                             <div className="activity-input-container">

@@ -53,13 +53,13 @@ class ProfilePage extends React.Component {
     getBio() {
         if (!this.props.user.currentUserBio) {
             return (
-                <div>
+                <div className='profile-bio-description'>
                     No Bio
                 </div>
             )
         } else {
             return (
-                <div>
+                <div className='profile-bio-description'>
                     {this.props.user.currentUserBio}
                 </div>
             )
