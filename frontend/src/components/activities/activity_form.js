@@ -16,6 +16,7 @@ class ActivityForm extends React.Component {
         this.formSubmission = this.formSubmission.bind(this);
         this.renderSubmitButton = this.renderSubmitButton.bind(this);
         this.initMap = this.initMap.bind(this);
+        this.validateForm = this.validateForm.bind(this);
     }
 
     update(field) { 
@@ -28,30 +29,42 @@ class ActivityForm extends React.Component {
         }
     }
 
+    validateForm() { 
+        if (this.state.title.trim().length &&
+        this.state.location.trim().length &&
+        this.state.sport.trim().length &&
+        this.state.numplayersneed.toString().trim().length && // Have to convert it to a string because an integer is brought up from the db with the edit form
+        this.state.day.trim().length &&
+        this.state.time.trim().length &&
+        this.state.lat &&
+        this.state.lng) {
+            return true;
+        } else { 
+            return false;
+        }
+    }
+
     formSubmission(e) { 
         e.preventDefault()
-        this.setState({ clicked: true })
-        if (this.props.formType === "Edit") { 
-            this.props.action(this.state)
-                .then(window.location.href = `/#/activity/${this.state._id}`);
+
+        if (this.validateForm()) { 
+            this.setState({ clicked: true })
+            if (this.props.formType === "Edit") { 
+                this.props.action(this.state)
+                    .then(window.location.href = `/#/activity/${this.state._id}`);
+            } else { 
+                this.props.action(this.state)
+                    .then(data => window.location.href = `/#/activity/${data.activity._id}`);
+            }
         } else { 
-            this.props.action(this.state)
-                .then(data => window.location.href = `/#/activity/${data.activity._id}`);
+            return 
         }
-        
     }
 
     renderSubmitButton() { 
         if (this.state.clicked) {
             return <div className="activity-form-spinner"><GuardSpinner size={20} frontColor="#EF8354" backColor="#2D3142" loading={this.state.clicked} /></div>;
-        } else if (this.state.title.trim().length &&
-            this.state.location.trim().length &&
-            this.state.sport.trim().length && 
-            this.state.numplayersneed.toString().trim().length && // Have to convert it to a string because an integer is brought up from the db with the edit form
-            this.state.day.trim().length && 
-            this.state.time.trim().length && 
-            this.state.lat && 
-            this.state.lng) { 
+        } else if (this.validateForm()) { 
                 if (this.props.formType === "Host") { 
                     return <input type="submit" value="Host" className="submit-activity" />
                 } else if (this.props.formType === "Edit") { 
