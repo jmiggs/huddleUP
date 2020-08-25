@@ -149,12 +149,89 @@ a {
 }
 
 a:hover {
-   cursor:pointer;  
+  cursor:pointer;  
+}
+
+/******************************************************************************/
+
+.burger { 
+  display: none;
+}
+
+.burger-line-1, 
+.burger-line-2, 
+.burger-line-3 { 
+  border: 1px solid white;
+  width: 30px;
+  border-radius: 15px;
+  height: 5px;
+  background-color: var(--white-color);
+  margin: 0 0 5px 0;
+  transition: 0.2s ease-in; /* When you don't specify which property, it just does all of them. */
+}
+
+.cross .burger-line-1 { 
+  transform: rotate(45deg) translate(5px, 9px);
+}
+
+.cross .burger-line-2 { 
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.cross .burger-line-3 { 
+  transform: rotate(-45deg) translate(5px, -9px);
 }
 
 @media only screen and (max-width: 800px) { 
-  .hamburger { 
-    
+  body { 
+    overflow-x: hidden;
+  }
+
+  .navbar-links { 
+    flex-direction: column;
+    position: absolute;
+    transform: translateX(100%);
+    right: 0;
+    top: 50px;
+    margin: 0;
+    padding: 10px;
+    transition: transform 0.3s ease-in;
+    background-color: var(--white-color);
+    height: 85vh;
+    width: 100vw;
+    justify-content: space-evenly;
+  }
+
+  .navbar-explore-link, 
+  .navbar-host-link, 
+  .navbar-profile-link {
+    margin: 20px 0 20px 0;
+    text-decoration: none;
+    color: var(--light-gray-color);
+    text-align: end;
+    transition: color 0.2s ease-out;
+  }
+
+  .navbar-explore-link:hover, 
+  .navbar-host-link:hover, 
+  .navbar-profile-link:hover {
+    color: var(--black-color);
+  }
+
+  .burger { 
+    display: block;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .right-navbar { 
+    display: block;
+  }
+
+  .slide { 
+    transform: translateX(0%);
   }
 }
 
