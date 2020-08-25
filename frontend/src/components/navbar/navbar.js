@@ -22,6 +22,8 @@ class NavBar extends React.Component {
         this.props.logout();
     }
 
+    // I'm going to make this responsive
+
     // getLinks() { // I like how they abstracted this away from the render. I'm going to do this from now on.
     //     if (this.props.loggedIn) { 
     //         return ( 
