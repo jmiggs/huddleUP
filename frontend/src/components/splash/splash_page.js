@@ -2,16 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./splash_page.css";
-// import NavBarContainer from "../navbar/navbar_container";
 import Footer from "../footer/footer";
-
-
 
 const goToSignUp = () => {
     window.location.href = '/#/signup';
 }
-
-
 
 const SplashPage = props => { 
     return (
