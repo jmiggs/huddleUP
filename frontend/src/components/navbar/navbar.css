@@ -172,16 +172,26 @@ a:hover {
 
 .cross .burger-line-1 { 
   transform: rotate(45deg) translate(5px, 9px);
+  background-color: black;
+  border: 1px solid black;
 }
 
 .cross .burger-line-2 { 
   opacity: 0;
   transform: translateX(-100%);
   pointer-events: none;
+  background-color: black;
+  border: 1px solid black;
 }
 
 .cross .burger-line-3 { 
   transform: rotate(-45deg) translate(5px, -9px);
+  background-color: black;
+  border: 1px solid black;
+}
+
+.no-scroll { 
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 800px) { 
@@ -194,14 +204,15 @@ a:hover {
     position: absolute;
     transform: translateX(100%);
     right: 0;
-    top: 50px;
+    top: 0;
     margin: 0;
     padding: 10px;
     transition: transform 0.3s ease-in;
     background-color: var(--white-color);
-    height: 85vh;
+    height: 100vh;
     width: 100vw;
     justify-content: space-evenly;
+    overflow-y: scroll;
   }
 
   .navbar-explore-link, 
@@ -212,6 +223,7 @@ a:hover {
     color: var(--light-gray-color);
     text-align: end;
     transition: color 0.2s ease-out;
+    font-size: 10vh;
   }
 
   .navbar-explore-link:hover, 
@@ -224,6 +236,8 @@ a:hover {
     display: block;
     margin: 10px;
     cursor: pointer;
+    /* position: absolute */
+    /* z-index: 3; */
   }
 
   .right-navbar { 

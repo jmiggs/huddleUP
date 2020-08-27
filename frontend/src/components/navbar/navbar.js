@@ -51,10 +51,6 @@ class NavBar extends React.Component {
         this.setState({ slide: !this.state.slide })
     }
 
-    renderNav() { 
-        
-    }
-
     huddleUpTab() {
         return (
             <Link to="/" className="navbar-name">
@@ -98,6 +94,9 @@ class NavBar extends React.Component {
 
 
     render() { 
+        // if (this.state.slide) document.querySelector("body").classList.add("no-scroll");
+        // if (!this.state.slide) document.querySelector("body").classList.remove("no-scroll");
+
         return (
             <div className="navbar">
                 <div className="left-navbar">

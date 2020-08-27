@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
     if (activity) {
       numOfPlayers = activity.participants.length
       for (let i = 0; i < activity.participants.length; i++) { 
-        if (currentUser.id === activity.participants[i]) { 
+        if (currentUser.id === activity.participants[i]) { // Maybe I can just do something with .includes instead of this for loop
           subscribed = true 
           existingSubscriptionId = activity.participants[i]
           break 
