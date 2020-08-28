@@ -202,9 +202,9 @@ a:hover {
   .navbar-links { 
     flex-direction: column;
     position: absolute;
-    transform: translateX(100%);
-    right: 0;
+    transform: translateX(-100%);
     top: 0;
+    left: 0;
     margin: 0;
     padding: 10px;
     transition: transform 0.3s ease-in;
@@ -221,7 +221,6 @@ a:hover {
     margin: 20px 0 20px 0;
     text-decoration: none;
     color: var(--light-gray-color);
-    text-align: end;
     transition: color 0.2s ease-out;
     font-size: 10vh;
   }
@@ -236,8 +235,6 @@ a:hover {
     display: block;
     margin: 10px;
     cursor: pointer;
-    /* position: absolute */
-    /* z-index: 3; */
   }
 
   .right-navbar { 
