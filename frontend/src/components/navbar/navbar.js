@@ -7,6 +7,7 @@ import "./navbar.css"
 class NavBar extends React.Component { 
     constructor(props) { 
         super(props)
+        this.state = { slide: false };
 
         this.logoutUser = this.logoutUser.bind(this);
         // this.getLinks = this.getLinks.bind(this);
@@ -15,12 +16,15 @@ class NavBar extends React.Component {
         this.exploreTab = this.exploreTab.bind(this);
         this.hostTab = this.hostTab.bind(this); 
         this.profileTab = this.profileTab.bind(this);
+        this.slideIn = this.slideIn.bind(this);
     }
 
     logoutUser(e) { 
         e.preventDefault();
         this.props.logout();
     }
+
+    // I'm going to make this responsive
 
     // getLinks() { // I like how they abstracted this away from the render. I'm going to do this from now on.
     //     if (this.props.loggedIn) { 
@@ -42,6 +46,10 @@ class NavBar extends React.Component {
     //         )
     //     }
     // }
+
+    slideIn() {
+        this.setState({ slide: !this.state.slide })
+    }
 
     huddleUpTab() {
         return (
@@ -86,18 +94,43 @@ class NavBar extends React.Component {
 
 
     render() { 
+        // if (this.state.slide) document.querySelector("body").classList.add("no-scroll");
+        // if (!this.state.slide) document.querySelector("body").classList.remove("no-scroll");
+
         return (
             <div className="navbar">
                 <div className="left-navbar">
                     { this.huddleUpTab() }
                 </div>
                 <div className="right-navbar">
-                    <div className="navbar-links">
-                        { this.myEventsTab() }
-                        { this.exploreTab() }
-                        { this.hostTab() }
-                        { this.profileTab() }
+                    { 
+                    (this.state.slide) ? 
+                    <div className="navbar-links slide">
+                        {this.myEventsTab()}
+                        {this.exploreTab()}
+                        {this.hostTab()}
+                        {this.profileTab()}
+                    </div> : 
+                    <div className="navbar-links"> 
+                        {this.myEventsTab()}
+                        {this.exploreTab()}
+                        {this.hostTab()}
+                        {this.profileTab()}
                     </div>
+                    }
+                    {this.state.slide ?
+                    <div className="burger cross" onClick={this.slideIn}>
+                        <div className="burger-line-1"></div>  
+                        <div className="burger-line-2"></div>
+                        <div className="burger-line-3"></div>
+                    </div>
+                    : 
+                        <div className="burger" onClick={this.slideIn}>
+                            <div className="burger-line-1"></div>
+                            <div className="burger-line-2"></div>
+                            <div className="burger-line-3"></div>
+                        </div>
+                    }
                 </div>
             </div>
         )

@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 .splash-container {
+    font-size: 24px;
     margin: 0 auto;
 }
 
@@ -58,19 +59,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
 }
 
-.top-banner-not-the-nav { 
+.top-banner-not-the-nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 40px;
+    padding: 40px 40px 100px 40px;
 }
 
 .top-banner-text { 
     background-color: transparent;
     max-width: 500px;
-    font-size: 20px;
+    /* font-size: 20px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,14 +86,14 @@
 
 .main-phrase { 
     font-family: 'Work Sans', sans-serif;
-    font-size: 55px;
+    font-size: 2.75em;
     color: black;
     padding: 5px;
 }
 
 .main-phrase-caption { 
     color: var(--white-color);
-    font-size: 24px;
+    font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.3;
     padding: 8px;
@@ -146,7 +148,7 @@
 .bottom-half-of-splash-container {
     display: flex;
     justify-content: center;
-    padding: 50px;
+    padding: 0 10% 0% 10%;
 }
 
 .bottom-half-of-splash { 
@@ -164,30 +166,44 @@
     text-align: center;
 }
 
-.huddleup-is { 
+.huddleup-is {
     display: flex;
     flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
 }
 
-.huddleup-is > div { 
+.huddleup-is > div {
     background-color: var(--white-color);
     transition-duration: 0.5s;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-    flex: 0 50%;
-    padding: 10px;
+    /* border-radius: 5px; */
+    border-radius: 15px;
+    flex: 0 1 45%;
+    margin: 15px 0 17px 0;
+    box-shadow: 0px 3px 6px 0px #0000005c;
+    transition: 0.1s ease-in;
+}
+
+.huddleup-is > div:hover { 
+    transform: translateY(-2%);
+    box-shadow: 0px 5px 6px 5px #0000005c;
+}
+
+.huddleup-is-bottom-text-pic { 
+    display: flex;
+    justify-content: center;
 }
 
 .huddleup-is-bottom-text-pic > img {
-    height: 100%;
+    height: 90%;
     max-height: 300px;
-    width: 100%;
-    max-width: 400px; 
-    display: flex;
-    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px 0px 0px 0px;
 }
 
 .huddleup-is-bottom-text { 
@@ -196,6 +212,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
+    padding: 0 10px;
 }
 
 .huddleup-is-bottom-text h2 { 
@@ -216,7 +233,7 @@
 }
 
 .signup-bottom-button-container {
-    padding: 20px;
+    padding: 5% 0%;
 }
 
 .signup-bottom-button { 
@@ -226,7 +243,6 @@
     text-align: center;
     padding: 17px 0px;
     border-radius: 25px;
-    margin-bottom: 10px;
     cursor: pointer;
     transition-duration: 0.5s;
 }
@@ -243,8 +259,21 @@
     font-size: 16px;
 }
 
+.fade-in { 
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+}
+
+.fade-in.appear { 
+    opacity: 1;
+}
+
 /* Responsiveness Starts */
 @media only screen and (max-width: 1024px) {
+    .bottom-half-of-splash-container {
+        padding: 0 8% 0% 8%;
+    }
+
     .huddleup-is-bottom-text-pic > img {
         max-width: 320px;
     }
@@ -280,6 +309,10 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 25px;
+    }
+
+    .bottom-half-of-splash-container {
+        padding: 0 6% 0% 6%;
     }
 
     .huddleup-is-bottom-text-pic > img {
@@ -342,6 +375,14 @@
     }
 }
 
+@media only screen and (max-width: 600px) { 
+    .huddleup-is {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+
 @media only screen and (max-width: 480px) { 
     .main-phrase { 
         font-size: 200%;
@@ -353,12 +394,6 @@
 
     .huddleup-is-bottom-text-pic > img {
         max-width: 200px;
-    }
-
-    .huddleup-is {
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
     }
 
     .huddleup-is > div { 

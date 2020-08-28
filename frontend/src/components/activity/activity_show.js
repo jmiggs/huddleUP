@@ -78,33 +78,54 @@ class Activity extends React.Component {
     return (
       <div>
         <NavBarContainer />
+
+
+
+
+
+
         <div className="activity-show-page"> 
+
+
           <div className="activity-show-container"> 
+
+
             <p className="show-page-title">{this.props.activity.title}</p>
             <p className="show-page-description">{this.props.activity.description}</p>
+
             <div className="show-page-details">
               <p className="show-page-numamountplayers">Players Attending: {this.props.numOfPlayers}</p>
               <p className="show-page-numplayersneed">Remaining Players Needed: {this.props.activity.numplayersneed - this.props.numOfPlayers}</p>
-
-              {/* Change the class names  */}
               <p className="show-page-location">Date: {this.props.activity.day}</p>
               <p className="show-page-location">Start Time: {this.props.activity.time}</p>
-
               <p className="show-page-location">Location: {this.props.activity.location}</p>
               <p className="show-page-sport">Sport: {this.props.activity.sport.charAt(0).toUpperCase() + this.props.activity.sport.slice(1)}</p>
             </div>
 
+
             {this.renderSubscribe()}
-            {(this.props.currentUser.id === this.props.activity.host) ? 
+
+            {
+            this.props.currentUser.id === this.props.activity.host ? 
             <div className="show-buttons"> 
               <button onClick={() => window.location.href = `/#${this.props.match.url}/edit`} className="owned-activity-button edit">Edit</button> 
-                <button onClick={e => this.deleteActivity(e)} className="owned-activity-button delete">Delete</button>
+              <button onClick={e => this.deleteActivity(e)} className="owned-activity-button delete">Delete</button>
             </div> : 
-            null}
-          <ShowMap activity={this.props.activity} />
+            null
+            }
 
+
+            <ShowMap activity={this.props.activity} />
           </div>
+
+
         </div>
+
+
+
+
+
+
         <Footer />
       </div>
     )

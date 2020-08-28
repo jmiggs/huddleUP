@@ -2,32 +2,33 @@
 /* @import url('https://fonts.googleapis.com/css?family=Josefin+Sans'); */
 
 .activity-show-page { 
+    font-size: 16px;
     margin-top: 69px;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 20px 100px 20px;
 }
 
 .activity-show-container { 
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
+    width: 60%;
 }
 
 .show-page-title { 
-    font-size: 48px;
-    color: var(--dark-gray-color);
     font-family: 'Work Sans', sans-serif;
-    margin-bottom: 15px;
+    font-size: 5em;
+    color: var(--dark-gray-color);
+    margin-bottom: 0.2em;
     align-self: center;
     text-align: center;
 }
 
 .show-page-description { 
     font-family: sans-serif;
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 2em;
+    margin: 0.25em 0 0.75em 0;
     color: var(--armor-gray-color);
     width: 600px;
     align-self: center;
@@ -35,66 +36,55 @@
 }
 
 .show-page-details { 
+    font-family: 'Josefin Sans', cursive;
+    font-size: 1.1em;
     width: 100%;
-    margin-bottom: 10px;
+    margin: 1em 0;
     padding-left: 10px;
     border-left: 4px solid var(--orange-color);
+    line-height: 1.22;
 }
 
 .show-page-numamountplayers,
 .show-page-numplayersneed,
 .show-page-location { 
-    font-family: 'Josefin Sans', cursive;
-    margin-bottom: 10px;
-}
-
-.show-page-sport { 
-    font-family: 'Josefin Sans', cursive;
-    /* margin-bottom: 10px; */
+    margin-bottom: 0.8em;
 }
 
 .max-players { 
     color: var(--light-gray-color);
     font-family: 'Josefin Sans', cursive;
     margin: 10px 0;
-    font-size: 16px;
-    /* height: 35px; */
+}
+
+.unsubscribe-button,
+.subscribe-button { 
+    border: none;
+    font-size: 1em;
+    outline: none;
+    cursor: pointer;
+    padding: 0.75em 1.5em;
+    margin: 1em 0;
 }
 
 .unsubscribe-button { 
-    margin-bottom: 10px;
-    border: none;
     color: var(--light-gray-color);
-    font-size: 16px;
-    outline: none;
-    cursor: pointer;
-    height: 35px;
 }
 
 .subscribe-button { 
-    margin-bottom: 10px;
-    border: none;
     color: var(--orange-color);
-    font-size: 16px;
-    outline: none;
-    cursor: pointer;
     background-color: var(--dark-gray-color);
     border-radius: 25px;
-    height: 35px;
-    width: 110px;
-}
-
-.show-buttons { 
-
 }
 
 .owned-activity-button { 
     border: none;
     background: none;
-    padding-bottom: 10px;
     cursor: pointer;
     outline: none;
-    margin: 0px 10px;
+    font-size: 1em;
+    margin: 0 1em 1em 1em;
+    padding: 0 0.25em;
 }
 
 .edit { 
@@ -120,6 +110,10 @@
 }
 
 @media only screen and (max-width: 768px) { 
+    .activity-show-page { 
+        font-size: 14px;
+    }
+
     .activity-show-container { 
         width: 80%;
     }
@@ -130,5 +124,15 @@
 
     .activity-show-map { 
         height: 80vw;
+    }
+}
+
+@media only screen and (max-width: 600px) { 
+    .show-page-title { 
+        font-size: 3em;
+    }
+
+    .show-page-description { 
+        font-size: 1.5em;
     }
 }
