@@ -26,7 +26,6 @@ export const createActivity = data => {
 };
 
 export const updateActivity = data => { 
-  // console.log(data)
   return axios.patch(`/api/activities/${data._id}`, data)
 }
 
