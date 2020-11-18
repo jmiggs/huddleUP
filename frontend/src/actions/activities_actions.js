@@ -45,14 +45,12 @@ export const fetchActivitiesFiltered = (filters) => (dispatch, getState) => {
 export const fetchActivity = activityId => dispatch => {
     return ActivitiesAPIUtil.getActivity(activityId)
         .then(res => {
-          // console.log(res)
           dispatch(receiveActivity(res.data))
         })
         .catch(err => console.log("BAD"))
 };
 
 export const fetchUserActivities = userId => dispatch => {
-//   console.log(userId)
   return ActivitiesAPIUtil.getUserActivities(userId)
       .then(res => dispatch(receiveUserActivities(res.data)))
       .catch(err => console.log("BAD"))
@@ -79,8 +77,7 @@ export const deleteActivity = id => dispatch => {
 export const subscribeToActivity = activityId => dispatch => {
 
     return ActivitiesAPIUtil.subscribeToActivity(activityId)
-        .then(res => dispatch(receiveActivity(res.data))) // I don't even need an action for this since I'm doing it when the user leaves the page
-        // .then(res => console.log(res))
+        .then(res => dispatch(receiveActivity(res.data))) 
         .catch(err => console.log("Can't subscribe to this activity"))
 }
 
@@ -88,6 +85,5 @@ export const unsubscribeToActivity = activityId => dispatch => {
 
   return ActivitiesAPIUtil.unsubscribeToActivity(activityId)
       .then(res => dispatch(receiveActivity(res.data)))
-    //   .then(res => console.log(res))
       .catch(err => console.log("Can't unsubscribe to this activity"))
 }

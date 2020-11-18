@@ -4,7 +4,6 @@ import { subscribeToActivity, fetchActivity, unsubscribeToActivity, fetchUserAct
 import { deleteActivity } from "../../actions/activities_actions";
 
 const mapStateToProps = (state, ownProps) => {
-
     let currentUser = state.session.user
     let activity;
 
