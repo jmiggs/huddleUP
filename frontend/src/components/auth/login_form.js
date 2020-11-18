@@ -15,10 +15,10 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
-        this.demoUser = this.demoUser.bind(this);
+        this.logIntoDemoUser = this.logIntoDemoUser.bind(this);
     }
 
-    demoUser(e) { 
+    logIntoDemoUser(e) { 
         e.preventDefault()
         this.setState({ email: "demo_user@gmail.com", password: "DemoUser" })
         setTimeout(() => this.props.login(this.state), 0)
@@ -66,31 +66,29 @@ class LoginForm extends React.Component {
     render() { 
         return (
             <div className="auth-form-page">
-                {/* <div className="auth-form-container"> */}
-                    <form onSubmit={this.handleSubmit} className="auth-form-container">
-                        <Link to="/" className="auth-close-button"><IoIosClose /></Link>
-                        <h1 className="auth-logo">huddleUP</h1>
-                        <h3 className="auth-description">Log In to huddleUP</h3>
-                        <p className="opposite-auth-description">Don't have a huddleUP account? <Link to="/signup" className="opposite-auth-link">Sign Up</Link></p>
-                        
-                        <div className="input-box-container">
-                            <label className="auth-input-label">Email</label>
-                            <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" className="input-field" />
-                            {(this.state.errors.email) ? <p className="auth-errors">{this.state.errors.email}</p> : <></> }
-                        </div>
+                <form onSubmit={this.handleSubmit} className="auth-form-container">
+                    <Link to="/" className="auth-close-button"><IoIosClose /></Link>
+                    <h1 className="auth-logo">huddleUP</h1>
+                    <h3 className="auth-description">Log In to huddleUP</h3>
+                    <p className="opposite-auth-description">Don't have a huddleUP account? <Link to="/signup" className="opposite-auth-link">Sign Up</Link></p>
+                    
+                    <div className="input-box-container">
+                        <label className="auth-input-label">Email</label>
+                        <input type="text" value={this.state.email} onChange={this.update('email')} placeholder="Email" className="input-field" />
+                        {(this.state.errors.email) ? <p className="auth-errors">{this.state.errors.email}</p> : <></> }
+                    </div>
 
-                        <div className="input-box-container">
-                            <label className="auth-input-label">Password</label>
-                            <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password" className="input-field" />
-                            {(this.state.errors.password) ? <p className="auth-errors">{this.state.errors.password}</p> : <></>}
-                        </div>
-                        
-                        <div className="login-buttons"> 
-                            <input type="submit" value="LOG IN" className="submit-auth-form" />
-                            <button className="submit-auth-form" onClick={this.demoUser}>DEMO</button>
-                        </div>
-                    </form>
-                {/* </div> */}
+                    <div className="input-box-container">
+                        <label className="auth-input-label">Password</label>
+                        <input type="password" value={this.state.password} onChange={this.update('password')} placeholder="Password" className="input-field" />
+                        {(this.state.errors.password) ? <p className="auth-errors">{this.state.errors.password}</p> : <></>}
+                    </div>
+                    
+                    <div className="login-buttons"> 
+                        <input type="submit" value="LOG IN" className="submit-auth-form" />
+                        <button className="submit-auth-form" onClick={this.logIntoDemoUser}>DEMO</button>
+                    </div>
+                </form>
             </div>
         )
     }

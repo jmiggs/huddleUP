@@ -7,32 +7,26 @@ import { setAuthToken } from "./util/session_api_util";
 import { logout } from "./actions/session_actions";
 
 document.addEventListener("DOMContentLoaded", () => { 
-  let store;
+  let reduxStore;
 
   if (localStorage.jwtToken) { 
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
     const preloadedState = { session: { isAuthenticated: true, user: decodedUser }};
-    store = configureStore(preloadedState);
+    reduxStore = configureStore(preloadedState);
     
     const currentTime = Date.now() / 1000;
 
     if (decodedUser.exp < currentTime) { 
-      store.dispatch(logout());
+      reduxStore.dispatch(logout());
       window.location.href = "/#/";
     }
   } else { 
-    store = configureStore({});
+    reduxStore = configureStore({});
   }
 
-  // Testing
-  window.dispatch = store.dispatch; 
-  window.store = store;
-  window.getState = store.getState;
-  // End testing
-
-  const root = document.getElementById("root") // Gets it from the index.html in the public folder
-  ReactDOM.render(<Root store={store} />, root)
-  window.store = store;
-  window.getState = store.getState;
+  const root = document.getElementById("root") // Gets it from the index.html in the public folder. I also could've done document.querySelector("#root")
+  ReactDOM.render(<Root store={reduxStore} />, root)
+  window.reduxStore = reduxStore;
+  window.getState = reduxStore.getState;
 });

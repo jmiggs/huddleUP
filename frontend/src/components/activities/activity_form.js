@@ -16,7 +16,7 @@ class ActivityForm extends React.Component {
         this.formSubmission = this.formSubmission.bind(this);
         this.renderSubmitButton = this.renderSubmitButton.bind(this);
         this.initMap = this.initMap.bind(this);
-        this.validateForm = this.validateForm.bind(this);
+        this.validateActivityForm = this.validateActivityForm.bind(this);
     }
 
     update(field) { 
@@ -29,7 +29,7 @@ class ActivityForm extends React.Component {
         }
     }
 
-    validateForm() { 
+    validateActivityForm() { 
         if (this.state.title.trim().length &&
         this.state.location.trim().length &&
         this.state.sport.trim().length &&
@@ -47,7 +47,7 @@ class ActivityForm extends React.Component {
     formSubmission(e) { 
         e.preventDefault()
 
-        if (this.validateForm()) { 
+        if (this.validateActivityForm()) { 
             this.setState({ clicked: true })
             if (this.props.formType === "Edit") { 
                 this.props.action(this.state)
@@ -64,7 +64,7 @@ class ActivityForm extends React.Component {
     renderSubmitButton() { 
         if (this.state.clicked) {
             return <div className="activity-form-spinner"><GuardSpinner size={20} frontColor="#EF8354" backColor="#2D3142" loading={this.state.clicked} /></div>;
-        } else if (this.validateForm()) { 
+        } else if (this.validateActivityForm()) { 
                 if (this.props.formType === "Host") { 
                     return <input type="submit" value="Host" className="submit-activity" />
                 } else if (this.props.formType === "Edit") { 
@@ -130,13 +130,8 @@ class ActivityForm extends React.Component {
                 <div className="activity-form-page">
                     <div className="activity-box-box">
 
-                        {/* <div id="floating-panel"> Google 
-                            <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} />
-                            <input id="submit" type="button" value="Geocode" />
-                        </div> */}
                         <div id="map" className="activity-form-map"></div>
-                        
-                        {/* <form className="activity-form" onSubmit={this.formSubmission}></form> */}
+                    
                         <form className="activity-form" onSubmit={e => this.formSubmission(e)}>
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Title</label>
@@ -145,7 +140,6 @@ class ActivityForm extends React.Component {
 
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Location</label>
-                                {/* <input type="text" value={this.state.location} onChange={this.update("location")} className="activity-input-field" /> */}
                                 <input id="address" type="textbox" value={this.state.location} onChange={this.update("location")} className="activity-input-field" />
                                 <input id="submit" type="button" value="Find" className="find-form-button" />
                             </div>
@@ -212,7 +206,6 @@ class ActivityForm extends React.Component {
 
                             <div className="activity-input-container">
                                 <label className="activity-form-label">Choose a Start Time (HH:MM A/P)</label>
-                                {/* <input type="time" onChange={this.update("time")} value={this.state.time} className="time-date-input" /> */}
                                 <select onChange={this.update("time")} className="form-dropdown">
                                     <option value={this.state.time}></option>
                                     <option value="7:00AM">7:00AM</option>
@@ -251,16 +244,6 @@ class ActivityForm extends React.Component {
                                     <p className="original-values">Original: {this.state.time}</p> :
                                 null}  
                             </div>
-
-                            {/* <div className="activity-input-container">
-                                <label className="activity-form-label">Latitude</label>
-                                <input type="text" onChange={this.update("lat")} value={this.state.lat} className="activity-input-field" />
-                            </div>
-
-                            <div className="activity-input-container">
-                                <label className="activity-form-label">Longitude</label>
-                                <input type="text" onChange={this.update("lng")} value={this.state.lng} className="activity-input-field" />
-                            </div> */}
 
                             <div className="form-buttons-container"> 
                                 {this.renderSubmitButton()}

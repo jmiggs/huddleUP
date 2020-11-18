@@ -10,11 +10,14 @@ import Footer from "../footer/footer";
 class Activity extends React.Component { 
   constructor(props) { 
     super(props)
-    this.state = { subscribed: props.subscribed, existingSubscriptionId: props.existingSubscriptionId }
+    this.state = { 
+      subscribed: props.subscribed, 
+      existingSubscriptionId: props.existingSubscriptionId 
+    }
 
-    this.renderSubscribe = this.renderSubscribe.bind(this);
-    this.changeSubscription = this.changeSubscription.bind(this);
-    this.changeUnsubscription = this.changeUnsubscription.bind(this);
+    this.renderSubscribeButton = this.renderSubscribeButton.bind(this);
+    this.subscribeToActivity = this.subscribeToActivity.bind(this);
+    this.unsubscribeToActivity = this.unsubscribeToActivity.bind(this);
     this.deleteActivity = this.deleteActivity.bind(this);
   }
   
@@ -40,28 +43,27 @@ class Activity extends React.Component {
     } 
   }
 
-  changeUnsubscription(e) { 
+  unsubscribeToActivity(e) { 
     e.preventDefault();
 
     this.props.unsubscribeToActivity(this.props.activity._id) // I just needed to add { new: true } to the backend
      
   }
 
-  changeSubscription(e) { 
+  subscribeToActivity(e) { 
     e.preventDefault();
 
     this.props.subscribeToActivity(this.props.activity._id)
   }
 
-  renderSubscribe() { 
+  renderSubscribeButton() { 
     if (this.state) { 
       if ((this.props.activity.numplayersneed - this.props.numOfPlayers) === 0 && !this.state.existingSubscriptionId) { 
-        // if ((this.props.activity.numplayersneed - this.props.numOfPlayers) === 0) { 
         return <p className="max-players">No Players Needed</p>
       } else if (this.state.subscribed) {
-        return <button className="unsubscribe-button" onClick={this.changeUnsubscription}>Unsubscribe</button>
+        return <button className="unsubscribe-button" onClick={this.unsubscribeToActivity}>Unsubscribe</button>
       } else {
-        return <button className="subscribe-button" onClick={this.changeSubscription}>Subscribe</button>
+        return <button className="subscribe-button" onClick={this.subscribeToActivity}>Subscribe</button>
       }
     }
   }
@@ -78,18 +80,9 @@ class Activity extends React.Component {
     return (
       <div>
         <NavBarContainer />
-
-
-
-
-
-
+        
         <div className="activity-show-page"> 
-
-
           <div className="activity-show-container"> 
-
-
             <p className="show-page-title">{this.props.activity.title}</p>
             <p className="show-page-description">{this.props.activity.description}</p>
 
@@ -102,9 +95,7 @@ class Activity extends React.Component {
               <p className="show-page-sport">Sport: {this.props.activity.sport.charAt(0).toUpperCase() + this.props.activity.sport.slice(1)}</p>
             </div>
 
-
-            {this.renderSubscribe()}
-
+            {this.renderSubscribeButton()}
             {
             this.props.currentUser.id === this.props.activity.host ? 
             <div className="show-buttons"> 
@@ -114,17 +105,9 @@ class Activity extends React.Component {
             null
             }
 
-
             <ShowMap activity={this.props.activity} />
           </div>
-
-
         </div>
-
-
-
-
-
 
         <Footer />
       </div>

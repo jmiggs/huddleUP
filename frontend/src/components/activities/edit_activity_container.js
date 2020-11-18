@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchActivity: id => dispatch(fetchActivity(id)),
-    action: activity => dispatch(updateActivity(activity)) // Need to make the backend edit action and the whole redux cycle
+    action: activity => dispatch(updateActivity(activity)) 
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Edit)
