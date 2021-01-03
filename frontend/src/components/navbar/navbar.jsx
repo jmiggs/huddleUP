@@ -7,12 +7,12 @@ import "./navbar.css"
 const NavBar = props => {
     const [slide, setSlide] = useState(false);
 
-    const logoutUser = e => {
-        e.preventDefault();
-        props.logout();
-    };
-
     // I'm going to make this responsive
+
+    // const logoutUser = e => {
+    //     e.preventDefault();
+    //     props.logout();
+    // };
 
     // getLinks() { // I like how they abstracted this away from the render. I'm going to do this from now on.
     //     if (this.props.loggedIn) { 
