@@ -12,16 +12,15 @@ const mapStateToProps = state => ({
         numplayersneed: "", 
         day: "", 
         time: "", 
-        host: state.session.user, 
-        clicked: false, 
+        host: state.session.user,
         lat: "", 
         lng: ""
     },
     formType: "Host"
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     action: activity => dispatch(createActivity(activity))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActivityForm);
