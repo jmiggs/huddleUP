@@ -21,7 +21,6 @@ export default function(oldState = initialState, action) {
                 user: undefined
             };
         case RECEIVE_USER_SIGN_IN:
-            // return Object.assign({}, oldState, { isSignedIn: true })
             return {
                 ...oldState,
                 isSignedIn: true

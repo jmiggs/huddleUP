@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reduxStore = configureStore({});
   }
 
-  const root = document.getElementById("root") // Gets it from the index.html in the public folder. I also could've done document.querySelector("#root")
+  const root = document.getElementById("root") 
   ReactDOM.render(<Root store={reduxStore} />, root)
   window.reduxStore = reduxStore;
   window.getState = reduxStore.getState;
