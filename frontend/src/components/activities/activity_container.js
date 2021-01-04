@@ -31,7 +31,15 @@ const mapStateToProps = (state, ownProps) => {
       }
   
     }
-    // debugger
+    
+    // let subscribed;
+    // let numOfPlayers;
+    // if (activity) { 
+    //   console.log(activity);
+    //   subscribed = activity.participants.has(currentUser.id);
+    //   numOfPlayers = activity.participants.size;
+    // }
+
     return { activity, subscribed, existingSubscriptionId, numOfPlayers, currentUser }
 };
 

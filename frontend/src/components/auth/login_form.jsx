@@ -19,11 +19,9 @@ const LoginForm = props => {
         setErrors(props.errors);
     }, [props.errors]);
 
-    const logIntoDemoUser = e => {
-        e.preventDefault()
+    const demoLogin = () => { 
         setEmail("demo_user@gmail.com");
         setPassword("DemoUser");
-        setTimeout(() => props.login({ email, password }), 0);
     };
     
     const handleSubmit = e => {
@@ -45,19 +43,19 @@ const LoginForm = props => {
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Email</label>
-                    <input type="text" value={email} onChange={e => setEmail(e.currentTarget.value)} placeholder="Email" className="input-field" />
+                    <input type="text" value={email} onChange={e => setEmail(e.currentTarget.value)} className="input-field" />
                     {(errors.email) ? <p className="auth-errors">{errors.email}</p> : <></>}
                 </div>
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Password</label>
-                    <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} placeholder="Password" className="input-field" />
+                    <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} className="input-field" />
                     {(errors.password) ? <p className="auth-errors">{errors.password}</p> : <></>}
                 </div>
 
                 <div className="login-buttons">
                     <input type="submit" value="LOG IN" className="submit-auth-form" />
-                    <button className="submit-auth-form" onClick={logIntoDemoUser}>DEMO</button>
+                    <button className="submit-auth-form" onClick={demoLogin}>DEMO</button>
                 </div>
             </form>
         </div>

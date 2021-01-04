@@ -6,7 +6,9 @@ const ActivitiesReducer = (oldState = {}, action) => {
         case RECEIVE_ACTIVITIES:
             return Object.assign({}, action.activities)
         case RECEIVE_ACTIVITY:
-            return { [action.activity._id]: action.activity }
+            // const participants = new Set(action.activity.participants);
+            // return { [action.activity._id]: { ...action.activity, participants } };
+            return { [action.activity._id]: action.activity };
         case REMOVE_ACTIVITY: 
             let newState = Object.assign({}, oldState);
             delete newState[action.activityid];

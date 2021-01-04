@@ -44,25 +44,25 @@ const SignupForm = props => {
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Email</label>
-                    <input type="text" value={email} onChange={e => setEmail(e.currentTarget.value)} placeholder="Email" className="input-field" />
+                    <input type="text" value={email} onChange={e => setEmail(e.currentTarget.value)} className="input-field" />
                     {(errors.email) ? <p className="auth-errors">{errors.email}</p> : <></>}
                 </div>
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Username</label>
-                    <input type="text" value={username} onChange={e => setUsername(e.currentTarget.value)} placeholder="Username" className="input-field" />
+                    <input type="text" value={username} onChange={e => setUsername(e.currentTarget.value)} className="input-field" />
                     {(errors.username) ? <p className="auth-errors">{errors.username}</p> : <></>}
                 </div>
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Password</label>
-                    <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} placeholder="Password" className="input-field" />
+                    <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} className="input-field" />
                     {(errors.password) ? <p className="auth-errors">{errors.password}</p> : <></>}
                 </div>
 
                 <div className="input-box-container">
                     <label className="auth-input-label">Confirm Password</label>
-                    <input type="password" value={password2} onChange={e => setPassword2(e.currentTarget.value)} placeholder="Confirm Password" className="input-field" />
+                    <input type="password" value={password2} onChange={e => setPassword2(e.currentTarget.value)} className="input-field" />
                     {(errors.password2) ? <p className="auth-errors">{errors.password2}</p> : <></>}
                 </div>
 
