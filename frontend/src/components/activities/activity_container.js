@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
             }
         };
     }
-
+    
     let numOfPlayers;
     let subscribed;
     if (activity) {
