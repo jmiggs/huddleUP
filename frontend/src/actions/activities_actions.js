@@ -75,14 +75,12 @@ export const deleteActivity = id => dispatch => {
 }
 
 export const subscribeToActivity = activityId => dispatch => {
-
     return ActivitiesAPIUtil.subscribeToActivity(activityId)
         .then(res => dispatch(receiveActivity(res.data))) 
         .catch(err => console.log("Can't subscribe to this activity"))
 }
 
 export const unsubscribeToActivity = activityId => dispatch => {
-
   return ActivitiesAPIUtil.unsubscribeToActivity(activityId)
       .then(res => dispatch(receiveActivity(res.data)))
       .catch(err => console.log("Can't unsubscribe to this activity"))

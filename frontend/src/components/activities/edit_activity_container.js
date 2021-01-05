@@ -5,7 +5,7 @@ import { fetchActivity, updateActivity } from "../../actions/activities_actions"
 
 class Edit extends React.Component { 
     componentDidMount() { 
-        this.props.fetchActivity(this.props.match.params.id)
+        this.props.fetchActivity(this.props.match.params.id);
     }
 
     render() { 
@@ -17,11 +17,11 @@ const mapStateToProps = (state, ownProps) => ({
     activity: state.entities.activities[ownProps.match.params.id],
     currentUser: state.session.user,
     formType: "Edit"
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     fetchActivity: id => dispatch(fetchActivity(id)),
     action: activity => dispatch(updateActivity(activity)) 
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Edit)
+export default connect(mapStateToProps, mapDispatchToProps)(Edit);

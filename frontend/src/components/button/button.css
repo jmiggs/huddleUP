@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@531&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+.button { 
+    height: 50px;
+    width: 170px;
+    text-align: center;
+    padding: 17px 0px;
+    border-radius: 25px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+}

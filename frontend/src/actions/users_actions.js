@@ -1,7 +1,5 @@
 import * as UsersAPIUtil from "../util/users_api_util";
 
-// import jwt_decode from "jwt-decode";
-
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RECEIVE_USER_ERRORS = 'RECEIVE_USER_ERRORS';
