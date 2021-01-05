@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../reset.css";
 import "./splash_page.css";
 import Footer from "../footer/footer";
+import Button from "../button/button";
 
 const goToSignUp = () => {
     window.location.href = '/#/signup';
@@ -105,6 +106,7 @@ const SplashPage = () => (
                         <p className="signup-bottom-button-text">Let's Go</p>
                     </div>
                 </div>
+                {/* <Button text="Let's Go" textColor="black" backgroundColor="orange" onClick={goToSignUp} /> */}
             </div>
         </div>
         <Footer />
