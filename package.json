@@ -4,7 +4,7 @@
   "description": "MERN stack AA",
   "main": "app.js",
   "dependencies": {
-    "aws-sdk": "^2.676.0",
+    "aws-sdk": "^2.814.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "busboy": "^0.3.1",
